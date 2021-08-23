@@ -4,11 +4,7 @@
   
   <pre>npm i @dash-ui/layout</pre>
   <br/>
-
-```sh
-npm i @dash-ui/layout
-```
-
+  
 <p>
   <a href="https://bundlephobia.com/result?p=@dash-ui/layout">
     <img alt="Bundlephobia" src="https://img.shields.io/bundlephobia/minzip/@dash-ui/layout?style=for-the-badge&labelColor=24292e">
