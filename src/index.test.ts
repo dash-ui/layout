@@ -2,6 +2,10 @@ import {createStyles} from '@dash-ui/styles'
 import responsive from '@dash-ui/responsive'
 import layout from './index'
 
+afterEach(() => {
+  document.getElementsByTagName('html')[0].innerHTML = ''
+})
+
 describe('layout', () => {
   it('should pass', () => {
     const styles = createStyles({
@@ -31,7 +35,22 @@ describe('layout', () => {
 
     const layoutStyles = layout(styles)
     layoutStyles.row({gap: 'sm'})
-    expect(true).toBe(true)
+    expect(document.querySelectorAll(`style[data-dash]`).length).toBe(5)
+    expect(document.querySelectorAll(`style[data-dash]`)[0]).toMatchSnapshot(
+      'DOM'
+    )
+    expect(document.querySelectorAll(`style[data-dash]`)[1]).toMatchSnapshot(
+      'DOM'
+    )
+    expect(document.querySelectorAll(`style[data-dash]`)[2]).toMatchSnapshot(
+      'DOM'
+    )
+    expect(document.querySelectorAll(`style[data-dash]`)[3]).toMatchSnapshot(
+      'DOM'
+    )
+    expect(document.querySelectorAll(`style[data-dash]`)[4]).toMatchSnapshot(
+      'DOM'
+    )
   })
 
   it('should also pass', () => {
@@ -65,6 +84,18 @@ describe('layout', () => {
 
     const layoutStyles = layout(responsiveStyles)
     layoutStyles.row({gap: {sm: 'sm'}})
-    expect(true).toBe(true)
+    expect(document.querySelectorAll(`style[data-dash]`).length).toBe(4)
+    expect(document.querySelectorAll(`style[data-dash]`)[0]).toMatchSnapshot(
+      'DOM'
+    )
+    expect(document.querySelectorAll(`style[data-dash]`)[1]).toMatchSnapshot(
+      'DOM'
+    )
+    expect(document.querySelectorAll(`style[data-dash]`)[2]).toMatchSnapshot(
+      'DOM'
+    )
+    expect(document.querySelectorAll(`style[data-dash]`)[3]).toMatchSnapshot(
+      'DOM'
+    )
   })
 })

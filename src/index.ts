@@ -17,13 +17,6 @@ function layout<
 >(styles: S | ResponsiveStyles<Tokens, MQ, DashThemeNames>) {
   const compoundStyles = compound(styles)
 
-  /**
-   * A layout style for adding size, padding, position, color, and more
-   * using tokens from your CSS variable theme.
-   *
-   * @example
-   * <div className={box({size: 300, bg: {sm: 'red', md: 'blue'}})} />
-   */
   const box = compoundStyles({
     /**
      * Sets a `display` CSS property on your component
@@ -180,11 +173,8 @@ function layout<
           zIndex: typeof value === 'number' ? value : zIndex[value],
         })
     ),
-  })
+  } as const)
 
-  /**
-   * Sets a `align-items` CSS property on your component
-   */
   const alignItems = styles({
     start: {
       alignItems: 'flex-start',
@@ -203,9 +193,6 @@ function layout<
     },
   })
 
-  /**
-   * Sets a `justify-items` CSS property on your component
-   */
   const justifyItems = styles({
     start: {
       justifyItems: 'flex-start',
@@ -224,9 +211,6 @@ function layout<
     },
   })
 
-  /**
-   * Sets a `justify-content` CSS property on your component
-   */
   const justifyContent = styles({
     start: {
       justifyContent: 'flex-start',
@@ -254,9 +238,6 @@ function layout<
     },
   })
 
-  /**
-   * Sets a `align-content` CSS property on your component
-   */
   const alignContent = styles({
     start: {
       alignContent: 'flex-start',
@@ -284,9 +265,6 @@ function layout<
     },
   })
 
-  /**
-   * Sets a `align-self` CSS property on your component
-   */
   const alignSelf = styles({
     start: {
       alignSelf: 'flex-start',
@@ -305,9 +283,6 @@ function layout<
     },
   })
 
-  /**
-   * Sets a `justify-self` CSS property on your component
-   */
   const justifySelf = styles({
     start: {
       justifySelf: 'flex-start',
@@ -335,33 +310,6 @@ function layout<
     },
   })
 
-  /**
-   * A row directional layout style that distributes its items in a cluster
-   * like so:
-   *
-   * ```
-   * ☐☐☐☐☐
-   * ☐☐☐☐☐☐
-   * ☐☐☐☐☐
-   * ☐☐☐
-   * ```
-   *
-   * or
-   * ```
-   *  ☐☐☐☐☐
-   * ☐☐☐☐☐☐
-   *  ☐☐☐☐☐
-   *    ☐☐☐
-   * ```
-   *
-   * Some use cases include input chips and tags.
-   *
-   * @example
-   * <div className={cluster({gap: 'sm})}>
-   *   <Item/>
-   *   <Item/>
-   * </div>
-   */
   const cluster = compoundStyles({
     default: styles.one({
       display: 'flex',
@@ -399,25 +347,8 @@ function layout<
      */
     align: alignItems,
     ...box.styles,
-  })
+  } as const)
 
-  /**
-   * A layout style that distributes its items in a column without wrapping
-   * like so:
-   *
-   * ```
-   * ☐
-   * ☐
-   * ☐
-   * ☐
-   * ```
-   *
-   * @example
-   * <div className={column({gap: 'sm'})}>
-   *   <Item/>
-   *   <Item/>
-   * </div>
-   */
   const column = compoundStyles({
     default: styles.one({
       display: 'flex',
@@ -452,7 +383,7 @@ function layout<
      */
     align: alignItems,
     ...box.styles,
-  })
+  } as const)
 
   const sharedGrid = compoundStyles({
     default: styles.one({
@@ -512,25 +443,8 @@ function layout<
       else rows = [`repeat(${value},minmax(0,1fr))`]
       return {gridTemplateRows: rows.map((row) => unit(row)).join(' ')}
     }),
-  })
+  } as const)
 
-  /**
-   * A layout style that distributes its children in a grid like so:
-   *
-   * ```
-   * ☐ ☐ ☐
-   * ☐ ☐ ☐
-   * ☐ ☐ ☐
-   * ```
-   *
-   * @example
-   * <div className={grid({rows: 2, cols: 2})}>
-   *   <GridItem/>
-   *   <GridItem/>
-   *   <GridItem/>
-   *   <GridItem/>
-   * </div>
-   */
   const grid = compoundStyles({
     /**
      * Sets a `grid-template-columns` CSS property on your component
@@ -544,20 +458,8 @@ function layout<
     }),
     ...sharedGrid.styles,
     ...box.styles,
-  })
+  } as const)
 
-  /**
-   * A layout style that can add positioning properties to itself inside
-   * of a `<Grid>` component.
-   *
-   * @example
-   * <div className={grid({cols: 2, rows: 2})}>
-   *   // Occupies 2 columns
-   *   <div className={gridItem({colStart: 1, colEnd: 2})} />
-   *   <div/>
-   *   <div/>
-   * </div>
-   */
   const gridItem = compoundStyles({
     /**
      * Sets a `justify-self` CSS property on your component
@@ -592,18 +494,8 @@ function layout<
       gridRowEnd,
     })),
     ...box.styles,
-  })
+  } as const)
 
-  /**
-   * A grid that automatically chooses a number of columns based on a preferred
-   * minimum grid item width. The items will grow to fit snugly within the grid
-   * container, like with flex wrapping, but no item will grow larger than the
-   * column size, unlike flex wrapping.
-   *
-   * ☐ ☐ ☐
-   * ☐ ☐ ☐
-   * ☐ ☐
-   */
   const autoGrid = compoundStyles({
     /**
      * The minimum width of a grid item
@@ -612,15 +504,8 @@ function layout<
       gridTemplateColumns: `repeat(auto-fit, minmax(${unit(itemWidth)}, 1fr))`,
     })),
     ...sharedGrid.styles,
-  })
+  } as const)
 
-  /**
-   * A layout style than positions itself absolutely inside of its
-   * container in whichever placement you decide.
-   *
-   * @example
-   * <div className={layer({placement: 'bottomRight', offset: 24})} />
-   */
   const layer = compoundStyles({
     default: styles.one({
       position: 'absolute',
@@ -688,22 +573,8 @@ function layout<
       }
     ),
     ...box.styles,
-  })
+  } as const)
 
-  /**
-   * A layout style that distributes its items in a row without wrapping
-   * like so:
-   *
-   * ```
-   * ☐ ☐ ☐ ☐ ☐ ☐ ☐
-   * ```
-   *
-   * @example
-   * <div className={row({gap: 'sm'})}>
-   *   <Item/>
-   *   <Item/>
-   * </div>
-   */
   const row = compoundStyles({
     default: styles.one({
       display: 'flex',
@@ -738,25 +609,156 @@ function layout<
      */
     align: alignItems,
     ...box.styles,
-  })
+  } as const)
 
   return {
     // Flex/grid
+
+    /**
+     * Sets a `align-items` CSS property on your component
+     */
     alignItems,
+    /**
+     * Sets a `justify-items` CSS property on your component
+     */
     justifyItems,
+    /**
+     * Sets a `justify-content` CSS property on your component
+     */
     justifyContent,
+    /**
+     * Sets a `align-content` CSS property on your component
+     */
     alignContent,
+    /**
+     * Sets a `align-self` CSS property on your component
+     */
     alignSelf,
+    /**
+     * Sets a `justify-self` CSS property on your component
+     */
     justifySelf,
 
     // Layouts
+
+    /**
+     * A layout style for adding size, padding, position, color, and more
+     * using tokens from your CSS variable theme.
+     *
+     * @example
+     * <div className={box({size: 300, bg: {sm: 'red', md: 'blue'}})} />
+     */
     box,
+    /**
+     * A row directional layout style that distributes its items in a cluster
+     * like so:
+     *
+     * ```
+     * ☐☐☐☐☐
+     * ☐☐☐☐☐☐
+     * ☐☐☐☐☐
+     * ☐☐☐
+     * ```
+     *
+     * or
+     * ```
+     *  ☐☐☐☐☐
+     * ☐☐☐☐☐☐
+     *  ☐☐☐☐☐
+     *    ☐☐☐
+     * ```
+     *
+     * Some use cases include input chips and tags.
+     *
+     * @example
+     * <div className={cluster({gap: 'sm})}>
+     *   <Item/>
+     *   <Item/>
+     * </div>
+     */
     cluster,
+    /**
+     * A layout style that distributes its items in a column without wrapping
+     * like so:
+     *
+     * ```
+     * ☐
+     * ☐
+     * ☐
+     * ☐
+     * ```
+     *
+     * @example
+     * <div className={column({gap: 'sm'})}>
+     *   <Item/>
+     *   <Item/>
+     * </div>
+     */
     column,
+    /**
+     * A layout style that distributes its children in a grid like so:
+     *
+     * ```
+     * ☐ ☐ ☐
+     * ☐ ☐ ☐
+     * ☐ ☐ ☐
+     * ```
+     *
+     * @example
+     * <div className={grid({rows: 2, cols: 2})}>
+     *   <GridItem/>
+     *   <GridItem/>
+     *   <GridItem/>
+     *   <GridItem/>
+     * </div>
+     */
     grid,
+    /**
+     * A layout style that can add positioning properties to itself inside
+     * of a `<Grid>` component.
+     *
+     * @example
+     * <div className={grid({cols: 2, rows: 2})}>
+     *   // Occupies 2 columns
+     *   <div className={gridItem({colStart: 1, colEnd: 2})} />
+     *   <div/>
+     *   <div/>
+     * </div>
+     */
     gridItem,
+    /**
+     * A grid that automatically chooses a number of columns based on a preferred
+     * minimum grid item width. The items will grow to fit snugly within the grid
+     * container, like with flex wrapping, but no item will grow larger than the
+     * column size, unlike flex wrapping.
+     *
+     * ☐ ☐ ☐
+     * ☐ ☐ ☐
+     * ☐ ☐
+     */
     autoGrid,
+    /**
+     * A layout style than positions itself absolutely inside of its
+     * container in whichever placement you decide.
+     *
+     * @example
+     * <div className={layer({placement: 'bottomRight', offset: 24})} />
+     */
     layer,
+    /**
+     * A layout style that distributes its items in a row without wrapping
+     * like so:
+     *
+     * ```
+     * ☐ ☐ ☐ ☐ ☐ ☐ ☐
+     * ```
+     *
+     * @example
+     * <div className={row({gap: 'sm'})}>
+     *   <Item/>
+     *   <Item/>
+     * </div>
+     */
     row,
   }
 }

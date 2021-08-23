@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`layout should also pass: DOM 1`] = `
+<style
+  data-dash="ui"
+>
+  :root{--gap-sm:4;--gap-md:8;--pad-sm:4;--border-width-sm:1;--shadow-sm:0 0 0 0;--radius-sm:4;--color-green:green;--z-index-min:0;}
+</style>
+`;
+
+exports[`layout should also pass: DOM 2`] = `
+<style
+  data-dash="ui"
+>
+  .ui-z1shxc{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}
+</style>
+`;
+
+exports[`layout should also pass: DOM 3`] = `
+<style
+  data-dash="ui"
+>
+  .ui-z1shxc &gt; *{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}
+</style>
+`;
+
+exports[`layout should also pass: DOM 4`] = `
+<style
+  data-dash="ui"
+>
+  @media only screen and (min-width:1em){@supports (display:flex) and (gap:1em){.ui-z1shxc{gap:var(--gap-sm);}}@supports not (display:flex) and (gap:1em){.ui-z1shxc &gt; * + *{margin-left:var(--gap-sm)!important;}}}
+</style>
+`;
+
+exports[`layout should pass: DOM 1`] = `
+<style
+  data-dash="ui"
+>
+  :root{--gap-sm:4;--gap-md:8;--pad-sm:4;--border-width-sm:1;--shadow-sm:0 0 0 0;--radius-sm:4;--color-green:green;--z-index-min:0;}
+</style>
+`;
+
+exports[`layout should pass: DOM 2`] = `
+<style
+  data-dash="ui"
+>
+  .ui-10di45e{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}
+</style>
+`;
+
+exports[`layout should pass: DOM 3`] = `
+<style
+  data-dash="ui"
+>
+  .ui-10di45e &gt; *{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}
+</style>
+`;
+
+exports[`layout should pass: DOM 4`] = `
+<style
+  data-dash="ui"
+>
+  @supports (display:flex) and (gap:1em){.ui-10di45e{gap:var(--gap-sm);}}
+</style>
+`;
+
+exports[`layout should pass: DOM 5`] = `
+<style
+  data-dash="ui"
+>
+  @supports not (display:flex) and (gap:1em){.ui-10di45e &gt; * + *{margin-left:var(--gap-sm)!important;}}
+</style>
+`;
