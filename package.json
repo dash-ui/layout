@@ -8,7 +8,10 @@
   "license": "MIT",
   "description": "A framework-agnostic layout library written in Dash",
   "keywords": [
-    "layout"
+    "dash-ui",
+    "dash",
+    "layout",
+    "css layout"
   ],
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
@@ -112,13 +115,15 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
+    "@dash-ui/responsive": "^0.2.3",
+    "@dash-ui/styles": "^0.8.6",
     "@types/jest": "latest",
     "babel-jest": "latest",
     "cli-confirm": "latest",
     "cz-conventional-changelog": "latest",
     "eslint": "latest",
     "eslint-config-lunde": "latest",
-    "husky": "latest",
+    "husky": "4",
     "jest": "latest",
     "lint-staged": "latest",
     "lundle": "latest",
@@ -126,6 +131,11 @@
     "standard-version": "latest",
     "typescript": "latest"
   },
-  "dependencies": {},
-  "peerDependencies": {}
+  "dependencies": {
+    "@dash-ui/compound": "^0.1.1"
+  },
+  "peerDependencies": {
+    "@dash-ui/responsive": ">=0.2.3",
+    "@dash-ui/styles": ">=0.8.6"
+  }
 }

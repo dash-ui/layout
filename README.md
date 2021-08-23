@@ -1,8 +1,9 @@
-<hr/>
-
-# @dash-ui/layout
-
-> A framework-agnostic layout library written in Dash
+  <br/>
+  <img src='https://github.com/dash-ui/styles/raw/master/assets/logo.png'/>
+  <blockquote>A framework-agnostic layout library written in Dash</blockquote>
+  
+  <pre>npm i @dash-ui/layout</pre>
+  <br/>
 
 ```sh
 npm i @dash-ui/layout
