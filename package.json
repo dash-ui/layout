@@ -101,7 +101,7 @@
       "**/src/**/*.ts"
     ],
     "setupFilesAfterEnv": [
-      "./test/setup.js"
+      "./test/setup.ts"
     ],
     "snapshotResolver": "./test/resolve-snapshot.js",
     "globals": {
@@ -116,6 +116,7 @@
   "devDependencies": {
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
+    "@dash-ui/jest": "^2.1.2",
     "@dash-ui/responsive": "^0.2.3",
     "@dash-ui/styles": "^0.8.6",
     "@types/jest": "latest",
