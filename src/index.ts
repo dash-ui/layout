@@ -128,7 +128,7 @@ function layout<
         ]) =>
         ({borderWidth, color}) => ({
           borderWidth: Array.isArray(width)
-            ? width.map((w) => borderWidth[w]).join('')
+            ? width.map((w) => borderWidth[w]).join(' ')
             : borderWidth[width],
           borderStyle: 'solid',
           borderColor: color[borderColor],
@@ -373,10 +373,41 @@ function layout<
     revert: {justifySelf: 'revert'},
   } as const)
 
+  const flexItem = compoundStyles({
+    /**
+     * Sets a `align-self` CSS property on your component
+     */
+    align: alignSelf,
+    /**
+     * Sets a `justify-self` CSS property on your component
+     */
+    basis: styles.lazy((value: string | number) => ({flexBasis: value})),
+    /**
+     * Sets a `justify-self` CSS property on your component
+     */
+    distribute: justifySelf,
+    /**
+     * Sets a `flex-grow` CSS property on your component
+     */
+    grow: styles.lazy((value: number | boolean) => ({flexGrow: Number(value)})),
+    /**
+     * Sets a `order` CSS property on your component
+     */
+    order: styles.lazy((value: number) => ({order: value})),
+    /**
+     * Sets a `flex-shrink` CSS property on your component
+     */
+    shrink: styles.lazy((value: number | boolean) => ({
+      flexShrink: Number(value),
+    })),
+    ...box.styles,
+  })
+
   const cluster = compoundStyles({
     default: styles.one({
       display: 'flex',
       flexWrap: 'wrap',
+      justifyContent: 'flex-start',
       '& > *': {
         flexShrink: 0,
       },
@@ -746,6 +777,14 @@ function layout<
      * </div>
      */
     column,
+    /**
+     * A layout style that can add positioning properties to itself inside
+     * of a flex container.
+     *
+     * @example
+     * <div className={flexItem({alignSelf: 'center', order: 2})}/>
+     */
+    flexItem,
     /**
      * A layout style that distributes its children in a grid like so:
      *
