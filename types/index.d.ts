@@ -330,6 +330,16 @@ declare function layout<
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
+          readonly minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
           readonly size?:
             | string
             | number
@@ -585,6 +595,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       readonly size?:
         | string
         | number
@@ -732,6 +752,20 @@ declare function layout<
        * Sets a `max-height` CSS property on your component
        */
       readonly maxHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import('@dash-ui/responsive').ResponsiveLazy<
         string | number,
         MQ
       >
@@ -1027,6 +1061,16 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
           readonly maxHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minHeight?:
             | string
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
@@ -1421,6 +1465,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       readonly size?:
         | string
         | number
@@ -1703,6 +1757,20 @@ declare function layout<
        * Sets a `max-height` CSS property on your component
        */
       readonly maxHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import('@dash-ui/responsive').ResponsiveLazy<
         string | number,
         MQ
       >
@@ -2038,6 +2106,16 @@ declare function layout<
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
+          readonly minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
           readonly size?:
             | string
             | number
@@ -2428,6 +2506,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       readonly size?:
         | string
         | number
@@ -2710,6 +2798,20 @@ declare function layout<
        * Sets a `max-height` CSS property on your component
        */
       readonly maxHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import('@dash-ui/responsive').ResponsiveLazy<
         string | number,
         MQ
       >
@@ -3031,6 +3133,16 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
           maxHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          minHeight?:
             | string
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
@@ -3435,6 +3547,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       size?:
         | string
         | number
@@ -3703,6 +3825,14 @@ declare function layout<
         MQ
       >
       maxHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      minHeight: import('@dash-ui/responsive').ResponsiveLazy<
         string | number,
         MQ
       >
@@ -4009,6 +4139,16 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
           readonly maxHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minHeight?:
             | string
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
@@ -4555,6 +4695,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       readonly size?:
         | string
         | number
@@ -4993,6 +5143,20 @@ declare function layout<
         MQ
       >
       /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
        * Sets a `width` and `height` CSS property on your component
        */
       readonly size: import('@dash-ui/responsive').ResponsiveLazy<
@@ -5374,6 +5538,16 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
           readonly maxHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minHeight?:
             | string
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
@@ -5779,6 +5953,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       readonly size?:
         | string
         | number
@@ -6072,6 +6256,20 @@ declare function layout<
        * Sets a `max-height` CSS property on your component
        */
       readonly maxHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import('@dash-ui/responsive').ResponsiveLazy<
         string | number,
         MQ
       >
@@ -7112,6 +7310,16 @@ declare function layout<
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
+          readonly minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
           readonly size?:
             | string
             | number
@@ -7405,6 +7613,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       readonly size?:
         | string
         | number
@@ -7590,6 +7808,20 @@ declare function layout<
        * Sets a `max-height` CSS property on your component
        */
       readonly maxHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import('@dash-ui/responsive').ResponsiveLazy<
         string | number,
         MQ
       >
@@ -7895,6 +8127,16 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
           readonly maxHeight?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minWidth?:
+            | string
+            | number
+            | import('@dash-ui/responsive').Responsive<string | number, MQ>
+            | undefined
+          readonly minHeight?:
             | string
             | number
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
@@ -8289,6 +8531,16 @@ declare function layout<
         | number
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
       readonly size?:
         | string
         | number
@@ -8571,6 +8823,20 @@ declare function layout<
        * Sets a `max-height` CSS property on your component
        */
       readonly maxHeight: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import('@dash-ui/responsive').ResponsiveLazy<
+        string | number,
+        MQ
+      >
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import('@dash-ui/responsive').ResponsiveLazy<
         string | number,
         MQ
       >
