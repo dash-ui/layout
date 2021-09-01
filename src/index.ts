@@ -83,6 +83,16 @@ function layout<
       maxHeight,
     })),
     /**
+     * Sets a `max-width` CSS property on your component
+     */
+    minWidth: styles.lazy((minWidth: number | string) => ({minWidth})),
+    /**
+     * Sets a `max-height` CSS property on your component
+     */
+    minHeight: styles.lazy((minHeight: number | string) => ({
+      minHeight,
+    })),
+    /**
      * Sets a `width` and `height` CSS property on your component
      */
     size: styles.lazy((size: number | string) => ({

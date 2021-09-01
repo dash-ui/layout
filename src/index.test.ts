@@ -55,6 +55,20 @@ describe('box()', () => {
     expect(element).toHaveStyleRule('height', '100px')
   })
 
+  it('applies the "min-width" prop', () => {
+    expect(createElement(layoutStyles.box({minWidth: '100%'}))).toHaveStyleRule(
+      'min-width',
+      '100%'
+    )
+  })
+
+  it('applies the "min-width" prop w/ px default', () => {
+    expect(createElement(layoutStyles.box({minWidth: 100}))).toHaveStyleRule(
+      'min-width',
+      '100px'
+    )
+  })
+
   it('applies the "max-width" prop', () => {
     expect(createElement(layoutStyles.box({maxWidth: '100%'}))).toHaveStyleRule(
       'max-width',
