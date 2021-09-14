@@ -1167,10 +1167,10 @@
   dependencies:
     chalk "^4.0.0"
 
-"@dash-ui/compound@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@dash-ui/compound/-/compound-0.1.1.tgz#b90de09a6da927d24c73cb0656cfca32dc7c381a"
-  integrity sha512-bL2kIrDxuBOCnT+wa4Q7lr01cml3U70dNbYt915P1LdlgzeLmnM/bb0t2Luid7xJQM8R7l7FAj6+AkEseNzpmg==
+"@dash-ui/compound@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@dash-ui/compound/-/compound-0.1.2.tgz#f9027767a9e3ccc50b9e7c2c9d6de0d52ca2a0a0"
+  integrity sha512-jQCS8ea4hQqksiVBnVY+AEk/Mxk5N/iyshACWQ1o3LTynRB50fIxXh8M/Vn5IU4DGC8VBDTpB8wbO/3ncNRRXw==
 
 "@dash-ui/jest@^2.1.2":
   version "2.1.2"

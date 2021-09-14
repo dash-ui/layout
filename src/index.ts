@@ -20,195 +20,198 @@ function layout<
     mediaQueries || {}
   )
 
-  const box = compoundStyles({
-    /**
-     * Sets a `display` CSS property on your component
-     */
-    display: styles({
-      flex: {display: 'flex'},
-      inlineFlex: {display: 'inline-flex'},
-      grid: {display: 'grid'},
-      inlineGrid: {display: 'inlineGrid'},
-      block: {display: 'block'},
-      inlineBlock: {display: 'inline-block'},
-      inline: {display: 'inline'},
-      table: {display: 'table'},
-      tableCell: {display: 'table-cell'},
-      tableRowGroup: {display: 'table-row-group'},
-      tableRow: {display: 'table-row'},
-      tableColumn: {display: 'table-column'},
-      tableColumnGroup: {display: 'table-column-group'},
-      tableHeader: {display: 'table-header'},
-      tableHeaderGroup: {display: 'table-header-group'},
-      tableFooterGroup: {display: 'table-footer-group'},
-      listItem: {display: 'list-item'},
-      contents: {display: 'contents'},
-      runIn: {display: 'run-in'},
-      none: {display: 'none'},
-      inherit: {display: 'inherit'},
-      initial: {display: 'initial'},
-      unset: {display: 'unset'},
-      revert: {display: 'revert'},
-    }),
-    /**
-     * Sets a `position` CSS property on your component
-     */
-    position: styles({
-      absolute: {position: 'absolute'},
-      relative: {position: 'relative'},
-      fixed: {position: 'fixed'},
-      sticky: {position: 'sticky'},
-      static: {position: 'static'},
-      inherit: {position: 'inherit'},
-      initial: {position: 'initial'},
-      unset: {position: 'unset'},
-      revert: {position: 'revert'},
-    }),
-    /**
-     * Sets a `width` CSS property on your component
-     */
-    width: styles.lazy((width: number | string) => ({width})),
-    /**
-     * Sets a `height` CSS property on your component
-     */
-    height: styles.lazy((height: number | string) => ({height})),
-    /**
-     * Sets a `max-width` CSS property on your component
-     */
-    maxWidth: styles.lazy((maxWidth: number | string) => ({maxWidth})),
-    /**
-     * Sets a `max-height` CSS property on your component
-     */
-    maxHeight: styles.lazy((maxHeight: number | string) => ({
-      maxHeight,
-    })),
-    /**
-     * Sets a `max-width` CSS property on your component
-     */
-    minWidth: styles.lazy((minWidth: number | string) => ({minWidth})),
-    /**
-     * Sets a `max-height` CSS property on your component
-     */
-    minHeight: styles.lazy((minHeight: number | string) => ({
-      minHeight,
-    })),
-    /**
-     * Sets a `width` and `height` CSS property on your component
-     */
-    size: styles.lazy((size: number | string) => ({
-      width: size,
-      height: size,
-    })),
-    /**
-     * Sets a `padding` CSS property on your component using the "pad"
-     * token in your theme
-     */
-    pad: styles.lazy(
-      (
-          value:
-            | Extract<keyof Tokens['pad'], string | number>
-            | Extract<keyof Tokens['pad'], string | number>[]
-        ) =>
-        ({pad}) => ({
-          padding: Array.isArray(value)
-            ? value.map((k) => pad[k]).join(' ')
-            : pad[value],
-        })
-    ),
-    /**
-     * Sets a `background-color` CSS property on your component using the "color"
-     * token in your theme
-     */
-    bg: styles.lazy(
-      (bg: Extract<keyof Tokens['color'], string | number>) =>
-        ({color}) => ({backgroundColor: color[bg]})
-    ),
-    /**
-     * Sets a `border-color` CSS property on your component using the "color"
-     * token in your theme and a `border-width` property using the "borderWidth"
-     * token
-     */
-    border: styles.lazy(
-      ([width, borderColor]: [
-          (
-            | Extract<keyof Tokens['borderWidth'], string | number>
-            | Extract<keyof Tokens['borderWidth'], string | number>[]
-          ),
-          Extract<keyof Tokens['color'], string | number>
-        ]) =>
-        ({borderWidth, color}) => ({
-          borderWidth: Array.isArray(width)
-            ? width.map((w) => borderWidth[w]).join(' ')
-            : borderWidth[width],
-          borderStyle: 'solid',
-          borderColor: color[borderColor],
-        })
-    ),
-    /**
-     * Sets a `box-shadow` CSS property on your component using the "shadow"
-     * token in your theme
-     */
-    shadow: styles.lazy(
-      (value: Extract<keyof Tokens['shadow'], string | number>) =>
-        ({shadow}) => ({boxShadow: shadow[value]})
-    ),
-    /**
-     * Sets a `border-radius` CSS property on your component using the "radius"
-     * token in your theme
-     */
-    radius: styles.lazy(
-      (
-          value:
-            | Extract<keyof Tokens['radius'], string | number>
-            | Extract<keyof Tokens['radius'], string | number>[]
-        ) =>
-        ({radius}) => ({
-          borderRadius: Array.isArray(value)
-            ? value.map((k) => radius[k]).join(' ')
-            : radius[value],
-        })
-    ),
-    /**
-     * Sets the top, right, bottom, left position of the element
-     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
-     */
-    inset: styles.lazy((value: string | number | (string | number)[]) => {
-      if (Array.isArray(value)) {
+  const box = compoundStyles(
+    {
+      /**
+       * Sets a `display` CSS property on your component
+       */
+      display: styles({
+        flex: {display: 'flex'},
+        inlineFlex: {display: 'inline-flex'},
+        grid: {display: 'grid'},
+        inlineGrid: {display: 'inlineGrid'},
+        block: {display: 'block'},
+        inlineBlock: {display: 'inline-block'},
+        inline: {display: 'inline'},
+        table: {display: 'table'},
+        tableCell: {display: 'table-cell'},
+        tableRowGroup: {display: 'table-row-group'},
+        tableRow: {display: 'table-row'},
+        tableColumn: {display: 'table-column'},
+        tableColumnGroup: {display: 'table-column-group'},
+        tableHeader: {display: 'table-header'},
+        tableHeaderGroup: {display: 'table-header-group'},
+        tableFooterGroup: {display: 'table-footer-group'},
+        listItem: {display: 'list-item'},
+        contents: {display: 'contents'},
+        runIn: {display: 'run-in'},
+        none: {display: 'none'},
+        inherit: {display: 'inherit'},
+        initial: {display: 'initial'},
+        unset: {display: 'unset'},
+        revert: {display: 'revert'},
+      }),
+      /**
+       * Sets a `position` CSS property on your component
+       */
+      position: styles({
+        absolute: {position: 'absolute'},
+        relative: {position: 'relative'},
+        fixed: {position: 'fixed'},
+        sticky: {position: 'sticky'},
+        static: {position: 'static'},
+        inherit: {position: 'inherit'},
+        initial: {position: 'initial'},
+        unset: {position: 'unset'},
+        revert: {position: 'revert'},
+      }),
+      /**
+       * Sets a `width` CSS property on your component
+       */
+      width: styles.lazy((width: number | string) => ({width})),
+      /**
+       * Sets a `height` CSS property on your component
+       */
+      height: styles.lazy((height: number | string) => ({height})),
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      maxWidth: styles.lazy((maxWidth: number | string) => ({maxWidth})),
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      maxHeight: styles.lazy((maxHeight: number | string) => ({
+        maxHeight,
+      })),
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      minWidth: styles.lazy((minWidth: number | string) => ({minWidth})),
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      minHeight: styles.lazy((minHeight: number | string) => ({
+        minHeight,
+      })),
+      /**
+       * Sets a `width` and `height` CSS property on your component
+       */
+      size: styles.lazy((size: number | string) => ({
+        width: size,
+        height: size,
+      })),
+      /**
+       * Sets a `padding` CSS property on your component using the "pad"
+       * token in your theme
+       */
+      pad: styles.lazy(
+        (
+            value:
+              | Extract<keyof Tokens['pad'], string | number>
+              | Extract<keyof Tokens['pad'], string | number>[]
+          ) =>
+          ({pad}) => ({
+            padding: Array.isArray(value)
+              ? value.map((k) => pad[k]).join(' ')
+              : pad[value],
+          })
+      ),
+      /**
+       * Sets a `background-color` CSS property on your component using the "color"
+       * token in your theme
+       */
+      bg: styles.lazy(
+        (bg: Extract<keyof Tokens['color'], string | number>) =>
+          ({color}) => ({backgroundColor: color[bg]})
+      ),
+      /**
+       * Sets a `border-color` CSS property on your component using the "color"
+       * token in your theme and a `border-width` property using the "borderWidth"
+       * token
+       */
+      border: styles.lazy(
+        ([width, borderColor]: [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]) =>
+          ({borderWidth, color}) => ({
+            borderWidth: Array.isArray(width)
+              ? width.map((w) => borderWidth[w]).join(' ')
+              : borderWidth[width],
+            borderStyle: 'solid',
+            borderColor: color[borderColor],
+          })
+      ),
+      /**
+       * Sets a `box-shadow` CSS property on your component using the "shadow"
+       * token in your theme
+       */
+      shadow: styles.lazy(
+        (value: Extract<keyof Tokens['shadow'], string | number>) =>
+          ({shadow}) => ({boxShadow: shadow[value]})
+      ),
+      /**
+       * Sets a `border-radius` CSS property on your component using the "radius"
+       * token in your theme
+       */
+      radius: styles.lazy(
+        (
+            value:
+              | Extract<keyof Tokens['radius'], string | number>
+              | Extract<keyof Tokens['radius'], string | number>[]
+          ) =>
+          ({radius}) => ({
+            borderRadius: Array.isArray(value)
+              ? value.map((k) => radius[k]).join(' ')
+              : radius[value],
+          })
+      ),
+      /**
+       * Sets the top, right, bottom, left position of the element
+       * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
+       */
+      inset: styles.lazy((value: string | number | (string | number)[]) => {
+        if (Array.isArray(value)) {
+          return {
+            '@supports (inset: 10px)': {
+              inset: value.map(unit).join(' '),
+            },
+            '@supports not (inset: 10px)': {
+              top: value[0],
+              right: value[1] ?? value[0],
+              bottom: value[2] ?? value[0],
+              left: value[3] ?? value[1] ?? value[0],
+            },
+          }
+        }
+
         return {
           '@supports (inset: 10px)': {
-            inset: value.map(unit).join(' '),
+            inset: value,
           },
           '@supports not (inset: 10px)': {
-            top: value[0],
-            right: value[1] ?? value[0],
-            bottom: value[2] ?? value[0],
-            left: value[3] ?? value[1] ?? value[0],
+            top: value,
+            right: value,
+            bottom: value,
+            left: value,
           },
         }
-      }
-
-      return {
-        '@supports (inset: 10px)': {
-          inset: value,
-        },
-        '@supports not (inset: 10px)': {
-          top: value,
-          right: value,
-          bottom: value,
-          left: value,
-        },
-      }
-    }),
-    /**
-     * Sets a `z-index` CSS property on your component
-     */
-    z: styles.lazy(
-      (value: number | Extract<keyof Tokens['zIndex'], string | number>) =>
-        ({zIndex}) => ({
-          zIndex: typeof value === 'number' ? value : zIndex[value],
-        })
-    ),
-  } as const)
+      }),
+      /**
+       * Sets a `z-index` CSS property on your component
+       */
+      z: styles.lazy(
+        (value: number | Extract<keyof Tokens['zIndex'], string | number>) =>
+          ({zIndex}) => ({
+            zIndex: typeof value === 'number' ? value : zIndex[value],
+          })
+      ),
+    } as const,
+    {atomic: true}
+  )
 
   const alignItems = styles({
     start: {
@@ -383,325 +386,360 @@ function layout<
     revert: {justifySelf: 'revert'},
   } as const)
 
-  const flexItem = compoundStyles({
-    /**
-     * Sets a `align-self` CSS property on your component
-     */
-    align: alignSelf,
-    /**
-     * Sets a `justify-self` CSS property on your component
-     */
-    basis: styles.lazy((value: string | number) => ({flexBasis: value})),
-    /**
-     * Sets a `justify-self` CSS property on your component
-     */
-    distribute: justifySelf,
-    /**
-     * Sets a `flex-grow` CSS property on your component
-     */
-    grow: styles.lazy((value: number | boolean) => ({flexGrow: Number(value)})),
-    /**
-     * Sets a `order` CSS property on your component
-     */
-    order: styles.lazy((value: number) => ({order: value})),
-    /**
-     * Sets a `flex-shrink` CSS property on your component
-     */
-    shrink: styles.lazy((value: number | boolean) => ({
-      flexShrink: Number(value),
-    })),
-    ...box.styles,
-  })
+  const flexItem = compoundStyles(
+    {
+      /**
+       * Sets a `align-self` CSS property on your component
+       */
+      align: alignSelf,
+      /**
+       * Sets a `justify-self` CSS property on your component
+       */
+      basis: styles.lazy((value: string | number) => ({flexBasis: value})),
+      /**
+       * Sets a `justify-self` CSS property on your component
+       */
+      distribute: justifySelf,
+      /**
+       * Sets a `flex-grow` CSS property on your component
+       */
+      grow: styles.lazy((value: number | boolean) => ({
+        flexGrow: Number(value),
+      })),
+      /**
+       * Sets a `order` CSS property on your component
+       */
+      order: styles.lazy((value: number) => ({order: value})),
+      /**
+       * Sets a `flex-shrink` CSS property on your component
+       */
+      shrink: styles.lazy((value: number | boolean) => ({
+        flexShrink: Number(value),
+      })),
+      ...box.styles,
+    },
+    {atomic: true}
+  )
 
-  const cluster = compoundStyles({
-    default: styles.one({
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'flex-start',
-      '& > *': {
-        flexShrink: 0,
-      },
-    }),
-    /**
-     * Sets a vertical and horizontal gap between the child elements in the
-     * cluster using the "gap" token in your theme
-     */
-    gap: styles.lazy(
-      (value: Extract<keyof Tokens['gap'], string | number>) =>
-        ({gap}) => ({
-          '@supports (display: flex) and (gap: 1em)': {
-            gap: gap[value],
-          },
-          '@supports not (display: flex) and (gap: 1em)': {
-            marginTop: `calc(-1 * ${gap[value]})!important`,
-            marginLeft: `calc(-1 * ${gap[value]})!important`,
-            '& > *': {
-              marginTop: `${gap[value]}!important`,
-              marginLeft: `${gap[value]}!important`,
+  const cluster = compoundStyles(
+    {
+      default: styles.one({
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'flex-start',
+        '& > *': {
+          flexShrink: 0,
+        },
+      }),
+      /**
+       * Sets a vertical and horizontal gap between the child elements in the
+       * cluster using the "gap" token in your theme
+       */
+      gap: styles.lazy(
+        (value: Extract<keyof Tokens['gap'], string | number>) =>
+          ({gap}) => ({
+            '@supports (display: flex) and (gap: 1em)': {
+              gap: gap[value],
             },
-          },
-        })
-    ),
-    /**
-     * Distributed alignment properties on the x-axis using `justify-content`
-     */
-    distribute: justifyContent,
-    /**
-     * Positional alignment for its child items on the y-axis using `align-items`
-     */
-    align: alignItems,
-    ...box.styles,
-  } as const)
-
-  const column = compoundStyles({
-    default: styles.one({
-      display: 'flex',
-      flexDirection: 'column',
-      '& > *': {
-        flexShrink: 0,
-      },
-    }),
-    /**
-     * Sets a vertical gap between the child elements in the cluster using the "gap"
-     * token in your theme
-     */
-    gap: styles.lazy(
-      (value: Extract<keyof Tokens['gap'], string | number>) =>
-        ({gap}) => ({
-          '@supports (display: flex) and (gap: 1em)': {
-            gap: gap[value],
-          },
-          '@supports not (display: flex) and (gap: 1em)': {
-            '& > * + *': {
-              marginTop: `${gap[value]}!important`,
+            '@supports not (display: flex) and (gap: 1em)': {
+              marginTop: `calc(-1 * ${gap[value]})!important`,
+              marginLeft: `calc(-1 * ${gap[value]})!important`,
+              '& > *': {
+                marginTop: `${gap[value]}!important`,
+                marginLeft: `${gap[value]}!important`,
+              },
             },
-          },
-        })
-    ),
-    /**
-     * Distributed alignment properties on the y-axis using `justify-content`
-     */
-    distribute: justifyContent,
-    /**
-     * Positional alignment for its child items on the y-axis using `align-items`
-     */
-    align: alignItems,
-    ...box.styles,
-  } as const)
+          })
+      ),
+      /**
+       * Distributed alignment properties on the x-axis using `justify-content`
+       */
+      distribute: justifyContent,
+      /**
+       * Positional alignment for its child items on the y-axis using `align-items`
+       */
+      align: alignItems,
+      ...box.styles,
+    } as const,
+    {atomic: true}
+  )
 
-  const sharedGrid = compoundStyles({
-    default: styles.one({display: 'grid'}),
-    /**
-     * Makes the component display as an `inline-grid` rather than `grid`
-     */
-    inline: styles.one({display: 'inline-grid'}),
-    /**
-     * Sets a `justify-items` CSS property on your component
-     */
-    alignX: justifyItems,
-    /**
-     * Sets an `align-items` CSS property on your component
-     */
-    alignY: alignItems,
-    /**
-     * Sets a `justify-content` CSS property on your component
-     */
-    distributeX: justifyContent,
-    /**
-     * Sets an `align-content` CSS property on your component
-     */
-    distributeY: alignContent,
-    /**
-     * Sets a horizontal and vertical gap between the child elements in the row
-     * using the "gap" token in your theme
-     */
-    gap: styles.lazy(
-      (
+  const column = compoundStyles(
+    {
+      default: styles.one({
+        display: 'flex',
+        flexDirection: 'column',
+        '& > *': {
+          flexShrink: 0,
+        },
+      }),
+      /**
+       * Sets a vertical gap between the child elements in the cluster using the "gap"
+       * token in your theme
+       */
+      gap: styles.lazy(
+        (value: Extract<keyof Tokens['gap'], string | number>) =>
+          ({gap}) => ({
+            '@supports (display: flex) and (gap: 1em)': {
+              gap: gap[value],
+            },
+            '@supports not (display: flex) and (gap: 1em)': {
+              '& > * + *': {
+                marginTop: `${gap[value]}!important`,
+              },
+            },
+          })
+      ),
+      /**
+       * Distributed alignment properties on the y-axis using `justify-content`
+       */
+      distribute: justifyContent,
+      /**
+       * Positional alignment for its child items on the y-axis using `align-items`
+       */
+      align: alignItems,
+      ...box.styles,
+    } as const,
+    {atomic: true}
+  )
+
+  const sharedGrid = compoundStyles(
+    {
+      default: styles.one({display: 'grid'}),
+      /**
+       * Makes the component display as an `inline-grid` rather than `grid`
+       */
+      inline: styles.one({display: 'inline-grid'}),
+      /**
+       * Sets a `justify-items` CSS property on your component
+       */
+      alignX: justifyItems,
+      /**
+       * Sets an `align-items` CSS property on your component
+       */
+      alignY: alignItems,
+      /**
+       * Sets a `justify-content` CSS property on your component
+       */
+      distributeX: justifyContent,
+      /**
+       * Sets an `align-content` CSS property on your component
+       */
+      distributeY: alignContent,
+      /**
+       * Sets a horizontal and vertical gap between the child elements in the row
+       * using the "gap" token in your theme
+       */
+      gap: styles.lazy(
+        (
+            value:
+              | Extract<keyof Tokens['gap'], number | string>
+              | [
+                  Extract<keyof Tokens['gap'], number | string>,
+                  Extract<keyof Tokens['gap'], number | string>
+                ]
+          ) =>
+          ({gap}) => ({
+            gridGap: Array.isArray(value)
+              ? value.map((p) => gap[p]).join(' ')
+              : gap[value] + ' ' + gap[value],
+            gap: Array.isArray(value)
+              ? value.map((p) => gap[p]).join(' ')
+              : gap[value] + ' ' + gap[value],
+          })
+      ),
+      /**
+       * Sets a `grid-template-rows` CSS property on your component
+       */
+      rows: styles.lazy((value: number | (number | string)[]) => {
+        let rows: (number | string)[]
+        if (Array.isArray(value)) rows = value
+        // ie doesn't have repeat
+        else rows = [`repeat(${value},minmax(0,1fr))`]
+        return {gridTemplateRows: rows.map((row) => unit(row)).join(' ')}
+      }),
+    } as const,
+    {atomic: true}
+  )
+
+  const grid = compoundStyles(
+    {
+      /**
+       * Sets a `grid-template-columns` CSS property on your component
+       */
+      cols: styles.lazy((value: number | (number | string)[]) => {
+        let columns: (number | string)[]
+        if (Array.isArray(value)) columns = value
+        // ie doesn't have repeat
+        else columns = [`repeat(${value},minmax(0,1fr))`]
+        return {gridTemplateColumns: columns.map((col) => unit(col)).join(' ')}
+      }),
+      ...sharedGrid.styles,
+      ...box.styles,
+    } as const,
+    {atomic: true}
+  )
+
+  const gridItem = compoundStyles(
+    {
+      /**
+       * Sets a `justify-self` CSS property on your component
+       */
+      distribute: justifySelf,
+      /**
+       * Sets an `align-self` CSS property on your component
+       */
+      align: alignSelf,
+      /**
+       * Sets a `grid-column-start` CSS property on your component
+       */
+      colStart: styles.lazy((gridColumnStart: number | string) => ({
+        gridColumnStart,
+      })),
+      /**
+       * Sets a `grid-column-end` CSS property on your component
+       */
+      colEnd: styles.lazy((gridColumnEnd: number | string) => ({
+        gridColumnEnd,
+      })),
+      /**
+       * Sets a `grid-row-start` CSS property on your component
+       */
+      rowStart: styles.lazy((gridRowStart: number | string) => ({
+        gridRowStart,
+      })),
+      /**
+       * Sets a `grid-row-end` CSS property on your component
+       */
+      rowEnd: styles.lazy((gridRowEnd: number | string) => ({gridRowEnd})),
+      ...box.styles,
+    } as const,
+    {atomic: true}
+  )
+
+  const autoGrid = compoundStyles(
+    {
+      /**
+       * The minimum width of a grid item
+       */
+      itemWidth: styles.lazy((itemWidth: number | string) => ({
+        gridTemplateColumns: `repeat(auto-fit, minmax(${unit(
+          itemWidth
+        )}, 1fr))`,
+      })),
+      ...sharedGrid.styles,
+    } as const,
+    {atomic: true}
+  )
+
+  const layer = compoundStyles(
+    {
+      default: styles.one({position: 'absolute'}),
+      /**
+       * Sets a `margin` between the edges of the layer item's container
+       */
+      offset: styles.lazy((margin: number | string) => ({margin})),
+      /**
+       * Sets the placement of your layer item relative to its container
+       */
+      placement: styles.lazy(
+        (
           value:
-            | Extract<keyof Tokens['gap'], number | string>
-            | [
-                Extract<keyof Tokens['gap'], number | string>,
-                Extract<keyof Tokens['gap'], number | string>
-              ]
-        ) =>
-        ({gap}) => ({
-          gridGap: Array.isArray(value)
-            ? value.map((p) => gap[p]).join(' ')
-            : gap[value] + ' ' + gap[value],
-          gap: Array.isArray(value)
-            ? value.map((p) => gap[p]).join(' ')
-            : gap[value] + ' ' + gap[value],
-        })
-    ),
-    /**
-     * Sets a `grid-template-rows` CSS property on your component
-     */
-    rows: styles.lazy((value: number | (number | string)[]) => {
-      let rows: (number | string)[]
-      if (Array.isArray(value)) rows = value
-      // ie doesn't have repeat
-      else rows = [`repeat(${value},minmax(0,1fr))`]
-      return {gridTemplateRows: rows.map((row) => unit(row)).join(' ')}
-    }),
-  } as const)
+            | 'top'
+            | 'right'
+            | 'bottom'
+            | 'left'
+            | 'center'
+            | 'topLeft'
+            | 'topRight'
+            | 'bottomRight'
+            | 'bottomLeft'
+        ) => {
+          if (value === 'center') {
+            return {top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}
+          }
 
-  const grid = compoundStyles({
-    /**
-     * Sets a `grid-template-columns` CSS property on your component
-     */
-    cols: styles.lazy((value: number | (number | string)[]) => {
-      let columns: (number | string)[]
-      if (Array.isArray(value)) columns = value
-      // ie doesn't have repeat
-      else columns = [`repeat(${value},minmax(0,1fr))`]
-      return {gridTemplateColumns: columns.map((col) => unit(col)).join(' ')}
-    }),
-    ...sharedGrid.styles,
-    ...box.styles,
-  } as const)
+          const lValue = value.toLowerCase()
+          const yProp =
+            lValue.indexOf('top') > -1
+              ? 'top'
+              : lValue.indexOf('bottom') > -1
+              ? 'bottom'
+              : void 0
 
-  const gridItem = compoundStyles({
-    /**
-     * Sets a `justify-self` CSS property on your component
-     */
-    distribute: justifySelf,
-    /**
-     * Sets an `align-self` CSS property on your component
-     */
-    align: alignSelf,
-    /**
-     * Sets a `grid-column-start` CSS property on your component
-     */
-    colStart: styles.lazy((gridColumnStart: number | string) => ({
-      gridColumnStart,
-    })),
-    /**
-     * Sets a `grid-column-end` CSS property on your component
-     */
-    colEnd: styles.lazy((gridColumnEnd: number | string) => ({gridColumnEnd})),
-    /**
-     * Sets a `grid-row-start` CSS property on your component
-     */
-    rowStart: styles.lazy((gridRowStart: number | string) => ({gridRowStart})),
-    /**
-     * Sets a `grid-row-end` CSS property on your component
-     */
-    rowEnd: styles.lazy((gridRowEnd: number | string) => ({gridRowEnd})),
-    ...box.styles,
-  } as const)
+          const xProp =
+            lValue.indexOf('left') > -1
+              ? 'left'
+              : lValue.indexOf('right') > -1
+              ? 'right'
+              : void 0
 
-  const autoGrid = compoundStyles({
-    /**
-     * The minimum width of a grid item
-     */
-    itemWidth: styles.lazy((itemWidth: number | string) => ({
-      gridTemplateColumns: `repeat(auto-fit, minmax(${unit(itemWidth)}, 1fr))`,
-    })),
-    ...sharedGrid.styles,
-  } as const)
+          const styles: Record<string, string | number> = {}
 
-  const layer = compoundStyles({
-    default: styles.one({position: 'absolute'}),
-    /**
-     * Sets a `margin` between the edges of the layer item's container
-     */
-    offset: styles.lazy((margin: number | string) => ({margin})),
-    /**
-     * Sets the placement of your layer item relative to its container
-     */
-    placement: styles.lazy(
-      (
-        value:
-          | 'top'
-          | 'right'
-          | 'bottom'
-          | 'left'
-          | 'center'
-          | 'topLeft'
-          | 'topRight'
-          | 'bottomRight'
-          | 'bottomLeft'
-      ) => {
-        if (value === 'center') {
-          return {top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}
+          if (yProp) {
+            styles[yProp] = 0
+          }
+
+          if (xProp) {
+            styles[xProp] = 0
+          }
+
+          if (value === 'left' || value === 'right') {
+            styles.top = '50%'
+            styles.transform = 'translateY(-50%)'
+          }
+
+          if (value === 'bottom' || value === 'top') {
+            styles.left = '50%'
+            styles.transform = 'translateX(-50%)'
+          }
+
+          return styles
         }
+      ),
+      ...box.styles,
+    } as const,
+    {atomic: true}
+  )
 
-        const lValue = value.toLowerCase()
-        const yProp =
-          lValue.indexOf('top') > -1
-            ? 'top'
-            : lValue.indexOf('bottom') > -1
-            ? 'bottom'
-            : void 0
-
-        const xProp =
-          lValue.indexOf('left') > -1
-            ? 'left'
-            : lValue.indexOf('right') > -1
-            ? 'right'
-            : void 0
-
-        const styles: Record<string, string | number> = {}
-
-        if (yProp) {
-          styles[yProp] = 0
-        }
-
-        if (xProp) {
-          styles[xProp] = 0
-        }
-
-        if (value === 'left' || value === 'right') {
-          styles.top = '50%'
-          styles.transform = 'translateY(-50%)'
-        }
-
-        if (value === 'bottom' || value === 'top') {
-          styles.left = '50%'
-          styles.transform = 'translateX(-50%)'
-        }
-
-        return styles
-      }
-    ),
-    ...box.styles,
-  } as const)
-
-  const row = compoundStyles({
-    default: styles.one({
-      display: 'flex',
-      flexDirection: 'row',
-      '& > *': {
-        flexShrink: 0,
-      },
-    }),
-    /**
-     * Sets a horizontal gap between the child elements in the cluster using the "gap"
-     * token in your theme
-     */
-    gap: styles.lazy(
-      (value: Extract<keyof Tokens['gap'], string | number>) =>
-        ({gap}) => ({
-          '@supports (display: flex) and (gap: 1em)': {
-            gap: gap[value],
-          },
-          '@supports not (display: flex) and (gap: 1em)': {
-            '& > * + *': {
-              marginLeft: `${gap[value]}!important`,
+  const row = compoundStyles(
+    {
+      default: styles.one({
+        display: 'flex',
+        flexDirection: 'row',
+        '& > *': {
+          flexShrink: 0,
+        },
+      }),
+      /**
+       * Sets a horizontal gap between the child elements in the cluster using the "gap"
+       * token in your theme
+       */
+      gap: styles.lazy(
+        (value: Extract<keyof Tokens['gap'], string | number>) =>
+          ({gap}) => ({
+            '@supports (display: flex) and (gap: 1em)': {
+              gap: gap[value],
             },
-          },
-        })
-    ),
-    /**
-     * Distributed alignment properties on the y-axis using `justify-content`
-     */
-    distribute: justifyContent,
-    /**
-     * Positional alignment for its child items on the x-axis using `align-items`
-     */
-    align: alignItems,
-    ...box.styles,
-  } as const)
+            '@supports not (display: flex) and (gap: 1em)': {
+              '& > * + *': {
+                marginLeft: `${gap[value]}!important`,
+              },
+            },
+          })
+      ),
+      /**
+       * Distributed alignment properties on the y-axis using `justify-content`
+       */
+      distribute: justifyContent,
+      /**
+       * Positional alignment for its child items on the x-axis using `align-items`
+       */
+      align: alignItems,
+      ...box.styles,
+    } as const,
+    {atomic: true}
+  )
 
   return {
     // Flex/grid

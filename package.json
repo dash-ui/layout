@@ -134,7 +134,7 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@dash-ui/compound": "^0.1.1"
+    "@dash-ui/compound": "^0.1.2"
   },
   "peerDependencies": {
     "@dash-ui/responsive": ">=0.2.3",

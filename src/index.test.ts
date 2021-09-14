@@ -658,7 +658,7 @@ const responsiveLayoutStyles = layout(styles, mediaQueries)
 
 function createElement(className: string) {
   const element = document.createElement('div')
-  element.classList.add(className)
+  element.classList.add(...className.split(' '))
   return element
 }
 
