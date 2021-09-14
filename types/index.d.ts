@@ -414,6 +414,9 @@ declare function layout<
               >
             | undefined
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -679,6 +682,269 @@ declare function layout<
           >
         | undefined
     }) => string
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      readonly shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+    }) => string[]
     styles: {
       /**
        * Sets a `display` CSS property on your component
@@ -1284,6 +1550,9 @@ declare function layout<
                 MQ
               >
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -1684,6 +1953,404 @@ declare function layout<
             MQ
           >
     }) => string
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      readonly shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly default?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly gap?:
+        | Extract<keyof Tokens['gap'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['gap'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly distribute?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly align?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+    }) => string[]
     styles: {
       /**
        * Sets a `display` CSS property on your component
@@ -2325,6 +2992,9 @@ declare function layout<
                 MQ
               >
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -2725,6 +3395,404 @@ declare function layout<
             MQ
           >
     }) => string
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      readonly shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly default?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly gap?:
+        | Extract<keyof Tokens['gap'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['gap'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly distribute?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly align?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+    }) => string[]
     styles: {
       /**
        * Sets a `display` CSS property on your component
@@ -3366,6 +4434,9 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<number | boolean, MQ>
             | undefined
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -3776,6 +4847,414 @@ declare function layout<
         | import('@dash-ui/responsive').Responsive<number | boolean, MQ>
         | undefined
     }) => string
+    atomicCss: (compoundMap: {
+      display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+      align?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | 'auto'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            auto?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | 'auto'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              auto?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      basis?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      distribute?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | 'auto'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            auto?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | 'auto'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              auto?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      grow?:
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<number | boolean, MQ>
+        | undefined
+      order?:
+        | number
+        | import('@dash-ui/responsive').Responsive<number, MQ>
+        | undefined
+      shrink?:
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<number | boolean, MQ>
+        | undefined
+    }) => string[]
     styles: {
       display: import('@dash-ui/responsive').ResponsiveStyle<
         | 'inherit'
@@ -4514,6 +5993,9 @@ declare function layout<
               >
             | undefined
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -5066,6 +6548,556 @@ declare function layout<
           >
         | undefined
     }) => string
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      readonly shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly default?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly inline?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly alignX?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly alignY?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly distributeX?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly distributeY?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly gap?:
+        | Extract<keyof Tokens['gap'], string | number>
+        | [
+            Extract<keyof Tokens['gap'], string | number>,
+            Extract<keyof Tokens['gap'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['gap'], string | number>
+            | [
+                Extract<keyof Tokens['gap'], string | number>,
+                Extract<keyof Tokens['gap'], string | number>
+              ],
+            MQ
+          >
+        | undefined
+      readonly rows?:
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly cols?:
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            number | (string | number)[],
+            MQ
+          >
+        | undefined
+    }) => string[]
     styles: {
       /**
        * Sets a `display` CSS property on your component
@@ -5772,6 +7804,9 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -6183,6 +8218,415 @@ declare function layout<
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
     }) => string
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      readonly shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly distribute?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | 'auto'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            auto?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | 'auto'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              auto?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly align?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | 'auto'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            auto?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | 'auto'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              auto?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly colStart?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly colEnd?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly rowStart?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly rowEnd?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+    }) => string[]
     styles: {
       /**
        * Sets a `display` CSS property on your component
@@ -6711,6 +9155,9 @@ declare function layout<
             | import('@dash-ui/responsive').Responsive<string | number, MQ>
             | undefined
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -6999,6 +9446,292 @@ declare function layout<
         | import('@dash-ui/responsive').Responsive<string | number, MQ>
         | undefined
     }) => string
+    atomicCss: (compoundMap: {
+      readonly default?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly inline?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly alignX?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly alignY?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly distributeX?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly distributeY?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly gap?:
+        | Extract<keyof Tokens['gap'], string | number>
+        | [
+            Extract<keyof Tokens['gap'], string | number>,
+            Extract<keyof Tokens['gap'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['gap'], string | number>
+            | [
+                Extract<keyof Tokens['gap'], string | number>,
+                Extract<keyof Tokens['gap'], string | number>
+              ],
+            MQ
+          >
+        | undefined
+      readonly rows?:
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly itemWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+    }) => string[]
     styles: {
       readonly default: import('@dash-ui/responsive').ResponsiveOne<MQ>
       /**
@@ -7432,6 +10165,9 @@ declare function layout<
               >
             | undefined
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -7735,6 +10471,307 @@ declare function layout<
           >
         | undefined
     }) => string
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      readonly shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly default?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly offset?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly placement?:
+        | 'center'
+        | 'left'
+        | 'right'
+        | 'bottom'
+        | 'top'
+        | 'topLeft'
+        | 'topRight'
+        | 'bottomRight'
+        | 'bottomLeft'
+        | import('@dash-ui/responsive').Responsive<
+            | 'center'
+            | 'left'
+            | 'right'
+            | 'bottom'
+            | 'top'
+            | 'topLeft'
+            | 'topRight'
+            | 'bottomRight'
+            | 'bottomLeft',
+            MQ
+          >
+        | undefined
+    }) => string[]
     styles: {
       /**
        * Sets a `display` CSS property on your component
@@ -8350,6 +11387,9 @@ declare function layout<
                 MQ
               >
         }
+      | undefined,
+    compoundOptions?:
+      | import('@dash-ui/compound').CompoundStylesOptions
       | undefined
   ) => string) & {
     css: (compoundMap: {
@@ -8750,6 +11790,404 @@ declare function layout<
             MQ
           >
     }) => string
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'none'
+        | 'contents'
+        | 'block'
+        | 'inline'
+        | 'flex'
+        | 'grid'
+        | 'table'
+        | import('@dash-ui/styles').Falsy
+        | 'inlineFlex'
+        | 'inlineGrid'
+        | 'inlineBlock'
+        | 'tableCell'
+        | 'tableRowGroup'
+        | 'tableRow'
+        | 'tableColumn'
+        | 'tableColumnGroup'
+        | 'tableHeader'
+        | 'tableHeaderGroup'
+        | 'tableFooterGroup'
+        | 'listItem'
+        | 'runIn'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            none?: string | number | boolean | null | undefined
+            contents?: string | number | boolean | null | undefined
+            block?: string | number | boolean | null | undefined
+            inline?: string | number | boolean | null | undefined
+            flex?: string | number | boolean | null | undefined
+            grid?: string | number | boolean | null | undefined
+            table?: string | number | boolean | null | undefined
+            inlineFlex?: string | number | boolean | null | undefined
+            inlineGrid?: string | number | boolean | null | undefined
+            inlineBlock?: string | number | boolean | null | undefined
+            tableCell?: string | number | boolean | null | undefined
+            tableRowGroup?: string | number | boolean | null | undefined
+            tableRow?: string | number | boolean | null | undefined
+            tableColumn?: string | number | boolean | null | undefined
+            tableColumnGroup?: string | number | boolean | null | undefined
+            tableHeader?: string | number | boolean | null | undefined
+            tableHeaderGroup?: string | number | boolean | null | undefined
+            tableFooterGroup?: string | number | boolean | null | undefined
+            listItem?: string | number | boolean | null | undefined
+            runIn?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'none'
+            | 'contents'
+            | 'block'
+            | 'inline'
+            | 'flex'
+            | 'grid'
+            | 'table'
+            | import('@dash-ui/styles').Falsy
+            | 'inlineFlex'
+            | 'inlineGrid'
+            | 'inlineBlock'
+            | 'tableCell'
+            | 'tableRowGroup'
+            | 'tableRow'
+            | 'tableColumn'
+            | 'tableColumnGroup'
+            | 'tableHeader'
+            | 'tableHeaderGroup'
+            | 'tableFooterGroup'
+            | 'listItem'
+            | 'runIn',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              none?: string | number | boolean | null | undefined
+              contents?: string | number | boolean | null | undefined
+              block?: string | number | boolean | null | undefined
+              inline?: string | number | boolean | null | undefined
+              flex?: string | number | boolean | null | undefined
+              grid?: string | number | boolean | null | undefined
+              table?: string | number | boolean | null | undefined
+              inlineFlex?: string | number | boolean | null | undefined
+              inlineGrid?: string | number | boolean | null | undefined
+              inlineBlock?: string | number | boolean | null | undefined
+              tableCell?: string | number | boolean | null | undefined
+              tableRowGroup?: string | number | boolean | null | undefined
+              tableRow?: string | number | boolean | null | undefined
+              tableColumn?: string | number | boolean | null | undefined
+              tableColumnGroup?: string | number | boolean | null | undefined
+              tableHeader?: string | number | boolean | null | undefined
+              tableHeaderGroup?: string | number | boolean | null | undefined
+              tableFooterGroup?: string | number | boolean | null | undefined
+              listItem?: string | number | boolean | null | undefined
+              runIn?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly position?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'fixed'
+        | 'absolute'
+        | 'relative'
+        | 'static'
+        | 'sticky'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            fixed?: string | number | boolean | null | undefined
+            absolute?: string | number | boolean | null | undefined
+            relative?: string | number | boolean | null | undefined
+            static?: string | number | boolean | null | undefined
+            sticky?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'fixed'
+            | 'absolute'
+            | 'relative'
+            | 'static'
+            | 'sticky'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              fixed?: string | number | boolean | null | undefined
+              absolute?: string | number | boolean | null | undefined
+              relative?: string | number | boolean | null | undefined
+              static?: string | number | boolean | null | undefined
+              sticky?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly width?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly height?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly maxHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minWidth?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly minHeight?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly size?:
+        | string
+        | number
+        | import('@dash-ui/responsive').Responsive<string | number, MQ>
+        | undefined
+      readonly pad?:
+        | Extract<keyof Tokens['pad'], string | number>
+        | Extract<keyof Tokens['pad'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['pad'], string | number>
+            | Extract<keyof Tokens['pad'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly bg?:
+        | Extract<keyof Tokens['color'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['color'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens['borderWidth'], string | number>
+              | Extract<keyof Tokens['borderWidth'], string | number>[]
+            ),
+            Extract<keyof Tokens['color'], string | number>
+          ]
+        | import('@dash-ui/responsive').Responsive<
+            [
+              (
+                | Extract<keyof Tokens['borderWidth'], string | number>
+                | Extract<keyof Tokens['borderWidth'], string | number>[]
+              ),
+              Extract<keyof Tokens['color'], string | number>
+            ],
+            MQ
+          >
+        | undefined
+      readonly shadow?:
+        | Extract<keyof Tokens['shadow'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['shadow'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly radius?:
+        | Extract<keyof Tokens['radius'], string | number>
+        | Extract<keyof Tokens['radius'], string | number>[]
+        | import('@dash-ui/responsive').Responsive<
+            | Extract<keyof Tokens['radius'], string | number>
+            | Extract<keyof Tokens['radius'], string | number>[],
+            MQ
+          >
+        | undefined
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import('@dash-ui/responsive').Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined
+      readonly z?:
+        | number
+        | Extract<keyof Tokens['zIndex'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            number | Extract<keyof Tokens['zIndex'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly default?:
+        | string
+        | number
+        | boolean
+        | import('@dash-ui/responsive').Responsive<
+            string | number | boolean | null,
+            MQ
+          >
+        | null
+        | undefined
+      readonly gap?:
+        | Extract<keyof Tokens['gap'], string | number>
+        | import('@dash-ui/responsive').Responsive<
+            Extract<keyof Tokens['gap'], string | number>,
+            MQ
+          >
+        | undefined
+      readonly distribute?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | 'around'
+        | 'between'
+        | 'evenly'
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+            around?: string | number | boolean | null | undefined
+            between?: string | number | boolean | null | undefined
+            evenly?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy
+            | 'around'
+            | 'between'
+            | 'evenly',
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+              around?: string | number | boolean | null | undefined
+              between?: string | number | boolean | null | undefined
+              evenly?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+      readonly align?:
+        | 'inherit'
+        | 'initial'
+        | 'revert'
+        | 'unset'
+        | 'stretch'
+        | 'center'
+        | 'end'
+        | 'start'
+        | 'baseline'
+        | 'normal'
+        | import('@dash-ui/styles').Falsy
+        | {
+            inherit?: string | number | boolean | null | undefined
+            initial?: string | number | boolean | null | undefined
+            revert?: string | number | boolean | null | undefined
+            unset?: string | number | boolean | null | undefined
+            stretch?: string | number | boolean | null | undefined
+            center?: string | number | boolean | null | undefined
+            end?: string | number | boolean | null | undefined
+            start?: string | number | boolean | null | undefined
+            baseline?: string | number | boolean | null | undefined
+            normal?: string | number | boolean | null | undefined
+          }
+        | import('@dash-ui/responsive').Responsive<
+            | 'inherit'
+            | 'initial'
+            | 'revert'
+            | 'unset'
+            | 'stretch'
+            | 'center'
+            | 'end'
+            | 'start'
+            | 'baseline'
+            | 'normal'
+            | import('@dash-ui/styles').Falsy,
+            MQ
+          >
+        | import('@dash-ui/responsive').Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined
+              initial?: string | number | boolean | null | undefined
+              revert?: string | number | boolean | null | undefined
+              unset?: string | number | boolean | null | undefined
+              stretch?: string | number | boolean | null | undefined
+              center?: string | number | boolean | null | undefined
+              end?: string | number | boolean | null | undefined
+              start?: string | number | boolean | null | undefined
+              baseline?: string | number | boolean | null | undefined
+              normal?: string | number | boolean | null | undefined
+            },
+            MQ
+          >
+    }) => string[]
     styles: {
       /**
        * Sets a `display` CSS property on your component
