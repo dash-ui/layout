@@ -1,24 +1,25 @@
-import type {Styles, DashThemeNames} from '@dash-ui/styles'
-import responsive, {ResponsiveStyles} from '@dash-ui/responsive'
-import compound from '@dash-ui/compound'
+import compound from "@dash-ui/compound";
+import type { ResponsiveStyles } from "@dash-ui/responsive";
+import responsive from "@dash-ui/responsive";
+import type { DashThemeNames, Styles } from "@dash-ui/styles";
 
 function layout<
   Tokens extends {
-    gap: any
-    pad: any
-    borderWidth: any
-    shadow: any
-    radius: any
-    color: any
-    zIndex: any
+    gap: any;
+    pad: any;
+    borderWidth: any;
+    shadow: any;
+    radius: any;
+    color: any;
+    zIndex: any;
   },
   MQ extends Record<string, string>
 >(baseStyles: Styles<Tokens, DashThemeNames>, mediaQueries?: MQ) {
-  const compoundStyles = compound(baseStyles)
+  const compoundStyles = compound(baseStyles);
   const styles: ResponsiveStyles<Tokens, MQ, DashThemeNames> = responsive(
     baseStyles,
     mediaQueries || {}
-  )
+  );
 
   const box = compoundStyles(
     {
@@ -26,57 +27,57 @@ function layout<
        * Sets a `display` CSS property on your component
        */
       display: styles({
-        flex: {display: 'flex'},
-        inlineFlex: {display: 'inline-flex'},
-        grid: {display: 'grid'},
-        inlineGrid: {display: 'inlineGrid'},
-        block: {display: 'block'},
-        inlineBlock: {display: 'inline-block'},
-        inline: {display: 'inline'},
-        table: {display: 'table'},
-        tableCell: {display: 'table-cell'},
-        tableRowGroup: {display: 'table-row-group'},
-        tableRow: {display: 'table-row'},
-        tableColumn: {display: 'table-column'},
-        tableColumnGroup: {display: 'table-column-group'},
-        tableHeader: {display: 'table-header'},
-        tableHeaderGroup: {display: 'table-header-group'},
-        tableFooterGroup: {display: 'table-footer-group'},
-        listItem: {display: 'list-item'},
-        contents: {display: 'contents'},
-        runIn: {display: 'run-in'},
-        none: {display: 'none'},
-        inherit: {display: 'inherit'},
-        initial: {display: 'initial'},
-        unset: {display: 'unset'},
-        revert: {display: 'revert'},
+        flex: { display: "flex" },
+        inlineFlex: { display: "inline-flex" },
+        grid: { display: "grid" },
+        inlineGrid: { display: "inlineGrid" },
+        block: { display: "block" },
+        inlineBlock: { display: "inline-block" },
+        inline: { display: "inline" },
+        table: { display: "table" },
+        tableCell: { display: "table-cell" },
+        tableRowGroup: { display: "table-row-group" },
+        tableRow: { display: "table-row" },
+        tableColumn: { display: "table-column" },
+        tableColumnGroup: { display: "table-column-group" },
+        tableHeader: { display: "table-header" },
+        tableHeaderGroup: { display: "table-header-group" },
+        tableFooterGroup: { display: "table-footer-group" },
+        listItem: { display: "list-item" },
+        contents: { display: "contents" },
+        runIn: { display: "run-in" },
+        none: { display: "none" },
+        inherit: { display: "inherit" },
+        initial: { display: "initial" },
+        unset: { display: "unset" },
+        revert: { display: "revert" },
       }),
       /**
        * Sets a `position` CSS property on your component
        */
       position: styles({
-        absolute: {position: 'absolute'},
-        relative: {position: 'relative'},
-        fixed: {position: 'fixed'},
-        sticky: {position: 'sticky'},
-        static: {position: 'static'},
-        inherit: {position: 'inherit'},
-        initial: {position: 'initial'},
-        unset: {position: 'unset'},
-        revert: {position: 'revert'},
+        absolute: { position: "absolute" },
+        relative: { position: "relative" },
+        fixed: { position: "fixed" },
+        sticky: { position: "sticky" },
+        static: { position: "static" },
+        inherit: { position: "inherit" },
+        initial: { position: "initial" },
+        unset: { position: "unset" },
+        revert: { position: "revert" },
       }),
       /**
        * Sets a `width` CSS property on your component
        */
-      width: styles.lazy((width: number | string) => ({width})),
+      width: styles.lazy((width: number | string) => ({ width })),
       /**
        * Sets a `height` CSS property on your component
        */
-      height: styles.lazy((height: number | string) => ({height})),
+      height: styles.lazy((height: number | string) => ({ height })),
       /**
        * Sets a `max-width` CSS property on your component
        */
-      maxWidth: styles.lazy((maxWidth: number | string) => ({maxWidth})),
+      maxWidth: styles.lazy((maxWidth: number | string) => ({ maxWidth })),
       /**
        * Sets a `max-height` CSS property on your component
        */
@@ -86,7 +87,7 @@ function layout<
       /**
        * Sets a `max-width` CSS property on your component
        */
-      minWidth: styles.lazy((minWidth: number | string) => ({minWidth})),
+      minWidth: styles.lazy((minWidth: number | string) => ({ minWidth })),
       /**
        * Sets a `max-height` CSS property on your component
        */
@@ -107,12 +108,12 @@ function layout<
       pad: styles.lazy(
         (
             value:
-              | Extract<keyof Tokens['pad'], string | number>
-              | Extract<keyof Tokens['pad'], string | number>[]
+              | Extract<keyof Tokens["pad"], string | number>
+              | Extract<keyof Tokens["pad"], string | number>[]
           ) =>
-          ({pad}) => ({
+          ({ pad }) => ({
             padding: Array.isArray(value)
-              ? value.map((k) => pad[k]).join(' ')
+              ? value.map((k) => pad[k]).join(" ")
               : pad[value],
           })
       ),
@@ -121,8 +122,8 @@ function layout<
        * token in your theme
        */
       bg: styles.lazy(
-        (bg: Extract<keyof Tokens['color'], string | number>) =>
-          ({color}) => ({backgroundColor: color[bg]})
+        (bg: Extract<keyof Tokens["color"], string | number>) =>
+          ({ color }) => ({ backgroundColor: color[bg] })
       ),
       /**
        * Sets a `border-color` CSS property on your component using the "color"
@@ -132,16 +133,16 @@ function layout<
       border: styles.lazy(
         ([width, borderColor]: [
             (
-              | Extract<keyof Tokens['borderWidth'], string | number>
-              | Extract<keyof Tokens['borderWidth'], string | number>[]
+              | Extract<keyof Tokens["borderWidth"], string | number>
+              | Extract<keyof Tokens["borderWidth"], string | number>[]
             ),
-            Extract<keyof Tokens['color'], string | number>
+            Extract<keyof Tokens["color"], string | number>
           ]) =>
-          ({borderWidth, color}) => ({
+          ({ borderWidth, color }) => ({
             borderWidth: Array.isArray(width)
-              ? width.map((w) => borderWidth[w]).join(' ')
+              ? width.map((w) => borderWidth[w]).join(" ")
               : borderWidth[width],
-            borderStyle: 'solid',
+            borderStyle: "solid",
             borderColor: color[borderColor],
           })
       ),
@@ -150,8 +151,8 @@ function layout<
        * token in your theme
        */
       shadow: styles.lazy(
-        (value: Extract<keyof Tokens['shadow'], string | number>) =>
-          ({shadow}) => ({boxShadow: shadow[value]})
+        (value: Extract<keyof Tokens["shadow"], string | number>) =>
+          ({ shadow }) => ({ boxShadow: shadow[value] })
       ),
       /**
        * Sets a `border-radius` CSS property on your component using the "radius"
@@ -160,231 +161,232 @@ function layout<
       radius: styles.lazy(
         (
             value:
-              | Extract<keyof Tokens['radius'], string | number>
-              | Extract<keyof Tokens['radius'], string | number>[]
+              | Extract<keyof Tokens["radius"], string | number>
+              | Extract<keyof Tokens["radius"], string | number>[]
           ) =>
-          ({radius}) => ({
+          ({ radius }) => ({
             borderRadius: Array.isArray(value)
-              ? value.map((k) => radius[k]).join(' ')
+              ? value.map((k) => radius[k]).join(" ")
               : radius[value],
           })
       ),
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       inset: styles.lazy((value: string | number | (string | number)[]) => {
         if (Array.isArray(value)) {
           return {
-            '@supports (inset: 10px)': {
-              inset: value.map(unit).join(' '),
+            "@supports (inset: 10px)": {
+              inset: value.map(unit).join(" "),
             },
-            '@supports not (inset: 10px)': {
+            "@supports not (inset: 10px)": {
               top: value[0],
               right: value[1] ?? value[0],
               bottom: value[2] ?? value[0],
               left: value[3] ?? value[1] ?? value[0],
             },
-          }
+          };
         }
 
         return {
-          '@supports (inset: 10px)': {
+          "@supports (inset: 10px)": {
             inset: value,
           },
-          '@supports not (inset: 10px)': {
+          "@supports not (inset: 10px)": {
             top: value,
             right: value,
             bottom: value,
             left: value,
           },
-        }
+        };
       }),
       /**
        * Sets a `z-index` CSS property on your component
        */
       z: styles.lazy(
-        (value: number | Extract<keyof Tokens['zIndex'], string | number>) =>
-          ({zIndex}) => ({
-            zIndex: typeof value === 'number' ? value : zIndex[value],
+        (value: number | Extract<keyof Tokens["zIndex"], string | number>) =>
+          ({ zIndex }) => ({
+            zIndex: typeof value === "number" ? value : zIndex[value],
           })
       ),
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const alignItems = styles({
     start: {
-      '@supports (align-items: start)': {
-        alignItems: 'start',
+      "@supports (align-items: start)": {
+        alignItems: "start",
       },
-      '@supports not (align-items: start)': {
-        alignItems: 'flex-start',
+      "@supports not (align-items: start)": {
+        alignItems: "flex-start",
       },
     },
     end: {
-      '@supports (align-items: end)': {
-        alignItems: 'end',
+      "@supports (align-items: end)": {
+        alignItems: "end",
       },
-      '@supports not (align-items: end)': {
-        alignItems: 'flex-end',
+      "@supports not (align-items: end)": {
+        alignItems: "flex-end",
       },
     },
-    center: {alignItems: 'center'},
-    baseline: {alignItems: 'baseline'},
-    stretch: {alignItems: 'stretch'},
-    normal: {alignItems: 'normal'},
-    inherit: {alignItems: 'inherit'},
-    initial: {alignItems: 'initial'},
-    unset: {alignItems: 'unset'},
-    revert: {alignItems: 'revert'},
-  } as const)
+    center: { alignItems: "center" },
+    baseline: { alignItems: "baseline" },
+    stretch: { alignItems: "stretch" },
+    normal: { alignItems: "normal" },
+    inherit: { alignItems: "inherit" },
+    initial: { alignItems: "initial" },
+    unset: { alignItems: "unset" },
+    revert: { alignItems: "revert" },
+  } as const);
 
   const justifyItems = styles({
     start: {
-      '@supports (justify-items: start)': {
-        justifyItems: 'start',
+      "@supports (justify-items: start)": {
+        justifyItems: "start",
       },
-      '@supports not (justify-items: start)': {
-        justifyItems: 'flex-start',
+      "@supports not (justify-items: start)": {
+        justifyItems: "flex-start",
       },
     },
     end: {
-      '@supports (justify-items: end)': {
-        justifyItems: 'end',
+      "@supports (justify-items: end)": {
+        justifyItems: "end",
       },
-      '@supports not (justify-items: end)': {
-        justifyItems: 'flex-end',
+      "@supports not (justify-items: end)": {
+        justifyItems: "flex-end",
       },
     },
-    center: {justifyItems: 'center'},
-    baseline: {justifyItems: 'baseline'},
-    stretch: {justifyItems: 'stretch'},
-    normal: {justifyItems: 'normal'},
-    inherit: {justifyItems: 'inherit'},
-    initial: {justifyItems: 'initial'},
-    unset: {justifyItems: 'unset'},
-    revert: {justifyItems: 'revert'},
-  } as const)
+    center: { justifyItems: "center" },
+    baseline: { justifyItems: "baseline" },
+    stretch: { justifyItems: "stretch" },
+    normal: { justifyItems: "normal" },
+    inherit: { justifyItems: "inherit" },
+    initial: { justifyItems: "initial" },
+    unset: { justifyItems: "unset" },
+    revert: { justifyItems: "revert" },
+  } as const);
 
   const justifyContent = styles({
     start: {
-      '@supports (justify-content: start)': {
-        justifyContent: 'start',
+      "@supports (justify-content: start)": {
+        justifyContent: "start",
       },
-      '@supports not (justify-content: start)': {
-        justifyContent: 'flex-start',
+      "@supports not (justify-content: start)": {
+        justifyContent: "flex-start",
       },
     },
     end: {
-      '@supports (justify-content: end)': {
-        justifyContent: 'end',
+      "@supports (justify-content: end)": {
+        justifyContent: "end",
       },
-      '@supports not (justify-content: end)': {
-        justifyContent: 'flex-end',
+      "@supports not (justify-content: end)": {
+        justifyContent: "flex-end",
       },
     },
-    center: {justifyContent: 'center'},
-    around: {justifyContent: 'space-around'},
-    between: {justifyContent: 'space-between'},
-    evenly: {justifyContent: 'space-evenly'},
-    baseline: {justifyContent: 'baseline'},
-    stretch: {justifyContent: 'stretch'},
-    normal: {justifyContent: 'normal'},
-    inherit: {justifyContent: 'inherit'},
-    initial: {justifyContent: 'initial'},
-    unset: {justifyContent: 'unset'},
-    revert: {justifyContent: 'revert'},
-  } as const)
+    center: { justifyContent: "center" },
+    around: { justifyContent: "space-around" },
+    between: { justifyContent: "space-between" },
+    evenly: { justifyContent: "space-evenly" },
+    baseline: { justifyContent: "baseline" },
+    stretch: { justifyContent: "stretch" },
+    normal: { justifyContent: "normal" },
+    inherit: { justifyContent: "inherit" },
+    initial: { justifyContent: "initial" },
+    unset: { justifyContent: "unset" },
+    revert: { justifyContent: "revert" },
+  } as const);
 
   const alignContent = styles({
     start: {
-      '@supports (align-content: start)': {
-        alignContent: 'start',
+      "@supports (align-content: start)": {
+        alignContent: "start",
       },
-      '@supports not (align-content: start)': {
-        alignContent: 'flex-start',
+      "@supports not (align-content: start)": {
+        alignContent: "flex-start",
       },
     },
     end: {
-      '@supports (align-content: end)': {
-        alignContent: 'end',
+      "@supports (align-content: end)": {
+        alignContent: "end",
       },
-      '@supports not (align-content: end)': {
-        alignContent: 'flex-end',
+      "@supports not (align-content: end)": {
+        alignContent: "flex-end",
       },
     },
-    center: {alignContent: 'center'},
-    around: {alignContent: 'space-around'},
-    between: {alignContent: 'space-between'},
-    evenly: {alignContent: 'space-evenly'},
-    baseline: {alignContent: 'baseline'},
-    stretch: {alignContent: 'stretch'},
-    normal: {alignContent: 'normal'},
-    inherit: {alignContent: 'inherit'},
-    initial: {alignContent: 'initial'},
-    unset: {alignContent: 'unset'},
-    revert: {alignContent: 'revert'},
-  } as const)
+    center: { alignContent: "center" },
+    around: { alignContent: "space-around" },
+    between: { alignContent: "space-between" },
+    evenly: { alignContent: "space-evenly" },
+    baseline: { alignContent: "baseline" },
+    stretch: { alignContent: "stretch" },
+    normal: { alignContent: "normal" },
+    inherit: { alignContent: "inherit" },
+    initial: { alignContent: "initial" },
+    unset: { alignContent: "unset" },
+    revert: { alignContent: "revert" },
+  } as const);
 
   const alignSelf = styles({
     start: {
-      '@supports (align-self: start)': {
-        alignSelf: 'start',
+      "@supports (align-self: start)": {
+        alignSelf: "start",
       },
-      '@supports not (align-self: start)': {
-        alignSelf: 'flex-start',
+      "@supports not (align-self: start)": {
+        alignSelf: "flex-start",
       },
     },
     end: {
-      '@supports (align-self: end)': {
-        alignSelf: 'end',
+      "@supports (align-self: end)": {
+        alignSelf: "end",
       },
-      '@supports not (align-self: end)': {
-        alignSelf: 'flex-end',
+      "@supports not (align-self: end)": {
+        alignSelf: "flex-end",
       },
     },
-    center: {alignSelf: 'center'},
-    baseline: {alignSelf: 'baseline'},
-    stretch: {alignSelf: 'stretch'},
-    auto: {alignSelf: 'auto'},
-    normal: {alignSelf: 'normal'},
-    inherit: {alignSelf: 'inherit'},
-    initial: {alignSelf: 'initial'},
-    unset: {alignSelf: 'unset'},
-    revert: {alignSelf: 'revert'},
-  } as const)
+    center: { alignSelf: "center" },
+    baseline: { alignSelf: "baseline" },
+    stretch: { alignSelf: "stretch" },
+    auto: { alignSelf: "auto" },
+    normal: { alignSelf: "normal" },
+    inherit: { alignSelf: "inherit" },
+    initial: { alignSelf: "initial" },
+    unset: { alignSelf: "unset" },
+    revert: { alignSelf: "revert" },
+  } as const);
 
   const justifySelf = styles({
     start: {
-      '@supports (justify-self: start)': {
-        justifySelf: 'start',
+      "@supports (justify-self: start)": {
+        justifySelf: "start",
       },
-      '@supports not (justify-self: start)': {
-        justifySelf: 'flex-start',
+      "@supports not (justify-self: start)": {
+        justifySelf: "flex-start",
       },
     },
     end: {
-      '@supports (justify-self: end)': {
-        justifySelf: 'end',
+      "@supports (justify-self: end)": {
+        justifySelf: "end",
       },
-      '@supports not (justify-self: end)': {
-        justifySelf: 'flex-end',
+      "@supports not (justify-self: end)": {
+        justifySelf: "flex-end",
       },
     },
-    center: {justifySelf: 'center'},
-    around: {justifySelf: 'space-around'},
-    between: {justifySelf: 'space-between'},
-    evenly: {justifySelf: 'space-evenly'},
-    baseline: {justifySelf: 'baseline'},
-    stretch: {justifySelf: 'stretch'},
-    auto: {justifySelf: 'auto'},
-    normal: {justifySelf: 'normal'},
-    inherit: {justifySelf: 'inherit'},
-    initial: {justifySelf: 'initial'},
-    unset: {justifySelf: 'unset'},
-    revert: {justifySelf: 'revert'},
-  } as const)
+    center: { justifySelf: "center" },
+    around: { justifySelf: "space-around" },
+    between: { justifySelf: "space-between" },
+    evenly: { justifySelf: "space-evenly" },
+    baseline: { justifySelf: "baseline" },
+    stretch: { justifySelf: "stretch" },
+    auto: { justifySelf: "auto" },
+    normal: { justifySelf: "normal" },
+    inherit: { justifySelf: "inherit" },
+    initial: { justifySelf: "initial" },
+    unset: { justifySelf: "unset" },
+    revert: { justifySelf: "revert" },
+  } as const);
 
   const flexItem = compoundStyles(
     {
@@ -395,7 +397,7 @@ function layout<
       /**
        * Sets a `justify-self` CSS property on your component
        */
-      basis: styles.lazy((value: string | number) => ({flexBasis: value})),
+      basis: styles.lazy((value: string | number) => ({ flexBasis: value })),
       /**
        * Sets a `justify-self` CSS property on your component
        */
@@ -409,7 +411,7 @@ function layout<
       /**
        * Sets a `order` CSS property on your component
        */
-      order: styles.lazy((value: number) => ({order: value})),
+      order: styles.lazy((value: number) => ({ order: value })),
       /**
        * Sets a `flex-shrink` CSS property on your component
        */
@@ -418,16 +420,16 @@ function layout<
       })),
       ...box.styles,
     },
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const cluster = compoundStyles(
     {
       default: styles.one({
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'flex-start',
-        '& > *': {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "flex-start",
+        "& > *": {
           flexShrink: 0,
         },
       }),
@@ -436,15 +438,15 @@ function layout<
        * cluster using the "gap" token in your theme
        */
       gap: styles.lazy(
-        (value: Extract<keyof Tokens['gap'], string | number>) =>
-          ({gap}) => ({
-            '@supports (display: flex) and (gap: 1em)': {
+        (value: Extract<keyof Tokens["gap"], string | number>) =>
+          ({ gap }) => ({
+            "@supports (display: flex) and (gap: 1em)": {
               gap: gap[value],
             },
-            '@supports not (display: flex) and (gap: 1em)': {
+            "@supports not (display: flex) and (gap: 1em)": {
               marginTop: `calc(-1 * ${gap[value]})!important`,
               marginLeft: `calc(-1 * ${gap[value]})!important`,
-              '& > *': {
+              "& > *": {
                 marginTop: `${gap[value]}!important`,
                 marginLeft: `${gap[value]}!important`,
               },
@@ -461,15 +463,15 @@ function layout<
       align: alignItems,
       ...box.styles,
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const column = compoundStyles(
     {
       default: styles.one({
-        display: 'flex',
-        flexDirection: 'column',
-        '& > *': {
+        display: "flex",
+        flexDirection: "column",
+        "& > *": {
           flexShrink: 0,
         },
       }),
@@ -478,13 +480,13 @@ function layout<
        * token in your theme
        */
       gap: styles.lazy(
-        (value: Extract<keyof Tokens['gap'], string | number>) =>
-          ({gap}) => ({
-            '@supports (display: flex) and (gap: 1em)': {
+        (value: Extract<keyof Tokens["gap"], string | number>) =>
+          ({ gap }) => ({
+            "@supports (display: flex) and (gap: 1em)": {
               gap: gap[value],
             },
-            '@supports not (display: flex) and (gap: 1em)': {
-              '& > * + *': {
+            "@supports not (display: flex) and (gap: 1em)": {
+              "& > * + *": {
                 marginTop: `${gap[value]}!important`,
               },
             },
@@ -500,16 +502,16 @@ function layout<
       align: alignItems,
       ...box.styles,
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const sharedGrid = compoundStyles(
     {
-      default: styles.one({display: 'grid'}),
+      default: styles.one({ display: "grid" }),
       /**
        * Makes the component display as an `inline-grid` rather than `grid`
        */
-      inline: styles.one({display: 'inline-grid'}),
+      inline: styles.one({ display: "inline-grid" }),
       /**
        * Sets a `justify-items` CSS property on your component
        */
@@ -533,34 +535,34 @@ function layout<
       gap: styles.lazy(
         (
             value:
-              | Extract<keyof Tokens['gap'], number | string>
+              | Extract<keyof Tokens["gap"], number | string>
               | [
-                  Extract<keyof Tokens['gap'], number | string>,
-                  Extract<keyof Tokens['gap'], number | string>
+                  Extract<keyof Tokens["gap"], number | string>,
+                  Extract<keyof Tokens["gap"], number | string>
                 ]
           ) =>
-          ({gap}) => ({
+          ({ gap }) => ({
             gridGap: Array.isArray(value)
-              ? value.map((p) => gap[p]).join(' ')
-              : gap[value] + ' ' + gap[value],
+              ? value.map((p) => gap[p]).join(" ")
+              : gap[value] + " " + gap[value],
             gap: Array.isArray(value)
-              ? value.map((p) => gap[p]).join(' ')
-              : gap[value] + ' ' + gap[value],
+              ? value.map((p) => gap[p]).join(" ")
+              : gap[value] + " " + gap[value],
           })
       ),
       /**
        * Sets a `grid-template-rows` CSS property on your component
        */
       rows: styles.lazy((value: number | (number | string)[]) => {
-        let rows: (number | string)[]
-        if (Array.isArray(value)) rows = value
+        let rows: (number | string)[];
+        if (Array.isArray(value)) rows = value;
         // ie doesn't have repeat
-        else rows = [`repeat(${value},minmax(0,1fr))`]
-        return {gridTemplateRows: rows.map((row) => unit(row)).join(' ')}
+        else rows = [`repeat(${value},minmax(0,1fr))`];
+        return { gridTemplateRows: rows.map((row) => unit(row)).join(" ") };
       }),
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const grid = compoundStyles(
     {
@@ -568,17 +570,19 @@ function layout<
        * Sets a `grid-template-columns` CSS property on your component
        */
       cols: styles.lazy((value: number | (number | string)[]) => {
-        let columns: (number | string)[]
-        if (Array.isArray(value)) columns = value
+        let columns: (number | string)[];
+        if (Array.isArray(value)) columns = value;
         // ie doesn't have repeat
-        else columns = [`repeat(${value},minmax(0,1fr))`]
-        return {gridTemplateColumns: columns.map((col) => unit(col)).join(' ')}
+        else columns = [`repeat(${value},minmax(0,1fr))`];
+        return {
+          gridTemplateColumns: columns.map((col) => unit(col)).join(" "),
+        };
       }),
       ...sharedGrid.styles,
       ...box.styles,
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const gridItem = compoundStyles(
     {
@@ -611,11 +615,11 @@ function layout<
       /**
        * Sets a `grid-row-end` CSS property on your component
        */
-      rowEnd: styles.lazy((gridRowEnd: number | string) => ({gridRowEnd})),
+      rowEnd: styles.lazy((gridRowEnd: number | string) => ({ gridRowEnd })),
       ...box.styles,
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const autoGrid = compoundStyles(
     {
@@ -629,85 +633,89 @@ function layout<
       })),
       ...sharedGrid.styles,
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const layer = compoundStyles(
     {
-      default: styles.one({position: 'absolute'}),
+      default: styles.one({ position: "absolute" }),
       /**
        * Sets a `margin` between the edges of the layer item's container
        */
-      offset: styles.lazy((margin: number | string) => ({margin})),
+      offset: styles.lazy((margin: number | string) => ({ margin })),
       /**
        * Sets the placement of your layer item relative to its container
        */
       placement: styles.lazy(
         (
           value:
-            | 'top'
-            | 'right'
-            | 'bottom'
-            | 'left'
-            | 'center'
-            | 'topLeft'
-            | 'topRight'
-            | 'bottomRight'
-            | 'bottomLeft'
+            | "top"
+            | "right"
+            | "bottom"
+            | "left"
+            | "center"
+            | "topLeft"
+            | "topRight"
+            | "bottomRight"
+            | "bottomLeft"
         ) => {
-          if (value === 'center') {
-            return {top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}
+          if (value === "center") {
+            return {
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+            };
           }
 
-          const lValue = value.toLowerCase()
+          const lValue = value.toLowerCase();
           const yProp =
-            lValue.indexOf('top') > -1
-              ? 'top'
-              : lValue.indexOf('bottom') > -1
-              ? 'bottom'
-              : void 0
+            lValue.indexOf("top") > -1
+              ? "top"
+              : lValue.indexOf("bottom") > -1
+              ? "bottom"
+              : void 0;
 
           const xProp =
-            lValue.indexOf('left') > -1
-              ? 'left'
-              : lValue.indexOf('right') > -1
-              ? 'right'
-              : void 0
+            lValue.indexOf("left") > -1
+              ? "left"
+              : lValue.indexOf("right") > -1
+              ? "right"
+              : void 0;
 
-          const styles: Record<string, string | number> = {}
+          const styles: Record<string, string | number> = {};
 
           if (yProp) {
-            styles[yProp] = 0
+            styles[yProp] = 0;
           }
 
           if (xProp) {
-            styles[xProp] = 0
+            styles[xProp] = 0;
           }
 
-          if (value === 'left' || value === 'right') {
-            styles.top = '50%'
-            styles.transform = 'translateY(-50%)'
+          if (value === "left" || value === "right") {
+            styles.top = "50%";
+            styles.transform = "translateY(-50%)";
           }
 
-          if (value === 'bottom' || value === 'top') {
-            styles.left = '50%'
-            styles.transform = 'translateX(-50%)'
+          if (value === "bottom" || value === "top") {
+            styles.left = "50%";
+            styles.transform = "translateX(-50%)";
           }
 
-          return styles
+          return styles;
         }
       ),
       ...box.styles,
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   const row = compoundStyles(
     {
       default: styles.one({
-        display: 'flex',
-        flexDirection: 'row',
-        '& > *': {
+        display: "flex",
+        flexDirection: "row",
+        "& > *": {
           flexShrink: 0,
         },
       }),
@@ -716,13 +724,13 @@ function layout<
        * token in your theme
        */
       gap: styles.lazy(
-        (value: Extract<keyof Tokens['gap'], string | number>) =>
-          ({gap}) => ({
-            '@supports (display: flex) and (gap: 1em)': {
+        (value: Extract<keyof Tokens["gap"], string | number>) =>
+          ({ gap }) => ({
+            "@supports (display: flex) and (gap: 1em)": {
               gap: gap[value],
             },
-            '@supports not (display: flex) and (gap: 1em)': {
-              '& > * + *': {
+            "@supports not (display: flex) and (gap: 1em)": {
+              "& > * + *": {
                 marginLeft: `${gap[value]}!important`,
               },
             },
@@ -738,8 +746,8 @@ function layout<
       align: alignItems,
       ...box.styles,
     } as const,
-    {atomic: true}
-  )
+    { atomic: true }
+  );
 
   return {
     // Flex/grid
@@ -898,16 +906,17 @@ function layout<
      * </div>
      */
     row,
-  }
+  };
 }
 
-export default layout
+export default layout;
 
 /**
  * Adds a `px` unit to numeric values and returns non-numeric values as
  * they are.
- * @param value The value you want to maybe add a unit to
+ *
+ * @param value - The value you want to maybe add a unit to
  */
 function unit<T extends unknown>(value: T) {
-  return !isNaN(value as any) && value !== 0 ? `${value}px` : value
+  return !isNaN(value as any) && value !== 0 ? `${value}px` : value;
 }
