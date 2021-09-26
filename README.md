@@ -1,6 +1,6 @@
 <hr/>
 
-  <img src='https://github.com/dash-ui/styles/raw/master/assets/logo.png'/>
+  <img src='https://github.com/dash-ui/styles/raw/main/assets/logo.png'/>
   <blockquote>A framework-agnostic layout library written in Dash</blockquote>
   
   <pre>npm i @dash-ui/layout</pre>
