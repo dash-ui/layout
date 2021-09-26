@@ -1,4 +1,10 @@
-import type { Styles, DashThemeNames } from "@dash-ui/styles";
+import type { DashThemeNames, Styles } from "@dash-ui/styles";
+/**
+ * Creates new atomic layout style utilities using an existing Dash `styles` instance.
+ *
+ * @param baseStyles - An `styles` instance from `@dash-ui/styles`
+ * @param mediaQueries - The media queries to use for responsive styles
+ */
 declare function layout<
   Tokens extends {
     gap: any;
@@ -17,7 +23,7 @@ declare function layout<
   /**
    * Sets a `align-items` CSS property on your component
    */
-  alignItems: import("@dash-ui/responsive").ResponsiveStyle<
+  readonly alignItems: import("@dash-ui/responsive").ResponsiveStyle<
     | "inherit"
     | "initial"
     | "revert"
@@ -34,7 +40,7 @@ declare function layout<
   /**
    * Sets a `justify-items` CSS property on your component
    */
-  justifyItems: import("@dash-ui/responsive").ResponsiveStyle<
+  readonly justifyItems: import("@dash-ui/responsive").ResponsiveStyle<
     | "inherit"
     | "initial"
     | "revert"
@@ -51,7 +57,7 @@ declare function layout<
   /**
    * Sets a `justify-content` CSS property on your component
    */
-  justifyContent: import("@dash-ui/responsive").ResponsiveStyle<
+  readonly justifyContent: import("@dash-ui/responsive").ResponsiveStyle<
     | "inherit"
     | "initial"
     | "revert"
@@ -71,7 +77,7 @@ declare function layout<
   /**
    * Sets a `align-content` CSS property on your component
    */
-  alignContent: import("@dash-ui/responsive").ResponsiveStyle<
+  readonly alignContent: import("@dash-ui/responsive").ResponsiveStyle<
     | "inherit"
     | "initial"
     | "revert"
@@ -91,36 +97,36 @@ declare function layout<
   /**
    * Sets a `align-self` CSS property on your component
    */
-  alignSelf: import("@dash-ui/responsive").ResponsiveStyle<
+  readonly alignSelf: import("@dash-ui/responsive").ResponsiveStyle<
     | "inherit"
     | "initial"
     | "revert"
     | "unset"
+    | "auto"
     | "stretch"
     | "center"
     | "end"
     | "start"
     | "baseline"
-    | "normal"
-    | "auto",
+    | "normal",
     Tokens,
     MQ
   >;
   /**
    * Sets a `justify-self` CSS property on your component
    */
-  justifySelf: import("@dash-ui/responsive").ResponsiveStyle<
+  readonly justifySelf: import("@dash-ui/responsive").ResponsiveStyle<
     | "inherit"
     | "initial"
     | "revert"
     | "unset"
+    | "auto"
     | "stretch"
     | "center"
     | "end"
     | "start"
     | "baseline"
     | "normal"
-    | "auto"
     | "around"
     | "between"
     | "evenly",
@@ -134,7 +140,7 @@ declare function layout<
    * @example
    * <div className={box({size: 300, bg: {sm: 'red', md: 'blue'}})} />
    */
-  box: ((
+  readonly box: ((
     compoundMap?:
       | {
           readonly display?:
@@ -262,33 +268,33 @@ declare function layout<
                 MQ
               >;
           readonly position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -298,11 +304,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -530,33 +536,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -566,11 +572,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -793,33 +799,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -829,11 +835,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -981,11 +987,11 @@ declare function layout<
        * Sets a `position` CSS property on your component
        */
       readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -1093,6 +1099,7 @@ declare function layout<
       >;
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       readonly inset: import("@dash-ui/responsive").ResponsiveLazy<
@@ -1135,7 +1142,7 @@ declare function layout<
    *   <Item/>
    * </div>
    */
-  cluster: ((
+  readonly cluster: ((
     compoundMap?:
       | {
           readonly display?:
@@ -1263,33 +1270,33 @@ declare function layout<
                 MQ
               >;
           readonly position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -1299,11 +1306,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -1666,33 +1673,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -1702,11 +1709,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -2064,33 +2071,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -2100,11 +2107,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -2387,11 +2394,11 @@ declare function layout<
        * Sets a `position` CSS property on your component
        */
       readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -2499,6 +2506,7 @@ declare function layout<
       >;
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       readonly inset: import("@dash-ui/responsive").ResponsiveLazy<
@@ -2577,7 +2585,7 @@ declare function layout<
    *   <Item/>
    * </div>
    */
-  column: ((
+  readonly column: ((
     compoundMap?:
       | {
           readonly display?:
@@ -2705,33 +2713,33 @@ declare function layout<
                 MQ
               >;
           readonly position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -2741,11 +2749,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -3108,33 +3116,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -3144,11 +3152,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -3506,33 +3514,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -3542,11 +3550,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -3829,11 +3837,11 @@ declare function layout<
        * Sets a `position` CSS property on your component
        */
       readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -3941,6 +3949,7 @@ declare function layout<
       >;
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       readonly inset: import("@dash-ui/responsive").ResponsiveLazy<
@@ -4009,7 +4018,7 @@ declare function layout<
    * @example
    * <div className={flexItem({alignSelf: 'center', order: 2})}/>
    */
-  flexItem: ((
+  readonly flexItem: ((
     compoundMap?:
       | {
           display?:
@@ -4137,33 +4146,33 @@ declare function layout<
                 MQ
               >;
           position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -4173,11 +4182,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -4293,39 +4302,39 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | {
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
+                auto?: string | number | boolean | null | undefined;
                 stretch?: string | number | boolean | null | undefined;
                 center?: string | number | boolean | null | undefined;
                 end?: string | number | boolean | null | undefined;
                 start?: string | number | boolean | null | undefined;
                 baseline?: string | number | boolean | null | undefined;
                 normal?: string | number | boolean | null | undefined;
-                auto?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
+                | "auto"
                 | "stretch"
                 | "center"
                 | "end"
                 | "start"
                 | "baseline"
                 | "normal"
-                | "auto"
                 | import("@dash-ui/styles").Falsy,
                 MQ
               >
@@ -4335,13 +4344,13 @@ declare function layout<
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
+                  auto?: string | number | boolean | null | undefined;
                   stretch?: string | number | boolean | null | undefined;
                   center?: string | number | boolean | null | undefined;
                   end?: string | number | boolean | null | undefined;
                   start?: string | number | boolean | null | undefined;
                   baseline?: string | number | boolean | null | undefined;
                   normal?: string | number | boolean | null | undefined;
-                  auto?: string | number | boolean | null | undefined;
                 },
                 MQ
               >;
@@ -4355,13 +4364,13 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | "around"
             | "between"
@@ -4371,13 +4380,13 @@ declare function layout<
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
+                auto?: string | number | boolean | null | undefined;
                 stretch?: string | number | boolean | null | undefined;
                 center?: string | number | boolean | null | undefined;
                 end?: string | number | boolean | null | undefined;
                 start?: string | number | boolean | null | undefined;
                 baseline?: string | number | boolean | null | undefined;
                 normal?: string | number | boolean | null | undefined;
-                auto?: string | number | boolean | null | undefined;
                 around?: string | number | boolean | null | undefined;
                 between?: string | number | boolean | null | undefined;
                 evenly?: string | number | boolean | null | undefined;
@@ -4387,13 +4396,13 @@ declare function layout<
                 | "initial"
                 | "revert"
                 | "unset"
+                | "auto"
                 | "stretch"
                 | "center"
                 | "end"
                 | "start"
                 | "baseline"
                 | "normal"
-                | "auto"
                 | import("@dash-ui/styles").Falsy
                 | "around"
                 | "between"
@@ -4406,13 +4415,13 @@ declare function layout<
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
+                  auto?: string | number | boolean | null | undefined;
                   stretch?: string | number | boolean | null | undefined;
                   center?: string | number | boolean | null | undefined;
                   end?: string | number | boolean | null | undefined;
                   start?: string | number | boolean | null | undefined;
                   baseline?: string | number | boolean | null | undefined;
                   normal?: string | number | boolean | null | undefined;
-                  auto?: string | number | boolean | null | undefined;
                   around?: string | number | boolean | null | undefined;
                   between?: string | number | boolean | null | undefined;
                   evenly?: string | number | boolean | null | undefined;
@@ -4550,33 +4559,33 @@ declare function layout<
             MQ
           >;
       position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -4586,11 +4595,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -4706,39 +4715,39 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | {
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy,
             MQ
           >
@@ -4748,13 +4757,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
             },
             MQ
           >;
@@ -4768,13 +4777,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | "around"
         | "between"
@@ -4784,13 +4793,13 @@ declare function layout<
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
             around?: string | number | boolean | null | undefined;
             between?: string | number | boolean | null | undefined;
             evenly?: string | number | boolean | null | undefined;
@@ -4800,13 +4809,13 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | "around"
             | "between"
@@ -4819,13 +4828,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
               around?: string | number | boolean | null | undefined;
               between?: string | number | boolean | null | undefined;
               evenly?: string | number | boolean | null | undefined;
@@ -4958,33 +4967,33 @@ declare function layout<
             MQ
           >;
       position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -4994,11 +5003,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -5114,39 +5123,39 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | {
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy,
             MQ
           >
@@ -5156,13 +5165,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
             },
             MQ
           >;
@@ -5176,13 +5185,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | "around"
         | "between"
@@ -5192,13 +5201,13 @@ declare function layout<
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
             around?: string | number | boolean | null | undefined;
             between?: string | number | boolean | null | undefined;
             evenly?: string | number | boolean | null | undefined;
@@ -5208,13 +5217,13 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | "around"
             | "between"
@@ -5227,13 +5236,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
               around?: string | number | boolean | null | undefined;
               between?: string | number | boolean | null | undefined;
               evenly?: string | number | boolean | null | undefined;
@@ -5285,11 +5294,11 @@ declare function layout<
         MQ
       >;
       position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -5360,13 +5369,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
-        | "normal"
-        | "auto",
+        | "normal",
         Tokens,
         MQ
       >;
@@ -5382,13 +5391,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | "around"
         | "between"
         | "evenly",
@@ -5429,7 +5438,7 @@ declare function layout<
    *   <GridItem/>
    * </div>
    */
-  grid: ((
+  readonly grid: ((
     compoundMap?:
       | {
           readonly display?:
@@ -5557,33 +5566,33 @@ declare function layout<
                 MQ
               >;
           readonly position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -5593,11 +5602,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -6112,33 +6121,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -6148,11 +6157,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -6662,33 +6671,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -6698,11 +6707,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -7137,11 +7146,11 @@ declare function layout<
        * Sets a `position` CSS property on your component
        */
       readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -7249,6 +7258,7 @@ declare function layout<
       >;
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       readonly inset: import("@dash-ui/responsive").ResponsiveLazy<
@@ -7381,7 +7391,7 @@ declare function layout<
    *   <div/>
    * </div>
    */
-  gridItem: ((
+  readonly gridItem: ((
     compoundMap?:
       | {
           readonly display?:
@@ -7509,33 +7519,33 @@ declare function layout<
                 MQ
               >;
           readonly position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -7545,11 +7555,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -7665,13 +7675,13 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | "around"
             | "between"
@@ -7681,13 +7691,13 @@ declare function layout<
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
+                auto?: string | number | boolean | null | undefined;
                 stretch?: string | number | boolean | null | undefined;
                 center?: string | number | boolean | null | undefined;
                 end?: string | number | boolean | null | undefined;
                 start?: string | number | boolean | null | undefined;
                 baseline?: string | number | boolean | null | undefined;
                 normal?: string | number | boolean | null | undefined;
-                auto?: string | number | boolean | null | undefined;
                 around?: string | number | boolean | null | undefined;
                 between?: string | number | boolean | null | undefined;
                 evenly?: string | number | boolean | null | undefined;
@@ -7697,13 +7707,13 @@ declare function layout<
                 | "initial"
                 | "revert"
                 | "unset"
+                | "auto"
                 | "stretch"
                 | "center"
                 | "end"
                 | "start"
                 | "baseline"
                 | "normal"
-                | "auto"
                 | import("@dash-ui/styles").Falsy
                 | "around"
                 | "between"
@@ -7716,13 +7726,13 @@ declare function layout<
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
+                  auto?: string | number | boolean | null | undefined;
                   stretch?: string | number | boolean | null | undefined;
                   center?: string | number | boolean | null | undefined;
                   end?: string | number | boolean | null | undefined;
                   start?: string | number | boolean | null | undefined;
                   baseline?: string | number | boolean | null | undefined;
                   normal?: string | number | boolean | null | undefined;
-                  auto?: string | number | boolean | null | undefined;
                   around?: string | number | boolean | null | undefined;
                   between?: string | number | boolean | null | undefined;
                   evenly?: string | number | boolean | null | undefined;
@@ -7734,39 +7744,39 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | {
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
+                auto?: string | number | boolean | null | undefined;
                 stretch?: string | number | boolean | null | undefined;
                 center?: string | number | boolean | null | undefined;
                 end?: string | number | boolean | null | undefined;
                 start?: string | number | boolean | null | undefined;
                 baseline?: string | number | boolean | null | undefined;
                 normal?: string | number | boolean | null | undefined;
-                auto?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
+                | "auto"
                 | "stretch"
                 | "center"
                 | "end"
                 | "start"
                 | "baseline"
                 | "normal"
-                | "auto"
                 | import("@dash-ui/styles").Falsy,
                 MQ
               >
@@ -7776,13 +7786,13 @@ declare function layout<
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
+                  auto?: string | number | boolean | null | undefined;
                   stretch?: string | number | boolean | null | undefined;
                   center?: string | number | boolean | null | undefined;
                   end?: string | number | boolean | null | undefined;
                   start?: string | number | boolean | null | undefined;
                   baseline?: string | number | boolean | null | undefined;
                   normal?: string | number | boolean | null | undefined;
-                  auto?: string | number | boolean | null | undefined;
                 },
                 MQ
               >;
@@ -7923,33 +7933,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -7959,11 +7969,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -8079,13 +8089,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | "around"
         | "between"
@@ -8095,13 +8105,13 @@ declare function layout<
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
             around?: string | number | boolean | null | undefined;
             between?: string | number | boolean | null | undefined;
             evenly?: string | number | boolean | null | undefined;
@@ -8111,13 +8121,13 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | "around"
             | "between"
@@ -8130,13 +8140,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
               around?: string | number | boolean | null | undefined;
               between?: string | number | boolean | null | undefined;
               evenly?: string | number | boolean | null | undefined;
@@ -8148,39 +8158,39 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | {
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy,
             MQ
           >
@@ -8190,13 +8200,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
             },
             MQ
           >;
@@ -8332,33 +8342,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -8368,11 +8378,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -8488,13 +8498,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | "around"
         | "between"
@@ -8504,13 +8514,13 @@ declare function layout<
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
             around?: string | number | boolean | null | undefined;
             between?: string | number | boolean | null | undefined;
             evenly?: string | number | boolean | null | undefined;
@@ -8520,13 +8530,13 @@ declare function layout<
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy
             | "around"
             | "between"
@@ -8539,13 +8549,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
               around?: string | number | boolean | null | undefined;
               between?: string | number | boolean | null | undefined;
               evenly?: string | number | boolean | null | undefined;
@@ -8557,39 +8567,39 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | import("@dash-ui/styles").Falsy
         | {
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
+            auto?: string | number | boolean | null | undefined;
             stretch?: string | number | boolean | null | undefined;
             center?: string | number | boolean | null | undefined;
             end?: string | number | boolean | null | undefined;
             start?: string | number | boolean | null | undefined;
             baseline?: string | number | boolean | null | undefined;
             normal?: string | number | boolean | null | undefined;
-            auto?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
+            | "auto"
             | "stretch"
             | "center"
             | "end"
             | "start"
             | "baseline"
             | "normal"
-            | "auto"
             | import("@dash-ui/styles").Falsy,
             MQ
           >
@@ -8599,13 +8609,13 @@ declare function layout<
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
+              auto?: string | number | boolean | null | undefined;
               stretch?: string | number | boolean | null | undefined;
               center?: string | number | boolean | null | undefined;
               end?: string | number | boolean | null | undefined;
               start?: string | number | boolean | null | undefined;
               baseline?: string | number | boolean | null | undefined;
               normal?: string | number | boolean | null | undefined;
-              auto?: string | number | boolean | null | undefined;
             },
             MQ
           >;
@@ -8666,11 +8676,11 @@ declare function layout<
        * Sets a `position` CSS property on your component
        */
       readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -8778,6 +8788,7 @@ declare function layout<
       >;
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       readonly inset: import("@dash-ui/responsive").ResponsiveLazy<
@@ -8799,13 +8810,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
         | "normal"
-        | "auto"
         | "around"
         | "between"
         | "evenly",
@@ -8820,13 +8831,13 @@ declare function layout<
         | "initial"
         | "revert"
         | "unset"
+        | "auto"
         | "stretch"
         | "center"
         | "end"
         | "start"
         | "baseline"
-        | "normal"
-        | "auto",
+        | "normal",
         Tokens,
         MQ
       >;
@@ -8870,7 +8881,7 @@ declare function layout<
    * ☐ ☐ ☐
    * ☐ ☐
    */
-  autoGrid: ((
+  readonly autoGrid: ((
     compoundMap?:
       | {
           readonly default?:
@@ -9850,7 +9861,7 @@ declare function layout<
    * @example
    * <div className={layer({placement: 'bottomRight', offset: 24})} />
    */
-  layer: ((
+  readonly layer: ((
     compoundMap?:
       | {
           readonly display?:
@@ -9978,33 +9989,33 @@ declare function layout<
                 MQ
               >;
           readonly position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -10014,11 +10025,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -10284,33 +10295,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -10320,11 +10331,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -10585,33 +10596,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -10621,11 +10632,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -10811,11 +10822,11 @@ declare function layout<
        * Sets a `position` CSS property on your component
        */
       readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -10923,6 +10934,7 @@ declare function layout<
       >;
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       readonly inset: import("@dash-ui/responsive").ResponsiveLazy<
@@ -10975,7 +10987,7 @@ declare function layout<
    *   <Item/>
    * </div>
    */
-  row: ((
+  readonly row: ((
     compoundMap?:
       | {
           readonly display?:
@@ -11103,33 +11115,33 @@ declare function layout<
                 MQ
               >;
           readonly position?:
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
             | "sticky"
             | import("@dash-ui/styles").Falsy
             | {
+                fixed?: string | number | boolean | null | undefined;
                 inherit?: string | number | boolean | null | undefined;
                 initial?: string | number | boolean | null | undefined;
                 revert?: string | number | boolean | null | undefined;
                 unset?: string | number | boolean | null | undefined;
-                fixed?: string | number | boolean | null | undefined;
                 absolute?: string | number | boolean | null | undefined;
                 relative?: string | number | boolean | null | undefined;
                 static?: string | number | boolean | null | undefined;
                 sticky?: string | number | boolean | null | undefined;
               }
             | import("@dash-ui/responsive").Responsive<
+                | "fixed"
                 | "inherit"
                 | "initial"
                 | "revert"
                 | "unset"
-                | "fixed"
                 | "absolute"
                 | "relative"
                 | "static"
@@ -11139,11 +11151,11 @@ declare function layout<
               >
             | import("@dash-ui/responsive").Responsive<
                 {
+                  fixed?: string | number | boolean | null | undefined;
                   inherit?: string | number | boolean | null | undefined;
                   initial?: string | number | boolean | null | undefined;
                   revert?: string | number | boolean | null | undefined;
                   unset?: string | number | boolean | null | undefined;
-                  fixed?: string | number | boolean | null | undefined;
                   absolute?: string | number | boolean | null | undefined;
                   relative?: string | number | boolean | null | undefined;
                   static?: string | number | boolean | null | undefined;
@@ -11506,33 +11518,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -11542,11 +11554,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -11904,33 +11916,33 @@ declare function layout<
             MQ
           >;
       readonly position?:
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
         | "sticky"
         | import("@dash-ui/styles").Falsy
         | {
+            fixed?: string | number | boolean | null | undefined;
             inherit?: string | number | boolean | null | undefined;
             initial?: string | number | boolean | null | undefined;
             revert?: string | number | boolean | null | undefined;
             unset?: string | number | boolean | null | undefined;
-            fixed?: string | number | boolean | null | undefined;
             absolute?: string | number | boolean | null | undefined;
             relative?: string | number | boolean | null | undefined;
             static?: string | number | boolean | null | undefined;
             sticky?: string | number | boolean | null | undefined;
           }
         | import("@dash-ui/responsive").Responsive<
+            | "fixed"
             | "inherit"
             | "initial"
             | "revert"
             | "unset"
-            | "fixed"
             | "absolute"
             | "relative"
             | "static"
@@ -11940,11 +11952,11 @@ declare function layout<
           >
         | import("@dash-ui/responsive").Responsive<
             {
+              fixed?: string | number | boolean | null | undefined;
               inherit?: string | number | boolean | null | undefined;
               initial?: string | number | boolean | null | undefined;
               revert?: string | number | boolean | null | undefined;
               unset?: string | number | boolean | null | undefined;
-              fixed?: string | number | boolean | null | undefined;
               absolute?: string | number | boolean | null | undefined;
               relative?: string | number | boolean | null | undefined;
               static?: string | number | boolean | null | undefined;
@@ -12227,11 +12239,11 @@ declare function layout<
        * Sets a `position` CSS property on your component
        */
       readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
         | "inherit"
         | "initial"
         | "revert"
         | "unset"
-        | "fixed"
         | "absolute"
         | "relative"
         | "static"
@@ -12339,6 +12351,7 @@ declare function layout<
       >;
       /**
        * Sets the top, right, bottom, left position of the element
+       *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
       readonly inset: import("@dash-ui/responsive").ResponsiveLazy<

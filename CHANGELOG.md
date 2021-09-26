@@ -1,3 +1,9 @@
+## [0.1.3](https://github.com/dash-ui/layout/compare/v0.1.2...v0.1.3) (2021-09-26)
+
+### Bug Fixes
+
+- return const object ([bd6a343](https://github.com/dash-ui/layout/commit/bd6a343b99dd221a0ce690b150b3b65c74726e12))
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
