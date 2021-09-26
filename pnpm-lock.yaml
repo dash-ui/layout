@@ -16,7 +16,7 @@ specifiers:
   cz-conventional-changelog: latest
   eslint: latest
   eslint-config-lunde: latest
-  husky: latest
+  husky: ^7.0.0
   jest: latest
   lint-staged: latest
   lundle: latest
