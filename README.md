@@ -1,6 +1,5 @@
 <hr/>
 
-  <br/>
   <img src='https://github.com/dash-ui/styles/raw/master/assets/logo.png'/>
   <blockquote>A framework-agnostic layout library written in Dash</blockquote>
   
