@@ -3,6 +3,12 @@ import type { ResponsiveStyles } from "@dash-ui/responsive";
 import responsive from "@dash-ui/responsive";
 import type { DashThemeNames, Styles } from "@dash-ui/styles";
 
+/**
+ * Creates new atomic layout style utilities using an existing Dash `styles` instance.
+ *
+ * @param baseStyles - An `styles` instance from `@dash-ui/styles`
+ * @param mediaQueries - The media queries to use for responsive styles
+ */
 function layout<
   Tokens extends {
     gap: any;
@@ -750,8 +756,6 @@ function layout<
   );
 
   return {
-    // Flex/grid
-
     /**
      * Sets a `align-items` CSS property on your component
      */
@@ -776,8 +780,6 @@ function layout<
      * Sets a `justify-self` CSS property on your component
      */
     justifySelf,
-
-    // Layouts
 
     /**
      * A layout style for adding size, padding, position, color, and more
@@ -906,7 +908,7 @@ function layout<
      * </div>
      */
     row,
-  };
+  } as const;
 }
 
 export default layout;
