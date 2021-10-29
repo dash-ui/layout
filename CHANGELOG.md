@@ -1,3 +1,10 @@
+# [1.0.0-alpha.2](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2021-10-29)
+
+
+### Bug Fixes
+
+* maybe fix type error ([4244786](https://github.com/dash-ui/layout/commit/4244786096c59f6ce508b721b3cf0b183032839f))
+
 # [1.0.0-alpha.1](https://github.com/dash-ui/layout/compare/v0.1.3...v1.0.0-alpha.1) (2021-10-29)
 
 ### Features
