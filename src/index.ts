@@ -137,7 +137,7 @@ function layout<
       /**
        * Sets a `border-color` CSS property on your component using the "color"
        * token in your theme and a `border-width` property using the "borderWidth"
-       * token
+       * token.
        */
       border: styles.lazy(
         ([width, borderColor]: [
