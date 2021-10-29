@@ -1,7 +1,7 @@
 import compound from "@dash-ui/compound";
 import type { ResponsiveStyles } from "@dash-ui/responsive";
 import responsive from "@dash-ui/responsive";
-import type { DashThemes, Styles } from "@dash-ui/styles";
+import type { DashThemes, DashTokens, Styles } from "@dash-ui/styles";
 
 /**
  * Creates new atomic layout style utilities using an existing Dash `styles` instance.
@@ -10,15 +10,17 @@ import type { DashThemes, Styles } from "@dash-ui/styles";
  * @param mediaQueries - The media queries to use for responsive styles
  */
 function layout<
-  Tokens extends {
-    gap: any;
-    pad: any;
-    borderWidth: any;
-    shadow: any;
-    radius: any;
-    color: any;
-    zIndex: any;
-  },
+  Tokens extends
+    | DashTokens
+    | {
+        gap: any;
+        pad: any;
+        borderWidth: any;
+        shadow: any;
+        radius: any;
+        color: any;
+        zIndex: any;
+      },
   Themes extends DashThemes,
   MQ extends Record<string, string>
 >(baseStyles: Styles<Tokens, Themes>, mediaQueries?: MQ) {

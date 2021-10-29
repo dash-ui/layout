@@ -1,5 +1,9 @@
+import { matchers } from "@dash-ui/jest";
 import { createStyles } from "@dash-ui/styles";
 import layout from "./index";
+
+// Add the custom matchers provided by '@dash-ui/jest'
+expect.extend(matchers);
 
 describe("box()", () => {
   it('applies the "display" prop', () => {
