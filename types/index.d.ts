@@ -1,4 +1,4 @@
-import type { DashThemeNames, Styles } from "@dash-ui/styles";
+import type { DashThemes, Styles } from "@dash-ui/styles";
 /**
  * Creates new atomic layout style utilities using an existing Dash `styles` instance.
  *
@@ -17,7 +17,7 @@ declare function layout<
   },
   MQ extends Record<string, string>
 >(
-  baseStyles: Styles<Tokens, DashThemeNames>,
+  baseStyles: Styles<Tokens, DashThemes>,
   mediaQueries?: MQ
 ): {
   /**
@@ -35,6 +35,7 @@ declare function layout<
     | "baseline"
     | "normal",
     Tokens,
+    DashThemes,
     MQ
   >;
   /**
@@ -52,6 +53,7 @@ declare function layout<
     | "baseline"
     | "normal",
     Tokens,
+    DashThemes,
     MQ
   >;
   /**
@@ -72,6 +74,7 @@ declare function layout<
     | "between"
     | "evenly",
     Tokens,
+    DashThemes,
     MQ
   >;
   /**
@@ -92,6 +95,7 @@ declare function layout<
     | "between"
     | "evenly",
     Tokens,
+    DashThemes,
     MQ
   >;
   /**
@@ -110,6 +114,7 @@ declare function layout<
     | "baseline"
     | "normal",
     Tokens,
+    DashThemes,
     MQ
   >;
   /**
@@ -131,6 +136,7 @@ declare function layout<
     | "between"
     | "evenly",
     Tokens,
+    DashThemes,
     MQ
   >;
   /**
@@ -981,6 +987,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -997,6 +1004,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -2388,6 +2396,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -2404,6 +2413,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -2547,6 +2557,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -2564,6 +2575,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
     };
@@ -3831,6 +3843,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -3847,6 +3860,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -3990,6 +4004,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -4007,6 +4022,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
     };
@@ -5291,6 +5307,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       position: import("@dash-ui/responsive").ResponsiveStyle<
@@ -5304,6 +5321,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       width: import("@dash-ui/responsive").ResponsiveLazy<string | number, MQ>;
@@ -5377,6 +5395,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -5402,6 +5421,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -7140,6 +7160,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -7156,6 +7177,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -7292,6 +7314,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -7309,6 +7332,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -7329,6 +7353,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -7349,6 +7374,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -8670,6 +8696,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -8686,6 +8713,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -8821,6 +8849,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -8839,6 +8868,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -9767,6 +9797,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -9784,6 +9815,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -9804,6 +9836,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -9824,6 +9857,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -10816,6 +10850,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -10832,6 +10867,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -12233,6 +12269,7 @@ declare function layout<
         | "listItem"
         | "runIn",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -12249,6 +12286,7 @@ declare function layout<
         | "static"
         | "sticky",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -12392,6 +12430,7 @@ declare function layout<
         | "between"
         | "evenly",
         Tokens,
+        DashThemes,
         MQ
       >;
       /**
@@ -12409,6 +12448,7 @@ declare function layout<
         | "baseline"
         | "normal",
         Tokens,
+        DashThemes,
         MQ
       >;
     };

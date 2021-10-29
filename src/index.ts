@@ -1,7 +1,7 @@
 import compound from "@dash-ui/compound";
 import type { ResponsiveStyles } from "@dash-ui/responsive";
 import responsive from "@dash-ui/responsive";
-import type { DashThemeNames, Styles } from "@dash-ui/styles";
+import type { DashThemes, Styles } from "@dash-ui/styles";
 
 /**
  * Creates new atomic layout style utilities using an existing Dash `styles` instance.
@@ -20,9 +20,9 @@ function layout<
     zIndex: any;
   },
   MQ extends Record<string, string>
->(baseStyles: Styles<Tokens, DashThemeNames>, mediaQueries?: MQ) {
+>(baseStyles: Styles<Tokens, DashThemes>, mediaQueries?: MQ) {
   const compoundStyles = compound(baseStyles);
-  const styles: ResponsiveStyles<Tokens, MQ, DashThemeNames> = responsive(
+  const styles: ResponsiveStyles<Tokens, DashThemes, MQ> = responsive(
     baseStyles,
     mediaQueries || {}
   );
@@ -32,7 +32,7 @@ function layout<
       /**
        * Sets a `display` CSS property on your component
        */
-      display: styles({
+      display: styles.variants({
         flex: { display: "flex" },
         inlineFlex: { display: "inline-flex" },
         grid: { display: "grid" },
@@ -61,7 +61,7 @@ function layout<
       /**
        * Sets a `position` CSS property on your component
        */
-      position: styles({
+      position: styles.variants({
         absolute: { position: "absolute" },
         relative: { position: "relative" },
         fixed: { position: "fixed" },
@@ -221,7 +221,7 @@ function layout<
     { atomic: true }
   );
 
-  const alignItems = styles({
+  const alignItems = styles.variants({
     start: {
       "@supports (align-items: start)": {
         alignItems: "start",
@@ -248,7 +248,7 @@ function layout<
     revert: { alignItems: "revert" },
   } as const);
 
-  const justifyItems = styles({
+  const justifyItems = styles.variants({
     start: {
       "@supports (justify-items: start)": {
         justifyItems: "start",
@@ -275,7 +275,7 @@ function layout<
     revert: { justifyItems: "revert" },
   } as const);
 
-  const justifyContent = styles({
+  const justifyContent = styles.variants({
     start: {
       "@supports (justify-content: start)": {
         justifyContent: "start",
@@ -305,7 +305,7 @@ function layout<
     revert: { justifyContent: "revert" },
   } as const);
 
-  const alignContent = styles({
+  const alignContent = styles.variants({
     start: {
       "@supports (align-content: start)": {
         alignContent: "start",
@@ -335,7 +335,7 @@ function layout<
     revert: { alignContent: "revert" },
   } as const);
 
-  const alignSelf = styles({
+  const alignSelf = styles.variants({
     start: {
       "@supports (align-self: start)": {
         alignSelf: "start",
@@ -363,7 +363,7 @@ function layout<
     revert: { alignSelf: "revert" },
   } as const);
 
-  const justifySelf = styles({
+  const justifySelf = styles.variants({
     start: {
       "@supports (justify-self: start)": {
         justifySelf: "start",
@@ -919,6 +919,6 @@ export default layout;
  *
  * @param value - The value you want to maybe add a unit to
  */
-function unit<T extends unknown>(value: T) {
+function unit<T extends number | string>(value: T) {
   return !isNaN(value as any) && value !== 0 ? `${value}px` : value;
 }
