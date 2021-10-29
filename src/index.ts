@@ -19,10 +19,11 @@ function layout<
     color: any;
     zIndex: any;
   },
+  Themes extends DashThemes,
   MQ extends Record<string, string>
->(baseStyles: Styles<Tokens, DashThemes>, mediaQueries?: MQ) {
+>(baseStyles: Styles<Tokens, Themes>, mediaQueries?: MQ) {
   const compoundStyles = compound(baseStyles);
-  const styles: ResponsiveStyles<Tokens, DashThemes, MQ> = responsive(
+  const styles: ResponsiveStyles<Tokens, Themes, MQ> = responsive(
     baseStyles,
     mediaQueries || {}
   );
