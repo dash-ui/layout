@@ -1,3 +1,13 @@
+# [1.0.0-alpha.1](https://github.com/dash-ui/layout/compare/v0.1.3...v1.0.0-alpha.1) (2021-10-29)
+
+### Features
+
+- update types to support latest dash ([d9b1a94](https://github.com/dash-ui/layout/commit/d9b1a94b3a337443feafb6fc1d7bb1a9c368d3e1))
+
+### BREAKING CHANGES
+
+- Updates type definitions and the expected styles instance shape
+
 ## [0.1.3](https://github.com/dash-ui/layout/compare/v0.1.2...v0.1.3) (2021-09-26)
 
 ### Bug Fixes
