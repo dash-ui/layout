@@ -35,8 +35,8 @@
     "@dash-ui/compound": "^1.0.0-alpha.1"
   },
   "peerDependencies": {
-    "@dash-ui/responsive": ">=0.2.3",
-    "@dash-ui/styles": ">=0.8.6"
+    "@dash-ui/responsive": ">=1.0.0-alpha.1",
+    "@dash-ui/styles": ">=1.0.0-alpha.1"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
