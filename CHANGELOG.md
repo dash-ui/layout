@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-10-30)
+
+
+### Bug Fixes
+
+* fix peer dependencies ([1061ba4](https://github.com/dash-ui/layout/commit/1061ba466092784ddb968877462f72d00d79ee24))
+
 # [1.0.0-alpha.3](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-10-29)
 
 
