@@ -1,23 +1,26 @@
-# [1.0.0-alpha.4](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-10-30)
+# [1.0.0-alpha.5](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-10-31)
 
+### Features
+
+- allow negative margins in row/column gaps ([70bb1b8](https://github.com/dash-ui/layout/commit/70bb1b8040db7cc7733febb591c1c9aed9dc1328))
+
+# [1.0.0-alpha.4](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-10-30)
 
 ### Bug Fixes
 
-* fix peer dependencies ([1061ba4](https://github.com/dash-ui/layout/commit/1061ba466092784ddb968877462f72d00d79ee24))
+- fix peer dependencies ([1061ba4](https://github.com/dash-ui/layout/commit/1061ba466092784ddb968877462f72d00d79ee24))
 
 # [1.0.0-alpha.3](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-10-29)
 
-
 ### Bug Fixes
 
-* force release ([da02df6](https://github.com/dash-ui/layout/commit/da02df6e7b2d763757626f5bf45a3f4c0ff7178c))
+- force release ([da02df6](https://github.com/dash-ui/layout/commit/da02df6e7b2d763757626f5bf45a3f4c0ff7178c))
 
 # [1.0.0-alpha.2](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2021-10-29)
 
-
 ### Bug Fixes
 
-* maybe fix type error ([4244786](https://github.com/dash-ui/layout/commit/4244786096c59f6ce508b721b3cf0b183032839f))
+- maybe fix type error ([4244786](https://github.com/dash-ui/layout/commit/4244786096c59f6ce508b721b3cf0b183032839f))
 
 # [1.0.0-alpha.1](https://github.com/dash-ui/layout/compare/v0.1.3...v1.0.0-alpha.1) (2021-10-29)
 
