@@ -1,7 +1,12 @@
 import compound from "@dash-ui/compound";
 import type { ResponsiveStyles } from "@dash-ui/responsive";
 import responsive from "@dash-ui/responsive";
-import type { DashThemes, DashTokens, Styles } from "@dash-ui/styles";
+import type {
+  DashThemes,
+  DashTokens,
+  StyleObject,
+  Styles,
+} from "@dash-ui/styles";
 
 /**
  * Creates new atomic layout style utilities using an existing Dash `styles` instance.
@@ -130,9 +135,27 @@ function layout<
        * Sets a `background-color` CSS property on your component using the "color"
        * token in your theme
        */
-      bg: styles.lazy(
-        (bg: Extract<keyof Tokens["color"], string | number>) =>
-          ({ color }) => ({ backgroundColor: color[bg] })
+      bg: styles.variants(
+        reduce(
+          baseStyles.tokens.color as Record<
+            Extract<keyof Tokens["color"], string | number>,
+            string | number
+          >,
+          (
+            acc: Record<
+              Extract<keyof Tokens["color"], string | number> | "default",
+              StyleObject
+            >,
+            key
+          ) => {
+            acc[key] = {
+              backgroundColor: baseStyles.tokens.color[key],
+            };
+
+            return acc;
+          },
+          {}
+        )
       ),
       /**
        * Sets a `border-color` CSS property on your component using the "color"
@@ -159,9 +182,27 @@ function layout<
        * Sets a `box-shadow` CSS property on your component using the "shadow"
        * token in your theme
        */
-      shadow: styles.lazy(
-        (value: Extract<keyof Tokens["shadow"], string | number>) =>
-          ({ shadow }) => ({ boxShadow: shadow[value] })
+      shadow: styles.variants(
+        reduce(
+          baseStyles.tokens.shadow as Record<
+            Extract<keyof Tokens["shadow"], string | number>,
+            string
+          >,
+          (
+            acc: Record<
+              Extract<keyof Tokens["shadow"], string | number> | "default",
+              StyleObject
+            >,
+            key
+          ) => {
+            acc[key] = {
+              boxShadow: baseStyles.tokens.shadow[key],
+            };
+
+            return acc;
+          },
+          {}
+        )
       ),
       /**
        * Sets a `border-radius` CSS property on your component using the "radius"
@@ -214,11 +255,27 @@ function layout<
       /**
        * Sets a `z-index` CSS property on your component
        */
-      z: styles.lazy(
-        (value: number | Extract<keyof Tokens["zIndex"], string | number>) =>
-          ({ zIndex }) => ({
-            zIndex: typeof value === "number" ? value : zIndex[value],
-          })
+      z: styles.variants(
+        reduce(
+          baseStyles.tokens.zIndex as Record<
+            Extract<keyof Tokens["zIndex"], string | number>,
+            string | number
+          >,
+          (
+            acc: Record<
+              Extract<keyof Tokens["zIndex"], string | number> | "default",
+              StyleObject
+            >,
+            key
+          ) => {
+            acc[key] = {
+              zIndex: baseStyles.tokens.zIndex[key],
+            };
+
+            return acc;
+          },
+          {}
+        )
       ),
     } as const,
     { atomic: true }
@@ -446,21 +503,39 @@ function layout<
        * Sets a vertical and horizontal gap between the child elements in the
        * cluster using the "gap" token in your theme
        */
-      gap: styles.lazy(
-        (value: Extract<keyof Tokens["gap"], string | number>) =>
-          ({ gap }) => ({
-            "@supports (display: flex) and (gap: 1em)": {
-              gap: gap[value],
-            },
-            "@supports not (display: flex) and (gap: 1em)": {
-              marginTop: `calc(-1 * ${gap[value]})!important`,
-              marginLeft: `calc(-1 * ${gap[value]})!important`,
-              "& > *": {
-                marginTop: `${gap[value]}!important`,
-                marginLeft: `${gap[value]}!important`,
+      gap: styles.variants(
+        reduce(
+          baseStyles.tokens.gap as Record<
+            Extract<keyof Tokens["gap"], string | number>,
+            string | number
+          >,
+          (
+            acc: Record<
+              Extract<keyof Tokens["gap"], string | number> | "default",
+              StyleObject
+            >,
+            value
+          ) => {
+            const gap = baseStyles.tokens.gap;
+
+            acc[value] = {
+              "@supports (display: flex) and (gap: 1em)": {
+                gap: gap[value],
               },
-            },
-          })
+              "@supports not (display: flex) and (gap: 1em)": {
+                marginTop: `calc(-1 * ${gap[value]})!important`,
+                marginLeft: `calc(-1 * ${gap[value]})!important`,
+                "& > *": {
+                  marginTop: `${gap[value]}!important`,
+                  marginLeft: `${gap[value]}!important`,
+                },
+              },
+            };
+
+            return acc;
+          },
+          {}
+        )
       ),
       /**
        * Distributed alignment properties on the x-axis using `justify-content`
@@ -488,18 +563,39 @@ function layout<
        * Sets a vertical gap between the child elements in the cluster using the "gap"
        * token in your theme
        */
-      gap: styles.lazy(
-        (value: Extract<keyof Tokens["gap"], string | number>) =>
-          ({ gap }) => ({
-            "@supports (display: flex) and (gap: 1em)": {
-              gap: gap[value],
-            },
-            "@supports not (display: flex) and (gap: 1em)": {
+      gap: styles.variants(
+        reduce(
+          baseStyles.tokens.gap as Record<
+            Extract<keyof Tokens["gap"], string | number>,
+            string | number
+          >,
+          (
+            acc: Record<
+              Extract<keyof Tokens["gap"], string | number> | "default",
+              StyleObject
+            >,
+            value
+          ) => {
+            const gap = baseStyles.tokens.gap;
+            const margin = {
               "& > * + *": {
                 marginTop: `${gap[value]}!important`,
               },
-            },
-          })
+            };
+
+            acc[value] = (value + "").startsWith("-")
+              ? margin
+              : {
+                  "@supports (display: flex) and (gap: 1em)": {
+                    gap: gap[value],
+                  },
+                  "@supports not (display: flex) and (gap: 1em)": margin,
+                };
+
+            return acc;
+          },
+          {}
+        )
       ),
       /**
        * Distributed alignment properties on the y-axis using `justify-content`
@@ -655,65 +751,21 @@ function layout<
       /**
        * Sets the placement of your layer item relative to its container
        */
-      placement: styles.lazy(
-        (
-          value:
-            | "top"
-            | "right"
-            | "bottom"
-            | "left"
-            | "center"
-            | "topLeft"
-            | "topRight"
-            | "bottomRight"
-            | "bottomLeft"
-        ) => {
-          if (value === "center") {
-            return {
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            };
-          }
-
-          const lValue = value.toLowerCase();
-          const yProp =
-            lValue.indexOf("top") > -1
-              ? "top"
-              : lValue.indexOf("bottom") > -1
-              ? "bottom"
-              : void 0;
-
-          const xProp =
-            lValue.indexOf("left") > -1
-              ? "left"
-              : lValue.indexOf("right") > -1
-              ? "right"
-              : void 0;
-
-          const styles: Record<string, string | number> = {};
-
-          if (yProp) {
-            styles[yProp] = 0;
-          }
-
-          if (xProp) {
-            styles[xProp] = 0;
-          }
-
-          if (value === "left" || value === "right") {
-            styles.top = "50%";
-            styles.transform = "translateY(-50%)";
-          }
-
-          if (value === "bottom" || value === "top") {
-            styles.left = "50%";
-            styles.transform = "translateX(-50%)";
-          }
-
-          return styles;
-        }
-      ),
+      placement: styles.variants({
+        top: { top: 0, left: "50%", transform: "translateX(-50%)" },
+        right: { right: 0, top: "50%", transform: "translateY(-50%)" },
+        bottom: { bottom: 0, left: "50%", transform: "translateX(-50%)" },
+        left: { left: 0, top: "50%", transform: "translateY(-50%)" },
+        center: {
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        },
+        topRight: { top: 0, right: 0 },
+        topLeft: { top: 0, left: 0 },
+        bottomRight: { bottom: 0, right: 0 },
+        bottomLeft: { bottom: 0, left: 0 },
+      }),
       ...box.styles,
     } as const,
     { atomic: true }
@@ -732,18 +784,38 @@ function layout<
        * Sets a horizontal gap between the child elements in the cluster using the "gap"
        * token in your theme
        */
-      gap: styles.lazy(
-        (value: Extract<keyof Tokens["gap"], string | number>) =>
-          ({ gap }) => ({
-            "@supports (display: flex) and (gap: 1em)": {
-              gap: gap[value],
-            },
-            "@supports not (display: flex) and (gap: 1em)": {
+      gap: styles.variants(
+        reduce(
+          baseStyles.tokens.gap as Record<
+            Extract<keyof Tokens["gap"], string | number>,
+            string | number
+          >,
+          (
+            acc: Record<
+              Extract<keyof Tokens["gap"], string | number> | "default",
+              StyleObject
+            >,
+            value
+          ) => {
+            const gap = baseStyles.tokens.gap;
+            const margin = {
               "& > * + *": {
                 marginLeft: `${gap[value]}!important`,
               },
-            },
-          })
+            };
+            acc[value] = ("" + value).startsWith("-")
+              ? margin
+              : {
+                  "@supports (display: flex) and (gap: 1em)": {
+                    gap: gap[value],
+                  },
+                  "@supports not (display: flex) and (gap: 1em)": margin,
+                };
+
+            return acc;
+          },
+          {}
+        )
       ),
       /**
        * Distributed alignment properties on the y-axis using `justify-content`
@@ -915,6 +987,15 @@ function layout<
 }
 
 export default layout;
+
+const keys: <T>(obj: T) => (keyof T)[] = Object.keys;
+function reduce<T, U>(
+  obj: T,
+  fn: (acc: U, key: keyof T, currentIndex: number, arr: (keyof T)[]) => U,
+  init: U extends {} ? Partial<U> : U
+): U {
+  return keys(obj).reduce(fn, init as U);
+}
 
 /**
  * Adds a `px` unit to numeric values and returns non-numeric values as

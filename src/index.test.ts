@@ -143,13 +143,6 @@ describe("box()", () => {
     ).toHaveStyleRule("padding", "var(--pad-0) var(--pad-auto)");
   });
 
-  it('applies the "z" prop w/ number', () => {
-    expect(createElement(layoutStyles.box({ z: 1 }))).toHaveStyleRule(
-      "z-index",
-      "1"
-    );
-  });
-
   it('applies the "z" prop w/ token', () => {
     expect(createElement(layoutStyles.box({ z: "min" }))).toHaveStyleRule(
       "z-index",
@@ -306,6 +299,13 @@ describe("row()", () => {
     });
   });
 
+  it('applies the "gap" prop w/ a negative margin', () => {
+    const element = createElement(layoutStyles.row({ gap: "-1" }));
+    expect(element).toHaveStyleRule("margin-left", "var(--gap--1)!important", {
+      target: ">* + *",
+    });
+  });
+
   it('applies the "align" prop', () => {
     const element = createElement(layoutStyles.row({ align: "center" }));
     expect(element).toHaveStyleRule("align-items", "center");
@@ -335,6 +335,13 @@ describe("column()", () => {
     expect(element).toHaveStyleRule("margin-top", "var(--gap-1)!important", {
       target: ">* + *",
       supports: "not (display: flex) and (gap: 1em)",
+    });
+  });
+
+  it('applies the "gap" prop w/ a negative margin', () => {
+    const element = createElement(layoutStyles.column({ gap: "-1" }));
+    expect(element).toHaveStyleRule("margin-top", "var(--gap--1)!important", {
+      target: ">* + *",
     });
   });
 
@@ -433,10 +440,10 @@ describe("layer()", () => {
       "bottom",
       "bottomLeft",
       "left",
-    ];
+    ] as const;
     for (const placement of placements) {
       const element = layoutStyles.layer.css({
-        placement: placement as any,
+        placement,
         offset: 10,
       });
       expect(element).toMatchSnapshot(placement);
@@ -618,6 +625,11 @@ const styles = createStyles({
   tokens: {
     gap: {
       auto: "auto",
+      "-5": "-4rem",
+      "-4": "-2rem",
+      "-3": "-1rem",
+      "-2": "-0.5rem",
+      "-1": "-0.25rem",
       0: 0,
       1: "0.25rem",
       2: "0.5rem",
@@ -652,7 +664,7 @@ const styles = createStyles({
     },
     zIndex: {
       min: -1,
-    },
+    } as const,
   },
 });
 

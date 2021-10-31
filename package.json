@@ -32,7 +32,7 @@
   "sideEffects": false,
   "types": "types/index.d.ts",
   "dependencies": {
-    "@dash-ui/compound": "^1.0.0-alpha.1"
+    "@dash-ui/compound": "^1.0.0-alpha.2"
   },
   "peerDependencies": {
     "@dash-ui/responsive": ">=1.0.0-alpha.1",
@@ -42,17 +42,17 @@
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@dash-ui/jest": "^2.1.2",
-    "@dash-ui/responsive": "^1.0.0-alpha.1",
-    "@dash-ui/styles": "^1.0.0-alpha.1",
-    "@semantic-release/changelog": "^6.0.0",
-    "@semantic-release/git": "^10.0.0",
-    "@swc-node/core": "^1.6.0",
-    "@swc-node/jest": "^1.3.2",
+    "@dash-ui/responsive": "^1.0.0-alpha.4",
+    "@dash-ui/styles": "^1.0.0-alpha.7",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@swc-node/core": "^1.7.1",
+    "@swc-node/jest": "^1.3.5",
     "@types/jest": "latest",
     "cz-conventional-changelog": "latest",
     "eslint": "^7.32.0",
     "eslint-config-lunde": "latest",
-    "husky": "^7.0.0",
+    "husky": "^7.0.4",
     "jest": "latest",
     "lint-staged": "latest",
     "lundle": "latest",
