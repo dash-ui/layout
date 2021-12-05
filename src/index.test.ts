@@ -621,6 +621,24 @@ describe("flexItem()", () => {
   });
 });
 
+describe("bleed()", () => {
+  it('applies the "amount" prop', () => {
+    expect(createElement(layoutStyles.bleed({ amount: 1 }))).toHaveStyleRule(
+      "margin",
+      "calc(-1 * var(--pad-1))!important"
+    );
+  });
+
+  it('applies the "amount" prop w/ array', () => {
+    expect(
+      createElement(layoutStyles.bleed({ amount: [0, 1] }))
+    ).toHaveStyleRule(
+      "margin",
+      "calc(-1 * var(--pad-0)) calc(-1 * var(--pad-1))!important"
+    );
+  });
+});
+
 const styles = createStyles({
   tokens: {
     gap: {

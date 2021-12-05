@@ -830,6 +830,36 @@ function layout<
     { atomic: true }
   );
 
+  const bleed = compoundStyles(
+    {
+      /**
+       * Sets a negative margin on itself using the "pad" token in your theme
+       */
+      amount: styles.lazy(
+        (
+            value:
+              | Extract<keyof Tokens["pad"], string | number>
+              | Extract<keyof Tokens["pad"], string | number>[]
+          ) =>
+          ({ pad }) => ({
+            margin: Array.isArray(value)
+              ? value
+                  .map((k) =>
+                    String(k).startsWith("-")
+                      ? `${pad[k]}`
+                      : `calc(-1 * ${pad[k]})`
+                  )
+                  .join(" ") + "!important"
+              : String(value).startsWith("-")
+              ? `${pad[value]}!important`
+              : `calc(-1 * ${pad[value]})!important`,
+          })
+      ),
+      ...box.styles,
+    } as const,
+    { atomic: true }
+  );
+
   return {
     /**
      * Sets a `align-items` CSS property on your component
@@ -983,6 +1013,18 @@ function layout<
      * </div>
      */
     row,
+    /**
+     * A layout style that sets a negative left/top margin on itself using
+     * the "pad" token in your theme. This is useful for increasing the
+     * tap area of a component while maintaining the desired visual padding.
+     *
+     * @example
+     * <div className={bleed({amount: 'sm', pad: 'lg'})}>
+     *   <Item/>
+     *   <Item/>
+     * </div>
+     */
+    bleed,
   } as const;
 }
 
