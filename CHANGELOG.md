@@ -1,3 +1,9 @@
+# [1.0.0-alpha.6](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-12-05)
+
+### Features
+
+- add bleed layout ([31a418c](https://github.com/dash-ui/layout/commit/31a418cf0697251f3cbf664898b162b57f620e4f))
+
 # [1.0.0-alpha.5](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-10-31)
 
 ### Features
