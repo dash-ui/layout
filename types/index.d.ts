@@ -14154,5 +14154,1207 @@ declare function layout<
       >;
     };
   };
+  /**
+   * A layout style that sets a negative left/top margin on itself using
+   * the "pad" token in your theme. This is useful for increasing the
+   * tap area of a component while maintaining the desired visual padding.
+   *
+   * @example
+   * <div className={bleed({amount: 'sm', pad: 'lg'})}>
+   *   <Item/>
+   *   <Item/>
+   * </div>
+   */
+  readonly bleed: ((
+    compoundMap?:
+      | {
+          readonly display?:
+            | "inherit"
+            | "initial"
+            | "revert"
+            | "unset"
+            | "none"
+            | "contents"
+            | "block"
+            | "inline"
+            | "flex"
+            | "grid"
+            | "table"
+            | import("@dash-ui/styles").Falsy
+            | "inlineFlex"
+            | "inlineGrid"
+            | "inlineBlock"
+            | "tableCell"
+            | "tableRowGroup"
+            | "tableRow"
+            | "tableColumn"
+            | "tableColumnGroup"
+            | "tableHeader"
+            | "tableHeaderGroup"
+            | "tableFooterGroup"
+            | "listItem"
+            | "runIn"
+            | {
+                inherit?: string | number | boolean | null | undefined;
+                initial?: string | number | boolean | null | undefined;
+                revert?: string | number | boolean | null | undefined;
+                unset?: string | number | boolean | null | undefined;
+                none?: string | number | boolean | null | undefined;
+                contents?: string | number | boolean | null | undefined;
+                block?: string | number | boolean | null | undefined;
+                inline?: string | number | boolean | null | undefined;
+                flex?: string | number | boolean | null | undefined;
+                grid?: string | number | boolean | null | undefined;
+                table?: string | number | boolean | null | undefined;
+                inlineFlex?: string | number | boolean | null | undefined;
+                inlineGrid?: string | number | boolean | null | undefined;
+                inlineBlock?: string | number | boolean | null | undefined;
+                tableCell?: string | number | boolean | null | undefined;
+                tableRowGroup?: string | number | boolean | null | undefined;
+                tableRow?: string | number | boolean | null | undefined;
+                tableColumn?: string | number | boolean | null | undefined;
+                tableColumnGroup?: string | number | boolean | null | undefined;
+                tableHeader?: string | number | boolean | null | undefined;
+                tableHeaderGroup?: string | number | boolean | null | undefined;
+                tableFooterGroup?: string | number | boolean | null | undefined;
+                listItem?: string | number | boolean | null | undefined;
+                runIn?: string | number | boolean | null | undefined;
+              }
+            | import("@dash-ui/responsive").Responsive<
+                | "inherit"
+                | "initial"
+                | "revert"
+                | "unset"
+                | "none"
+                | "contents"
+                | "block"
+                | "inline"
+                | "flex"
+                | "grid"
+                | "table"
+                | import("@dash-ui/styles").Falsy
+                | "inlineFlex"
+                | "inlineGrid"
+                | "inlineBlock"
+                | "tableCell"
+                | "tableRowGroup"
+                | "tableRow"
+                | "tableColumn"
+                | "tableColumnGroup"
+                | "tableHeader"
+                | "tableHeaderGroup"
+                | "tableFooterGroup"
+                | "listItem"
+                | "runIn",
+                MQ
+              >
+            | import("@dash-ui/responsive").Responsive<
+                {
+                  inherit?: string | number | boolean | null | undefined;
+                  initial?: string | number | boolean | null | undefined;
+                  revert?: string | number | boolean | null | undefined;
+                  unset?: string | number | boolean | null | undefined;
+                  none?: string | number | boolean | null | undefined;
+                  contents?: string | number | boolean | null | undefined;
+                  block?: string | number | boolean | null | undefined;
+                  inline?: string | number | boolean | null | undefined;
+                  flex?: string | number | boolean | null | undefined;
+                  grid?: string | number | boolean | null | undefined;
+                  table?: string | number | boolean | null | undefined;
+                  inlineFlex?: string | number | boolean | null | undefined;
+                  inlineGrid?: string | number | boolean | null | undefined;
+                  inlineBlock?: string | number | boolean | null | undefined;
+                  tableCell?: string | number | boolean | null | undefined;
+                  tableRowGroup?: string | number | boolean | null | undefined;
+                  tableRow?: string | number | boolean | null | undefined;
+                  tableColumn?: string | number | boolean | null | undefined;
+                  tableColumnGroup?:
+                    | string
+                    | number
+                    | boolean
+                    | null
+                    | undefined;
+                  tableHeader?: string | number | boolean | null | undefined;
+                  tableHeaderGroup?:
+                    | string
+                    | number
+                    | boolean
+                    | null
+                    | undefined;
+                  tableFooterGroup?:
+                    | string
+                    | number
+                    | boolean
+                    | null
+                    | undefined;
+                  listItem?: string | number | boolean | null | undefined;
+                  runIn?: string | number | boolean | null | undefined;
+                },
+                MQ
+              >;
+          readonly position?:
+            | "fixed"
+            | "inherit"
+            | "initial"
+            | "revert"
+            | "unset"
+            | "absolute"
+            | "relative"
+            | "static"
+            | "sticky"
+            | import("@dash-ui/styles").Falsy
+            | {
+                fixed?: string | number | boolean | null | undefined;
+                inherit?: string | number | boolean | null | undefined;
+                initial?: string | number | boolean | null | undefined;
+                revert?: string | number | boolean | null | undefined;
+                unset?: string | number | boolean | null | undefined;
+                absolute?: string | number | boolean | null | undefined;
+                relative?: string | number | boolean | null | undefined;
+                static?: string | number | boolean | null | undefined;
+                sticky?: string | number | boolean | null | undefined;
+              }
+            | import("@dash-ui/responsive").Responsive<
+                | "fixed"
+                | "inherit"
+                | "initial"
+                | "revert"
+                | "unset"
+                | "absolute"
+                | "relative"
+                | "static"
+                | "sticky"
+                | import("@dash-ui/styles").Falsy,
+                MQ
+              >
+            | import("@dash-ui/responsive").Responsive<
+                {
+                  fixed?: string | number | boolean | null | undefined;
+                  inherit?: string | number | boolean | null | undefined;
+                  initial?: string | number | boolean | null | undefined;
+                  revert?: string | number | boolean | null | undefined;
+                  unset?: string | number | boolean | null | undefined;
+                  absolute?: string | number | boolean | null | undefined;
+                  relative?: string | number | boolean | null | undefined;
+                  static?: string | number | boolean | null | undefined;
+                  sticky?: string | number | boolean | null | undefined;
+                },
+                MQ
+              >;
+          readonly width?:
+            | string
+            | number
+            | import("@dash-ui/responsive").Responsive<string | number, MQ>
+            | undefined;
+          readonly height?:
+            | string
+            | number
+            | import("@dash-ui/responsive").Responsive<string | number, MQ>
+            | undefined;
+          readonly maxWidth?:
+            | string
+            | number
+            | import("@dash-ui/responsive").Responsive<string | number, MQ>
+            | undefined;
+          readonly maxHeight?:
+            | string
+            | number
+            | import("@dash-ui/responsive").Responsive<string | number, MQ>
+            | undefined;
+          readonly minWidth?:
+            | string
+            | number
+            | import("@dash-ui/responsive").Responsive<string | number, MQ>
+            | undefined;
+          readonly minHeight?:
+            | string
+            | number
+            | import("@dash-ui/responsive").Responsive<string | number, MQ>
+            | undefined;
+          readonly size?:
+            | string
+            | number
+            | import("@dash-ui/responsive").Responsive<string | number, MQ>
+            | undefined;
+          readonly pad?:
+            | Extract<keyof Tokens["pad"], string | number>
+            | Extract<keyof Tokens["pad"], string | number>[]
+            | import("@dash-ui/responsive").Responsive<
+                | Extract<keyof Tokens["pad"], string | number>
+                | Extract<keyof Tokens["pad"], string | number>[],
+                MQ
+              >
+            | undefined;
+          readonly bg?:
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["color"], string | number>
+            | {
+                [Name in Extract<keyof Tokens["color"], string | number>]?:
+                  | string
+                  | number
+                  | boolean
+                  | null
+                  | undefined;
+              }
+            | import("@dash-ui/responsive").Responsive<
+                | import("@dash-ui/styles").Falsy
+                | Extract<keyof Tokens["color"], string | number>,
+                MQ
+              >
+            | import("@dash-ui/responsive").Responsive<
+                {
+                  [Name_1 in Extract<keyof Tokens["color"], string | number>]?:
+                    | string
+                    | number
+                    | boolean
+                    | null
+                    | undefined;
+                },
+                MQ
+              >;
+          readonly border?:
+            | [
+                (
+                  | Extract<keyof Tokens["borderWidth"], string | number>
+                  | Extract<keyof Tokens["borderWidth"], string | number>[]
+                ),
+                Extract<keyof Tokens["color"], string | number>
+              ]
+            | import("@dash-ui/responsive").Responsive<
+                [
+                  (
+                    | Extract<keyof Tokens["borderWidth"], string | number>
+                    | Extract<keyof Tokens["borderWidth"], string | number>[]
+                  ),
+                  Extract<keyof Tokens["color"], string | number>
+                ],
+                MQ
+              >
+            | undefined;
+          readonly shadow?:
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["shadow"], string | number>
+            | {
+                [Name_2 in Extract<keyof Tokens["shadow"], string | number>]?:
+                  | string
+                  | number
+                  | boolean
+                  | null
+                  | undefined;
+              }
+            | import("@dash-ui/responsive").Responsive<
+                | import("@dash-ui/styles").Falsy
+                | Extract<keyof Tokens["shadow"], string | number>,
+                MQ
+              >
+            | import("@dash-ui/responsive").Responsive<
+                {
+                  [Name_3 in Extract<
+                    keyof Tokens["shadow"],
+                    string | number
+                  >]?: string | number | boolean | null | undefined;
+                },
+                MQ
+              >;
+          readonly radius?:
+            | Extract<keyof Tokens["radius"], string | number>
+            | Extract<keyof Tokens["radius"], string | number>[]
+            | import("@dash-ui/responsive").Responsive<
+                | Extract<keyof Tokens["radius"], string | number>
+                | Extract<keyof Tokens["radius"], string | number>[],
+                MQ
+              >
+            | undefined;
+          readonly inset?:
+            | string
+            | number
+            | (string | number)[]
+            | import("@dash-ui/responsive").Responsive<
+                string | number | (string | number)[],
+                MQ
+              >
+            | undefined;
+          readonly z?:
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["zIndex"], string | number>
+            | {
+                [Name_4 in Extract<keyof Tokens["zIndex"], string | number>]?:
+                  | string
+                  | number
+                  | boolean
+                  | null
+                  | undefined;
+              }
+            | import("@dash-ui/responsive").Responsive<
+                | import("@dash-ui/styles").Falsy
+                | Extract<keyof Tokens["zIndex"], string | number>,
+                MQ
+              >
+            | import("@dash-ui/responsive").Responsive<
+                {
+                  [Name_5 in Extract<
+                    keyof Tokens["zIndex"],
+                    string | number
+                  >]?: string | number | boolean | null | undefined;
+                },
+                MQ
+              >;
+          readonly amount?:
+            | Extract<keyof Tokens["pad"], string | number>
+            | Extract<keyof Tokens["pad"], string | number>[]
+            | import("@dash-ui/responsive").Responsive<
+                | Extract<keyof Tokens["pad"], string | number>
+                | Extract<keyof Tokens["pad"], string | number>[],
+                MQ
+              >
+            | undefined;
+        }
+      | undefined,
+    compoundOptions?:
+      | import("@dash-ui/compound").CompoundStylesOptions
+      | undefined
+  ) => string) & {
+    css: (compoundMap: {
+      readonly display?:
+        | "inherit"
+        | "initial"
+        | "revert"
+        | "unset"
+        | "none"
+        | "contents"
+        | "block"
+        | "inline"
+        | "flex"
+        | "grid"
+        | "table"
+        | import("@dash-ui/styles").Falsy
+        | "inlineFlex"
+        | "inlineGrid"
+        | "inlineBlock"
+        | "tableCell"
+        | "tableRowGroup"
+        | "tableRow"
+        | "tableColumn"
+        | "tableColumnGroup"
+        | "tableHeader"
+        | "tableHeaderGroup"
+        | "tableFooterGroup"
+        | "listItem"
+        | "runIn"
+        | {
+            inherit?: string | number | boolean | null | undefined;
+            initial?: string | number | boolean | null | undefined;
+            revert?: string | number | boolean | null | undefined;
+            unset?: string | number | boolean | null | undefined;
+            none?: string | number | boolean | null | undefined;
+            contents?: string | number | boolean | null | undefined;
+            block?: string | number | boolean | null | undefined;
+            inline?: string | number | boolean | null | undefined;
+            flex?: string | number | boolean | null | undefined;
+            grid?: string | number | boolean | null | undefined;
+            table?: string | number | boolean | null | undefined;
+            inlineFlex?: string | number | boolean | null | undefined;
+            inlineGrid?: string | number | boolean | null | undefined;
+            inlineBlock?: string | number | boolean | null | undefined;
+            tableCell?: string | number | boolean | null | undefined;
+            tableRowGroup?: string | number | boolean | null | undefined;
+            tableRow?: string | number | boolean | null | undefined;
+            tableColumn?: string | number | boolean | null | undefined;
+            tableColumnGroup?: string | number | boolean | null | undefined;
+            tableHeader?: string | number | boolean | null | undefined;
+            tableHeaderGroup?: string | number | boolean | null | undefined;
+            tableFooterGroup?: string | number | boolean | null | undefined;
+            listItem?: string | number | boolean | null | undefined;
+            runIn?: string | number | boolean | null | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | "inherit"
+            | "initial"
+            | "revert"
+            | "unset"
+            | "none"
+            | "contents"
+            | "block"
+            | "inline"
+            | "flex"
+            | "grid"
+            | "table"
+            | import("@dash-ui/styles").Falsy
+            | "inlineFlex"
+            | "inlineGrid"
+            | "inlineBlock"
+            | "tableCell"
+            | "tableRowGroup"
+            | "tableRow"
+            | "tableColumn"
+            | "tableColumnGroup"
+            | "tableHeader"
+            | "tableHeaderGroup"
+            | "tableFooterGroup"
+            | "listItem"
+            | "runIn",
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined;
+              initial?: string | number | boolean | null | undefined;
+              revert?: string | number | boolean | null | undefined;
+              unset?: string | number | boolean | null | undefined;
+              none?: string | number | boolean | null | undefined;
+              contents?: string | number | boolean | null | undefined;
+              block?: string | number | boolean | null | undefined;
+              inline?: string | number | boolean | null | undefined;
+              flex?: string | number | boolean | null | undefined;
+              grid?: string | number | boolean | null | undefined;
+              table?: string | number | boolean | null | undefined;
+              inlineFlex?: string | number | boolean | null | undefined;
+              inlineGrid?: string | number | boolean | null | undefined;
+              inlineBlock?: string | number | boolean | null | undefined;
+              tableCell?: string | number | boolean | null | undefined;
+              tableRowGroup?: string | number | boolean | null | undefined;
+              tableRow?: string | number | boolean | null | undefined;
+              tableColumn?: string | number | boolean | null | undefined;
+              tableColumnGroup?: string | number | boolean | null | undefined;
+              tableHeader?: string | number | boolean | null | undefined;
+              tableHeaderGroup?: string | number | boolean | null | undefined;
+              tableFooterGroup?: string | number | boolean | null | undefined;
+              listItem?: string | number | boolean | null | undefined;
+              runIn?: string | number | boolean | null | undefined;
+            },
+            MQ
+          >;
+      readonly position?:
+        | "fixed"
+        | "inherit"
+        | "initial"
+        | "revert"
+        | "unset"
+        | "absolute"
+        | "relative"
+        | "static"
+        | "sticky"
+        | import("@dash-ui/styles").Falsy
+        | {
+            fixed?: string | number | boolean | null | undefined;
+            inherit?: string | number | boolean | null | undefined;
+            initial?: string | number | boolean | null | undefined;
+            revert?: string | number | boolean | null | undefined;
+            unset?: string | number | boolean | null | undefined;
+            absolute?: string | number | boolean | null | undefined;
+            relative?: string | number | boolean | null | undefined;
+            static?: string | number | boolean | null | undefined;
+            sticky?: string | number | boolean | null | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | "fixed"
+            | "inherit"
+            | "initial"
+            | "revert"
+            | "unset"
+            | "absolute"
+            | "relative"
+            | "static"
+            | "sticky"
+            | import("@dash-ui/styles").Falsy,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              fixed?: string | number | boolean | null | undefined;
+              inherit?: string | number | boolean | null | undefined;
+              initial?: string | number | boolean | null | undefined;
+              revert?: string | number | boolean | null | undefined;
+              unset?: string | number | boolean | null | undefined;
+              absolute?: string | number | boolean | null | undefined;
+              relative?: string | number | boolean | null | undefined;
+              static?: string | number | boolean | null | undefined;
+              sticky?: string | number | boolean | null | undefined;
+            },
+            MQ
+          >;
+      readonly width?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly height?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly maxWidth?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly maxHeight?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly minWidth?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly minHeight?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly size?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly pad?:
+        | Extract<keyof Tokens["pad"], string | number>
+        | Extract<keyof Tokens["pad"], string | number>[]
+        | import("@dash-ui/responsive").Responsive<
+            | Extract<keyof Tokens["pad"], string | number>
+            | Extract<keyof Tokens["pad"], string | number>[],
+            MQ
+          >
+        | undefined;
+      readonly bg?:
+        | import("@dash-ui/styles").Falsy
+        | Extract<keyof Tokens["color"], string | number>
+        | {
+            [Name in Extract<keyof Tokens["color"], string | number>]?:
+              | string
+              | number
+              | boolean
+              | null
+              | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["color"], string | number>,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              [Name_1 in Extract<keyof Tokens["color"], string | number>]?:
+                | string
+                | number
+                | boolean
+                | null
+                | undefined;
+            },
+            MQ
+          >;
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens["borderWidth"], string | number>
+              | Extract<keyof Tokens["borderWidth"], string | number>[]
+            ),
+            Extract<keyof Tokens["color"], string | number>
+          ]
+        | import("@dash-ui/responsive").Responsive<
+            [
+              (
+                | Extract<keyof Tokens["borderWidth"], string | number>
+                | Extract<keyof Tokens["borderWidth"], string | number>[]
+              ),
+              Extract<keyof Tokens["color"], string | number>
+            ],
+            MQ
+          >
+        | undefined;
+      readonly shadow?:
+        | import("@dash-ui/styles").Falsy
+        | Extract<keyof Tokens["shadow"], string | number>
+        | {
+            [Name_2 in Extract<keyof Tokens["shadow"], string | number>]?:
+              | string
+              | number
+              | boolean
+              | null
+              | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["shadow"], string | number>,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              [Name_3 in Extract<keyof Tokens["shadow"], string | number>]?:
+                | string
+                | number
+                | boolean
+                | null
+                | undefined;
+            },
+            MQ
+          >;
+      readonly radius?:
+        | Extract<keyof Tokens["radius"], string | number>
+        | Extract<keyof Tokens["radius"], string | number>[]
+        | import("@dash-ui/responsive").Responsive<
+            | Extract<keyof Tokens["radius"], string | number>
+            | Extract<keyof Tokens["radius"], string | number>[],
+            MQ
+          >
+        | undefined;
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import("@dash-ui/responsive").Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined;
+      readonly z?:
+        | import("@dash-ui/styles").Falsy
+        | Extract<keyof Tokens["zIndex"], string | number>
+        | {
+            [Name_4 in Extract<keyof Tokens["zIndex"], string | number>]?:
+              | string
+              | number
+              | boolean
+              | null
+              | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["zIndex"], string | number>,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              [Name_5 in Extract<keyof Tokens["zIndex"], string | number>]?:
+                | string
+                | number
+                | boolean
+                | null
+                | undefined;
+            },
+            MQ
+          >;
+      readonly amount?:
+        | Extract<keyof Tokens["pad"], string | number>
+        | Extract<keyof Tokens["pad"], string | number>[]
+        | import("@dash-ui/responsive").Responsive<
+            | Extract<keyof Tokens["pad"], string | number>
+            | Extract<keyof Tokens["pad"], string | number>[],
+            MQ
+          >
+        | undefined;
+    }) => string;
+    atomicCss: (compoundMap: {
+      readonly display?:
+        | "inherit"
+        | "initial"
+        | "revert"
+        | "unset"
+        | "none"
+        | "contents"
+        | "block"
+        | "inline"
+        | "flex"
+        | "grid"
+        | "table"
+        | import("@dash-ui/styles").Falsy
+        | "inlineFlex"
+        | "inlineGrid"
+        | "inlineBlock"
+        | "tableCell"
+        | "tableRowGroup"
+        | "tableRow"
+        | "tableColumn"
+        | "tableColumnGroup"
+        | "tableHeader"
+        | "tableHeaderGroup"
+        | "tableFooterGroup"
+        | "listItem"
+        | "runIn"
+        | {
+            inherit?: string | number | boolean | null | undefined;
+            initial?: string | number | boolean | null | undefined;
+            revert?: string | number | boolean | null | undefined;
+            unset?: string | number | boolean | null | undefined;
+            none?: string | number | boolean | null | undefined;
+            contents?: string | number | boolean | null | undefined;
+            block?: string | number | boolean | null | undefined;
+            inline?: string | number | boolean | null | undefined;
+            flex?: string | number | boolean | null | undefined;
+            grid?: string | number | boolean | null | undefined;
+            table?: string | number | boolean | null | undefined;
+            inlineFlex?: string | number | boolean | null | undefined;
+            inlineGrid?: string | number | boolean | null | undefined;
+            inlineBlock?: string | number | boolean | null | undefined;
+            tableCell?: string | number | boolean | null | undefined;
+            tableRowGroup?: string | number | boolean | null | undefined;
+            tableRow?: string | number | boolean | null | undefined;
+            tableColumn?: string | number | boolean | null | undefined;
+            tableColumnGroup?: string | number | boolean | null | undefined;
+            tableHeader?: string | number | boolean | null | undefined;
+            tableHeaderGroup?: string | number | boolean | null | undefined;
+            tableFooterGroup?: string | number | boolean | null | undefined;
+            listItem?: string | number | boolean | null | undefined;
+            runIn?: string | number | boolean | null | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | "inherit"
+            | "initial"
+            | "revert"
+            | "unset"
+            | "none"
+            | "contents"
+            | "block"
+            | "inline"
+            | "flex"
+            | "grid"
+            | "table"
+            | import("@dash-ui/styles").Falsy
+            | "inlineFlex"
+            | "inlineGrid"
+            | "inlineBlock"
+            | "tableCell"
+            | "tableRowGroup"
+            | "tableRow"
+            | "tableColumn"
+            | "tableColumnGroup"
+            | "tableHeader"
+            | "tableHeaderGroup"
+            | "tableFooterGroup"
+            | "listItem"
+            | "runIn",
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              inherit?: string | number | boolean | null | undefined;
+              initial?: string | number | boolean | null | undefined;
+              revert?: string | number | boolean | null | undefined;
+              unset?: string | number | boolean | null | undefined;
+              none?: string | number | boolean | null | undefined;
+              contents?: string | number | boolean | null | undefined;
+              block?: string | number | boolean | null | undefined;
+              inline?: string | number | boolean | null | undefined;
+              flex?: string | number | boolean | null | undefined;
+              grid?: string | number | boolean | null | undefined;
+              table?: string | number | boolean | null | undefined;
+              inlineFlex?: string | number | boolean | null | undefined;
+              inlineGrid?: string | number | boolean | null | undefined;
+              inlineBlock?: string | number | boolean | null | undefined;
+              tableCell?: string | number | boolean | null | undefined;
+              tableRowGroup?: string | number | boolean | null | undefined;
+              tableRow?: string | number | boolean | null | undefined;
+              tableColumn?: string | number | boolean | null | undefined;
+              tableColumnGroup?: string | number | boolean | null | undefined;
+              tableHeader?: string | number | boolean | null | undefined;
+              tableHeaderGroup?: string | number | boolean | null | undefined;
+              tableFooterGroup?: string | number | boolean | null | undefined;
+              listItem?: string | number | boolean | null | undefined;
+              runIn?: string | number | boolean | null | undefined;
+            },
+            MQ
+          >;
+      readonly position?:
+        | "fixed"
+        | "inherit"
+        | "initial"
+        | "revert"
+        | "unset"
+        | "absolute"
+        | "relative"
+        | "static"
+        | "sticky"
+        | import("@dash-ui/styles").Falsy
+        | {
+            fixed?: string | number | boolean | null | undefined;
+            inherit?: string | number | boolean | null | undefined;
+            initial?: string | number | boolean | null | undefined;
+            revert?: string | number | boolean | null | undefined;
+            unset?: string | number | boolean | null | undefined;
+            absolute?: string | number | boolean | null | undefined;
+            relative?: string | number | boolean | null | undefined;
+            static?: string | number | boolean | null | undefined;
+            sticky?: string | number | boolean | null | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | "fixed"
+            | "inherit"
+            | "initial"
+            | "revert"
+            | "unset"
+            | "absolute"
+            | "relative"
+            | "static"
+            | "sticky"
+            | import("@dash-ui/styles").Falsy,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              fixed?: string | number | boolean | null | undefined;
+              inherit?: string | number | boolean | null | undefined;
+              initial?: string | number | boolean | null | undefined;
+              revert?: string | number | boolean | null | undefined;
+              unset?: string | number | boolean | null | undefined;
+              absolute?: string | number | boolean | null | undefined;
+              relative?: string | number | boolean | null | undefined;
+              static?: string | number | boolean | null | undefined;
+              sticky?: string | number | boolean | null | undefined;
+            },
+            MQ
+          >;
+      readonly width?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly height?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly maxWidth?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly maxHeight?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly minWidth?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly minHeight?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly size?:
+        | string
+        | number
+        | import("@dash-ui/responsive").Responsive<string | number, MQ>
+        | undefined;
+      readonly pad?:
+        | Extract<keyof Tokens["pad"], string | number>
+        | Extract<keyof Tokens["pad"], string | number>[]
+        | import("@dash-ui/responsive").Responsive<
+            | Extract<keyof Tokens["pad"], string | number>
+            | Extract<keyof Tokens["pad"], string | number>[],
+            MQ
+          >
+        | undefined;
+      readonly bg?:
+        | import("@dash-ui/styles").Falsy
+        | Extract<keyof Tokens["color"], string | number>
+        | {
+            [Name in Extract<keyof Tokens["color"], string | number>]?:
+              | string
+              | number
+              | boolean
+              | null
+              | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["color"], string | number>,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              [Name_1 in Extract<keyof Tokens["color"], string | number>]?:
+                | string
+                | number
+                | boolean
+                | null
+                | undefined;
+            },
+            MQ
+          >;
+      readonly border?:
+        | [
+            (
+              | Extract<keyof Tokens["borderWidth"], string | number>
+              | Extract<keyof Tokens["borderWidth"], string | number>[]
+            ),
+            Extract<keyof Tokens["color"], string | number>
+          ]
+        | import("@dash-ui/responsive").Responsive<
+            [
+              (
+                | Extract<keyof Tokens["borderWidth"], string | number>
+                | Extract<keyof Tokens["borderWidth"], string | number>[]
+              ),
+              Extract<keyof Tokens["color"], string | number>
+            ],
+            MQ
+          >
+        | undefined;
+      readonly shadow?:
+        | import("@dash-ui/styles").Falsy
+        | Extract<keyof Tokens["shadow"], string | number>
+        | {
+            [Name_2 in Extract<keyof Tokens["shadow"], string | number>]?:
+              | string
+              | number
+              | boolean
+              | null
+              | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["shadow"], string | number>,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              [Name_3 in Extract<keyof Tokens["shadow"], string | number>]?:
+                | string
+                | number
+                | boolean
+                | null
+                | undefined;
+            },
+            MQ
+          >;
+      readonly radius?:
+        | Extract<keyof Tokens["radius"], string | number>
+        | Extract<keyof Tokens["radius"], string | number>[]
+        | import("@dash-ui/responsive").Responsive<
+            | Extract<keyof Tokens["radius"], string | number>
+            | Extract<keyof Tokens["radius"], string | number>[],
+            MQ
+          >
+        | undefined;
+      readonly inset?:
+        | string
+        | number
+        | (string | number)[]
+        | import("@dash-ui/responsive").Responsive<
+            string | number | (string | number)[],
+            MQ
+          >
+        | undefined;
+      readonly z?:
+        | import("@dash-ui/styles").Falsy
+        | Extract<keyof Tokens["zIndex"], string | number>
+        | {
+            [Name_4 in Extract<keyof Tokens["zIndex"], string | number>]?:
+              | string
+              | number
+              | boolean
+              | null
+              | undefined;
+          }
+        | import("@dash-ui/responsive").Responsive<
+            | import("@dash-ui/styles").Falsy
+            | Extract<keyof Tokens["zIndex"], string | number>,
+            MQ
+          >
+        | import("@dash-ui/responsive").Responsive<
+            {
+              [Name_5 in Extract<keyof Tokens["zIndex"], string | number>]?:
+                | string
+                | number
+                | boolean
+                | null
+                | undefined;
+            },
+            MQ
+          >;
+      readonly amount?:
+        | Extract<keyof Tokens["pad"], string | number>
+        | Extract<keyof Tokens["pad"], string | number>[]
+        | import("@dash-ui/responsive").Responsive<
+            | Extract<keyof Tokens["pad"], string | number>
+            | Extract<keyof Tokens["pad"], string | number>[],
+            MQ
+          >
+        | undefined;
+    }) => string[];
+    styles: {
+      /**
+       * Sets a `display` CSS property on your component
+       */
+      readonly display: import("@dash-ui/responsive").ResponsiveStyle<
+        | "inherit"
+        | "initial"
+        | "revert"
+        | "unset"
+        | "none"
+        | "contents"
+        | "block"
+        | "inline"
+        | "flex"
+        | "grid"
+        | "table"
+        | "inlineFlex"
+        | "inlineGrid"
+        | "inlineBlock"
+        | "tableCell"
+        | "tableRowGroup"
+        | "tableRow"
+        | "tableColumn"
+        | "tableColumnGroup"
+        | "tableHeader"
+        | "tableHeaderGroup"
+        | "tableFooterGroup"
+        | "listItem"
+        | "runIn",
+        Tokens,
+        Themes,
+        MQ
+      >;
+      /**
+       * Sets a `position` CSS property on your component
+       */
+      readonly position: import("@dash-ui/responsive").ResponsiveStyle<
+        | "fixed"
+        | "inherit"
+        | "initial"
+        | "revert"
+        | "unset"
+        | "absolute"
+        | "relative"
+        | "static"
+        | "sticky",
+        Tokens,
+        Themes,
+        MQ
+      >;
+      /**
+       * Sets a `width` CSS property on your component
+       */
+      readonly width: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number,
+        MQ
+      >;
+      /**
+       * Sets a `height` CSS property on your component
+       */
+      readonly height: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number,
+        MQ
+      >;
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly maxWidth: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number,
+        MQ
+      >;
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly maxHeight: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number,
+        MQ
+      >;
+      /**
+       * Sets a `max-width` CSS property on your component
+       */
+      readonly minWidth: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number,
+        MQ
+      >;
+      /**
+       * Sets a `max-height` CSS property on your component
+       */
+      readonly minHeight: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number,
+        MQ
+      >;
+      /**
+       * Sets a `width` and `height` CSS property on your component
+       */
+      readonly size: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number,
+        MQ
+      >;
+      /**
+       * Sets a `padding` CSS property on your component using the "pad"
+       * token in your theme
+       */
+      readonly pad: import("@dash-ui/responsive").ResponsiveLazy<
+        | Extract<keyof Tokens["pad"], string | number>
+        | Extract<keyof Tokens["pad"], string | number>[],
+        MQ
+      >;
+      /**
+       * Sets a `background-color` CSS property on your component using the "color"
+       * token in your theme
+       */
+      readonly bg: import("@dash-ui/responsive").ResponsiveStyle<
+        Extract<keyof Tokens["color"], string | number>,
+        Tokens,
+        Themes,
+        MQ
+      >;
+      /**
+       * Sets a `border-color` CSS property on your component using the "color"
+       * token in your theme and a `border-width` property using the "borderWidth"
+       * token.
+       */
+      readonly border: import("@dash-ui/responsive").ResponsiveLazy<
+        [
+          (
+            | Extract<keyof Tokens["borderWidth"], string | number>
+            | Extract<keyof Tokens["borderWidth"], string | number>[]
+          ),
+          Extract<keyof Tokens["color"], string | number>
+        ],
+        MQ
+      >;
+      /**
+       * Sets a `box-shadow` CSS property on your component using the "shadow"
+       * token in your theme
+       */
+      readonly shadow: import("@dash-ui/responsive").ResponsiveStyle<
+        Extract<keyof Tokens["shadow"], string | number>,
+        Tokens,
+        Themes,
+        MQ
+      >;
+      /**
+       * Sets a `border-radius` CSS property on your component using the "radius"
+       * token in your theme
+       */
+      readonly radius: import("@dash-ui/responsive").ResponsiveLazy<
+        | Extract<keyof Tokens["radius"], string | number>
+        | Extract<keyof Tokens["radius"], string | number>[],
+        MQ
+      >;
+      /**
+       * Sets the top, right, bottom, left position of the element
+       *
+       * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
+       */
+      readonly inset: import("@dash-ui/responsive").ResponsiveLazy<
+        string | number | (string | number)[],
+        MQ
+      >;
+      /**
+       * Sets a `z-index` CSS property on your component
+       */
+      readonly z: import("@dash-ui/responsive").ResponsiveStyle<
+        Extract<keyof Tokens["zIndex"], string | number>,
+        Tokens,
+        Themes,
+        MQ
+      >;
+      /**
+       * Sets a negative margin on itself using the "pad" token in your theme
+       */
+      readonly amount: import("@dash-ui/responsive").ResponsiveLazy<
+        | Extract<keyof Tokens["pad"], string | number>
+        | Extract<keyof Tokens["pad"], string | number>[],
+        MQ
+      >;
+    };
+  };
 };
 export default layout;
