@@ -1,3 +1,10 @@
+# [1.0.0-alpha.7](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2021-12-07)
+
+
+### Features
+
+* add zstack, rename styles ([1e3142e](https://github.com/dash-ui/layout/commit/1e3142e7b46c4f44e175590fc241517b8d1493b9))
+
 # [1.0.0-alpha.6](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-12-05)
 
 ### Features
