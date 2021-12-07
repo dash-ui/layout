@@ -1,35 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`layer() applies default styles for each position: bottom 1`] = `"position:absolute;bottom:0;left:50%;transform:translateX(-50%);"`;
+exports[`overlay() applies default styles for each position: bottom 1`] = `"position:absolute;bottom:0;left:50%;transform:translateX(-50%);"`;
 
-exports[`layer() applies default styles for each position: bottomLeft 1`] = `"position:absolute;bottom:0;left:0;"`;
+exports[`overlay() applies default styles for each position: bottomLeft 1`] = `"position:absolute;bottom:0;left:0;"`;
 
-exports[`layer() applies default styles for each position: bottomRight 1`] = `"position:absolute;bottom:0;right:0;"`;
+exports[`overlay() applies default styles for each position: bottomRight 1`] = `"position:absolute;bottom:0;right:0;"`;
 
-exports[`layer() applies default styles for each position: center 1`] = `"position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);"`;
+exports[`overlay() applies default styles for each position: center 1`] = `"position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);"`;
 
-exports[`layer() applies default styles for each position: left 1`] = `"position:absolute;left:0;top:50%;transform:translateY(-50%);"`;
+exports[`overlay() applies default styles for each position: left 1`] = `"position:absolute;left:0;top:50%;transform:translateY(-50%);"`;
 
-exports[`layer() applies default styles for each position: right 1`] = `"position:absolute;right:0;top:50%;transform:translateY(-50%);"`;
+exports[`overlay() applies default styles for each position: right 1`] = `"position:absolute;right:0;top:50%;transform:translateY(-50%);"`;
 
-exports[`layer() applies default styles for each position: top 1`] = `"position:absolute;top:0;left:50%;transform:translateX(-50%);"`;
+exports[`overlay() applies default styles for each position: top 1`] = `"position:absolute;top:0;left:50%;transform:translateX(-50%);"`;
 
-exports[`layer() applies default styles for each position: topLeft 1`] = `"position:absolute;top:0;left:0;"`;
+exports[`overlay() applies default styles for each position: topLeft 1`] = `"position:absolute;top:0;left:0;"`;
 
-exports[`layer() applies default styles for each position: topRight 1`] = `"position:absolute;top:0;right:0;"`;
+exports[`overlay() applies default styles for each position: topRight 1`] = `"position:absolute;top:0;right:0;"`;
 
-exports[`layer() applies styles with offsets for each position: bottom 1`] = `"position:absolute;margin:10px;bottom:0;left:50%;transform:translateX(-50%);"`;
+exports[`overlay() applies styles with offsets for each position: bottom 1`] = `"position:absolute;margin:10px;bottom:0;left:50%;transform:translateX(-50%);"`;
 
-exports[`layer() applies styles with offsets for each position: bottomLeft 1`] = `"position:absolute;margin:10px;bottom:0;left:0;"`;
+exports[`overlay() applies styles with offsets for each position: bottomLeft 1`] = `"position:absolute;margin:10px;bottom:0;left:0;"`;
 
-exports[`layer() applies styles with offsets for each position: bottomRight 1`] = `"position:absolute;margin:10px;bottom:0;right:0;"`;
+exports[`overlay() applies styles with offsets for each position: bottomRight 1`] = `"position:absolute;margin:10px;bottom:0;right:0;"`;
 
-exports[`layer() applies styles with offsets for each position: left 1`] = `"position:absolute;margin:10px;left:0;top:50%;transform:translateY(-50%);"`;
+exports[`overlay() applies styles with offsets for each position: left 1`] = `"position:absolute;margin:10px;left:0;top:50%;transform:translateY(-50%);"`;
 
-exports[`layer() applies styles with offsets for each position: right 1`] = `"position:absolute;margin:10px;right:0;top:50%;transform:translateY(-50%);"`;
+exports[`overlay() applies styles with offsets for each position: right 1`] = `"position:absolute;margin:10px;right:0;top:50%;transform:translateY(-50%);"`;
 
-exports[`layer() applies styles with offsets for each position: top 1`] = `"position:absolute;margin:10px;top:0;left:50%;transform:translateX(-50%);"`;
+exports[`overlay() applies styles with offsets for each position: top 1`] = `"position:absolute;margin:10px;top:0;left:50%;transform:translateX(-50%);"`;
 
-exports[`layer() applies styles with offsets for each position: topLeft 1`] = `"position:absolute;margin:10px;top:0;left:0;"`;
+exports[`overlay() applies styles with offsets for each position: topLeft 1`] = `"position:absolute;margin:10px;top:0;left:0;"`;
 
-exports[`layer() applies styles with offsets for each position: topRight 1`] = `"position:absolute;margin:10px;top:0;right:0;"`;
+exports[`overlay() applies styles with offsets for each position: topRight 1`] = `"position:absolute;margin:10px;top:0;right:0;"`;

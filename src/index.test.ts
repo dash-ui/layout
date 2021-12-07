@@ -278,9 +278,9 @@ describe("box()", () => {
   });
 });
 
-describe("row()", () => {
+describe("hstack()", () => {
   it("applies default styles", () => {
-    const element = createElement(layoutStyles.row());
+    const element = createElement(layoutStyles.hstack());
     expect(element).toHaveStyleRule("display", "flex");
     expect(element).toHaveStyleRule("flex-direction", "row");
     expect(element).toHaveStyleRule("flex-shrink", "0", {
@@ -288,8 +288,14 @@ describe("row()", () => {
     });
   });
 
+  it('applies the "reversed" prop', () => {
+    const element = createElement(layoutStyles.hstack({ reversed: true }));
+    expect(element).not.toHaveStyleRule("flex-direction", "row");
+    expect(element).toHaveStyleRule("flex-direction", "row-reverse");
+  });
+
   it('applies the "gap" prop', () => {
-    const element = createElement(layoutStyles.row({ gap: 1 }));
+    const element = createElement(layoutStyles.hstack({ gap: 1 }));
     expect(element).toHaveStyleRule("gap", "var(--gap-1)", {
       supports: "(display: flex) and (gap: 1em)",
     });
@@ -300,26 +306,28 @@ describe("row()", () => {
   });
 
   it('applies the "gap" prop w/ a negative margin', () => {
-    const element = createElement(layoutStyles.row({ gap: "-1" }));
+    const element = createElement(layoutStyles.hstack({ gap: "-1" }));
     expect(element).toHaveStyleRule("margin-left", "var(--gap--1)!important", {
       target: ">* + *",
     });
   });
 
   it('applies the "align" prop', () => {
-    const element = createElement(layoutStyles.row({ align: "center" }));
+    const element = createElement(layoutStyles.hstack({ align: "center" }));
     expect(element).toHaveStyleRule("align-items", "center");
   });
 
   it('applies the "distribute" prop', () => {
-    const element = createElement(layoutStyles.row({ distribute: "center" }));
+    const element = createElement(
+      layoutStyles.hstack({ distribute: "center" })
+    );
     expect(element).toHaveStyleRule("justify-content", "center");
   });
 });
 
-describe("column()", () => {
+describe("vstack()", () => {
   it("applies default styles", () => {
-    const element = createElement(layoutStyles.column());
+    const element = createElement(layoutStyles.vstack());
     expect(element).toHaveStyleRule("display", "flex");
     expect(element).toHaveStyleRule("flex-direction", "column");
     expect(element).toHaveStyleRule("flex-shrink", "0", {
@@ -327,8 +335,13 @@ describe("column()", () => {
     });
   });
 
+  it('applies the "reversed" prop', () => {
+    const element = createElement(layoutStyles.vstack({ reversed: true }));
+    expect(element).not.toHaveStyleRule("flex-direction", "column");
+    expect(element).toHaveStyleRule("flex-direction", "column-reverse");
+  });
   it('applies the "gap" prop', () => {
-    const element = createElement(layoutStyles.column({ gap: 1 }));
+    const element = createElement(layoutStyles.vstack({ gap: 1 }));
     expect(element).toHaveStyleRule("gap", "var(--gap-1)", {
       supports: "(display: flex) and (gap: 1em)",
     });
@@ -339,28 +352,74 @@ describe("column()", () => {
   });
 
   it('applies the "gap" prop w/ a negative margin', () => {
-    const element = createElement(layoutStyles.column({ gap: "-1" }));
+    const element = createElement(layoutStyles.vstack({ gap: "-1" }));
     expect(element).toHaveStyleRule("margin-top", "var(--gap--1)!important", {
       target: ">* + *",
     });
   });
 
   it('applies the "align" prop', () => {
-    const element = createElement(layoutStyles.column({ align: "center" }));
+    const element = createElement(layoutStyles.vstack({ align: "center" }));
     expect(element).toHaveStyleRule("align-items", "center");
   });
 
   it('applies the "distribute" prop', () => {
     const element = createElement(
-      layoutStyles.column({ distribute: "center" })
+      layoutStyles.vstack({ distribute: "center" })
     );
     expect(element).toHaveStyleRule("justify-content", "center");
   });
 });
 
-describe("cluster()", () => {
+describe("zstack()", () => {
   it("applies default styles", () => {
-    const element = createElement(layoutStyles.cluster());
+    const element = createElement(layoutStyles.zstack());
+    expect(element).toHaveStyleRule("display", "grid");
+    expect(element).toHaveStyleRule("grid-area", "1/1/1/1", {
+      target: ">*",
+    });
+  });
+
+  it('applies the "inline" prop', () => {
+    const element = createElement(layoutStyles.zstack({ inline: true }));
+    expect(element).not.toHaveStyleRule("display", "grid");
+    expect(element).toHaveStyleRule("display", "inline-grid");
+  });
+
+  it('applies the "alignX" prop', () => {
+    const element = createElement(layoutStyles.zstack({ alignX: "center" }));
+    expect(element).toHaveStyleRule("justify-items", "center");
+  });
+
+  it('applies the "alignY" prop', () => {
+    const element = createElement(layoutStyles.zstack({ alignY: "center" }));
+    expect(element).toHaveStyleRule("align-items", "center");
+  });
+
+  it('applies the "distributeX" prop', () => {
+    const element = createElement(
+      layoutStyles.zstack({ distributeX: "center" })
+    );
+    expect(element).toHaveStyleRule("justify-content", "center");
+  });
+
+  it('applies the "distributeY" prop', () => {
+    const element = createElement(
+      layoutStyles.zstack({ distributeY: "center" })
+    );
+    expect(element).toHaveStyleRule("align-content", "center");
+  });
+
+  it('applies the "center" prop', () => {
+    const element = createElement(layoutStyles.zstack({ center: true }));
+    expect(element).toHaveStyleRule("align-items", "center");
+    expect(element).toHaveStyleRule("justify-items", "center");
+  });
+});
+
+describe("inline()", () => {
+  it("applies default styles", () => {
+    const element = createElement(layoutStyles.inline());
     expect(element).toHaveStyleRule("display", "flex");
     expect(element).toHaveStyleRule("flex-wrap", "wrap");
     expect(element).toHaveStyleRule("justify-content", "flex-start");
@@ -370,7 +429,7 @@ describe("cluster()", () => {
   });
 
   it('applies the "gap" prop', () => {
-    const element = createElement(layoutStyles.cluster({ gap: 1 }));
+    const element = createElement(layoutStyles.inline({ gap: 1 }));
     expect(element).toHaveStyleRule("gap", "var(--gap-1)", {
       supports: "(display: flex) and (gap: 1em)",
     });
@@ -399,19 +458,19 @@ describe("cluster()", () => {
   });
 
   it('applies the "align" prop', () => {
-    const element = createElement(layoutStyles.cluster({ align: "center" }));
+    const element = createElement(layoutStyles.inline({ align: "center" }));
     expect(element).toHaveStyleRule("align-items", "center");
   });
 
   it('applies the "distribute" prop', () => {
     const element = createElement(
-      layoutStyles.cluster({ distribute: "center" })
+      layoutStyles.inline({ distribute: "center" })
     );
     expect(element).toHaveStyleRule("justify-content", "center");
   });
 });
 
-describe("layer()", () => {
+describe("overlay()", () => {
   it("applies default styles for each position", () => {
     const placements = [
       "center",
@@ -425,7 +484,7 @@ describe("layer()", () => {
       "left",
     ];
     for (const placement of placements) {
-      const element = layoutStyles.layer.css({ placement: placement as any });
+      const element = layoutStyles.overlay.css({ placement: placement as any });
       expect(element).toMatchSnapshot(placement);
     }
   });
@@ -442,7 +501,7 @@ describe("layer()", () => {
       "left",
     ] as const;
     for (const placement of placements) {
-      const element = layoutStyles.layer.css({
+      const element = layoutStyles.overlay.css({
         placement,
         offset: 10,
       });

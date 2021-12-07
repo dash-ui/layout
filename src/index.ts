@@ -12,6 +12,7 @@ import type {
  * Creates new atomic layout style utilities using an existing Dash `styles` instance.
  *
  * @param baseStyles - An `styles` instance from `@dash-ui/styles`
+ * @param styles
  * @param mediaQueries - The media queries to use for responsive styles
  */
 function layout<
@@ -28,10 +29,10 @@ function layout<
       },
   Themes extends DashThemes,
   MQ extends Record<string, string>
->(baseStyles: Styles<Tokens, Themes>, mediaQueries?: MQ) {
-  const compoundStyles = compound(baseStyles);
-  const styles: ResponsiveStyles<Tokens, Themes, MQ> = responsive(
-    baseStyles,
+>(styles: Styles<Tokens, Themes>, mediaQueries?: MQ) {
+  const compoundStyles = compound(styles);
+  const responsiveStyles: ResponsiveStyles<Tokens, Themes, MQ> = responsive(
+    styles,
     mediaQueries || {}
   );
 
@@ -40,7 +41,7 @@ function layout<
       /**
        * Sets a `display` CSS property on your component
        */
-      display: styles.variants({
+      display: responsiveStyles.variants({
         flex: { display: "flex" },
         inlineFlex: { display: "inline-flex" },
         grid: { display: "grid" },
@@ -69,7 +70,7 @@ function layout<
       /**
        * Sets a `position` CSS property on your component
        */
-      position: styles.variants({
+      position: responsiveStyles.variants({
         absolute: { position: "absolute" },
         relative: { position: "relative" },
         fixed: { position: "fixed" },
@@ -83,35 +84,39 @@ function layout<
       /**
        * Sets a `width` CSS property on your component
        */
-      width: styles.lazy((width: number | string) => ({ width })),
+      width: responsiveStyles.lazy((width: number | string) => ({ width })),
       /**
        * Sets a `height` CSS property on your component
        */
-      height: styles.lazy((height: number | string) => ({ height })),
+      height: responsiveStyles.lazy((height: number | string) => ({ height })),
       /**
        * Sets a `max-width` CSS property on your component
        */
-      maxWidth: styles.lazy((maxWidth: number | string) => ({ maxWidth })),
+      maxWidth: responsiveStyles.lazy((maxWidth: number | string) => ({
+        maxWidth,
+      })),
       /**
        * Sets a `max-height` CSS property on your component
        */
-      maxHeight: styles.lazy((maxHeight: number | string) => ({
+      maxHeight: responsiveStyles.lazy((maxHeight: number | string) => ({
         maxHeight,
       })),
       /**
        * Sets a `max-width` CSS property on your component
        */
-      minWidth: styles.lazy((minWidth: number | string) => ({ minWidth })),
+      minWidth: responsiveStyles.lazy((minWidth: number | string) => ({
+        minWidth,
+      })),
       /**
        * Sets a `max-height` CSS property on your component
        */
-      minHeight: styles.lazy((minHeight: number | string) => ({
+      minHeight: responsiveStyles.lazy((minHeight: number | string) => ({
         minHeight,
       })),
       /**
        * Sets a `width` and `height` CSS property on your component
        */
-      size: styles.lazy((size: number | string) => ({
+      size: responsiveStyles.lazy((size: number | string) => ({
         width: size,
         height: size,
       })),
@@ -119,7 +124,7 @@ function layout<
        * Sets a `padding` CSS property on your component using the "pad"
        * token in your theme
        */
-      pad: styles.lazy(
+      pad: responsiveStyles.lazy(
         (
             value:
               | Extract<keyof Tokens["pad"], string | number>
@@ -135,9 +140,9 @@ function layout<
        * Sets a `background-color` CSS property on your component using the "color"
        * token in your theme
        */
-      bg: styles.variants(
+      bg: responsiveStyles.variants(
         reduce(
-          baseStyles.tokens.color as Record<
+          styles.tokens.color as Record<
             Extract<keyof Tokens["color"], string | number>,
             string | number
           >,
@@ -149,7 +154,7 @@ function layout<
             key
           ) => {
             acc[key] = {
-              backgroundColor: baseStyles.tokens.color[key],
+              backgroundColor: styles.tokens.color[key],
             };
 
             return acc;
@@ -162,7 +167,7 @@ function layout<
        * token in your theme and a `border-width` property using the "borderWidth"
        * token.
        */
-      border: styles.lazy(
+      border: responsiveStyles.lazy(
         ([width, borderColor]: [
             (
               | Extract<keyof Tokens["borderWidth"], string | number>
@@ -182,9 +187,9 @@ function layout<
        * Sets a `box-shadow` CSS property on your component using the "shadow"
        * token in your theme
        */
-      shadow: styles.variants(
+      shadow: responsiveStyles.variants(
         reduce(
-          baseStyles.tokens.shadow as Record<
+          styles.tokens.shadow as Record<
             Extract<keyof Tokens["shadow"], string | number>,
             string
           >,
@@ -196,7 +201,7 @@ function layout<
             key
           ) => {
             acc[key] = {
-              boxShadow: baseStyles.tokens.shadow[key],
+              boxShadow: styles.tokens.shadow[key],
             };
 
             return acc;
@@ -208,7 +213,7 @@ function layout<
        * Sets a `border-radius` CSS property on your component using the "radius"
        * token in your theme
        */
-      radius: styles.lazy(
+      radius: responsiveStyles.lazy(
         (
             value:
               | Extract<keyof Tokens["radius"], string | number>
@@ -225,39 +230,41 @@ function layout<
        *
        * @see https://developer.mozilla.org/en-US/docs/Web/CSS/inset
        */
-      inset: styles.lazy((value: string | number | (string | number)[]) => {
-        if (Array.isArray(value)) {
+      inset: responsiveStyles.lazy(
+        (value: string | number | (string | number)[]) => {
+          if (Array.isArray(value)) {
+            return {
+              "@supports (inset: 10px)": {
+                inset: value.map(unit).join(" "),
+              },
+              "@supports not (inset: 10px)": {
+                top: value[0],
+                right: value[1] ?? value[0],
+                bottom: value[2] ?? value[0],
+                left: value[3] ?? value[1] ?? value[0],
+              },
+            };
+          }
+
           return {
             "@supports (inset: 10px)": {
-              inset: value.map(unit).join(" "),
+              inset: value,
             },
             "@supports not (inset: 10px)": {
-              top: value[0],
-              right: value[1] ?? value[0],
-              bottom: value[2] ?? value[0],
-              left: value[3] ?? value[1] ?? value[0],
+              top: value,
+              right: value,
+              bottom: value,
+              left: value,
             },
           };
         }
-
-        return {
-          "@supports (inset: 10px)": {
-            inset: value,
-          },
-          "@supports not (inset: 10px)": {
-            top: value,
-            right: value,
-            bottom: value,
-            left: value,
-          },
-        };
-      }),
+      ),
       /**
        * Sets a `z-index` CSS property on your component
        */
-      z: styles.variants(
+      z: responsiveStyles.variants(
         reduce(
-          baseStyles.tokens.zIndex as Record<
+          styles.tokens.zIndex as Record<
             Extract<keyof Tokens["zIndex"], string | number>,
             string | number
           >,
@@ -269,7 +276,7 @@ function layout<
             key
           ) => {
             acc[key] = {
-              zIndex: baseStyles.tokens.zIndex[key],
+              zIndex: styles.tokens.zIndex[key],
             };
 
             return acc;
@@ -281,7 +288,7 @@ function layout<
     { atomic: true }
   );
 
-  const alignItems = styles.variants({
+  const alignItems = responsiveStyles.variants({
     start: {
       "@supports (align-items: start)": {
         alignItems: "start",
@@ -308,7 +315,7 @@ function layout<
     revert: { alignItems: "revert" },
   } as const);
 
-  const justifyItems = styles.variants({
+  const justifyItems = responsiveStyles.variants({
     start: {
       "@supports (justify-items: start)": {
         justifyItems: "start",
@@ -335,7 +342,7 @@ function layout<
     revert: { justifyItems: "revert" },
   } as const);
 
-  const justifyContent = styles.variants({
+  const justifyContent = responsiveStyles.variants({
     start: {
       "@supports (justify-content: start)": {
         justifyContent: "start",
@@ -365,7 +372,7 @@ function layout<
     revert: { justifyContent: "revert" },
   } as const);
 
-  const alignContent = styles.variants({
+  const alignContent = responsiveStyles.variants({
     start: {
       "@supports (align-content: start)": {
         alignContent: "start",
@@ -395,7 +402,7 @@ function layout<
     revert: { alignContent: "revert" },
   } as const);
 
-  const alignSelf = styles.variants({
+  const alignSelf = responsiveStyles.variants({
     start: {
       "@supports (align-self: start)": {
         alignSelf: "start",
@@ -423,7 +430,7 @@ function layout<
     revert: { alignSelf: "revert" },
   } as const);
 
-  const justifySelf = styles.variants({
+  const justifySelf = responsiveStyles.variants({
     start: {
       "@supports (justify-self: start)": {
         justifySelf: "start",
@@ -463,7 +470,9 @@ function layout<
       /**
        * Sets a `justify-self` CSS property on your component
        */
-      basis: styles.lazy((value: string | number) => ({ flexBasis: value })),
+      basis: responsiveStyles.lazy((value: string | number) => ({
+        flexBasis: value,
+      })),
       /**
        * Sets a `justify-self` CSS property on your component
        */
@@ -471,17 +480,17 @@ function layout<
       /**
        * Sets a `flex-grow` CSS property on your component
        */
-      grow: styles.lazy((value: number | boolean) => ({
+      grow: responsiveStyles.lazy((value: number | boolean) => ({
         flexGrow: Number(value),
       })),
       /**
        * Sets a `order` CSS property on your component
        */
-      order: styles.lazy((value: number) => ({ order: value })),
+      order: responsiveStyles.lazy((value: number) => ({ order: value })),
       /**
        * Sets a `flex-shrink` CSS property on your component
        */
-      shrink: styles.lazy((value: number | boolean) => ({
+      shrink: responsiveStyles.lazy((value: number | boolean) => ({
         flexShrink: Number(value),
       })),
       ...box.styles,
@@ -489,9 +498,9 @@ function layout<
     { atomic: true }
   );
 
-  const cluster = compoundStyles(
+  const inline = compoundStyles(
     {
-      default: styles.one({
+      default: responsiveStyles.one({
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "flex-start",
@@ -501,11 +510,11 @@ function layout<
       }),
       /**
        * Sets a vertical and horizontal gap between the child elements in the
-       * cluster using the "gap" token in your theme
+       * inline using the "gap" token in your theme
        */
-      gap: styles.variants(
+      gap: responsiveStyles.variants(
         reduce(
-          baseStyles.tokens.gap as Record<
+          styles.tokens.gap as Record<
             Extract<keyof Tokens["gap"], string | number>,
             string | number
           >,
@@ -516,7 +525,7 @@ function layout<
             >,
             value
           ) => {
-            const gap = baseStyles.tokens.gap;
+            const gap = styles.tokens.gap;
 
             acc[value] = {
               "@supports (display: flex) and (gap: 1em)": {
@@ -550,22 +559,161 @@ function layout<
     { atomic: true }
   );
 
-  const column = compoundStyles(
+  const sharedGrid = compoundStyles(
     {
-      default: styles.one({
+      default: responsiveStyles.one({ display: "grid" }),
+      /**
+       * Makes the component display as an `inline-grid` rather than `grid`
+       */
+      inline: responsiveStyles.one({ display: "inline-grid" }),
+      /**
+       * Sets a `justify-items` CSS property on your component
+       */
+      alignX: justifyItems,
+      /**
+       * Sets an `align-items` CSS property on your component
+       */
+      alignY: alignItems,
+      /**
+       * Sets a `justify-content` CSS property on your component
+       */
+      distributeX: justifyContent,
+      /**
+       * Sets an `align-content` CSS property on your component
+       */
+      distributeY: alignContent,
+      /**
+       * Sets a horizontal and vertical gap between the child elements in the row
+       * using the "gap" token in your theme
+       */
+      gap: responsiveStyles.lazy(
+        (
+            value:
+              | Extract<keyof Tokens["gap"], number | string>
+              | [
+                  Extract<keyof Tokens["gap"], number | string>,
+                  Extract<keyof Tokens["gap"], number | string>
+                ]
+          ) =>
+          ({ gap }) => ({
+            gridGap: Array.isArray(value)
+              ? value.map((p) => gap[p]).join(" ")
+              : gap[value] + " " + gap[value],
+            gap: Array.isArray(value)
+              ? value.map((p) => gap[p]).join(" ")
+              : gap[value] + " " + gap[value],
+          })
+      ),
+      /**
+       * Sets a `grid-template-rows` CSS property on your component
+       */
+      rows: responsiveStyles.lazy((value: number | (number | string)[]) => {
+        let rows: (number | string)[];
+        if (Array.isArray(value)) rows = value;
+        // ie doesn't have repeat
+        else rows = [`repeat(${value},minmax(0,1fr))`];
+        return { gridTemplateRows: rows.map((row) => unit(row)).join(" ") };
+      }),
+    } as const,
+    { atomic: true }
+  );
+
+  const grid = compoundStyles(
+    {
+      /**
+       * Sets a `grid-template-columns` CSS property on your component
+       */
+      cols: responsiveStyles.lazy((value: number | (number | string)[]) => {
+        let columns: (number | string)[];
+        if (Array.isArray(value)) columns = value;
+        // ie doesn't have repeat
+        else columns = [`repeat(${value},minmax(0,1fr))`];
+        return {
+          gridTemplateColumns: columns.map((col) => unit(col)).join(" "),
+        };
+      }),
+      ...sharedGrid.styles,
+      ...box.styles,
+    } as const,
+    { atomic: true }
+  );
+
+  const gridItem = compoundStyles(
+    {
+      /**
+       * Sets a `justify-self` CSS property on your component
+       */
+      distribute: justifySelf,
+      /**
+       * Sets an `align-self` CSS property on your component
+       */
+      align: alignSelf,
+      /**
+       * Sets a `grid-column-start` CSS property on your component
+       */
+      colStart: responsiveStyles.lazy((gridColumnStart: number | string) => ({
+        gridColumnStart,
+      })),
+      /**
+       * Sets a `grid-column-end` CSS property on your component
+       */
+      colEnd: responsiveStyles.lazy((gridColumnEnd: number | string) => ({
+        gridColumnEnd,
+      })),
+      /**
+       * Sets a `grid-row-start` CSS property on your component
+       */
+      rowStart: responsiveStyles.lazy((gridRowStart: number | string) => ({
+        gridRowStart,
+      })),
+      /**
+       * Sets a `grid-row-end` CSS property on your component
+       */
+      rowEnd: responsiveStyles.lazy((gridRowEnd: number | string) => ({
+        gridRowEnd,
+      })),
+      ...box.styles,
+    } as const,
+    { atomic: true }
+  );
+
+  const autoGrid = compoundStyles(
+    {
+      /**
+       * The minimum width of a grid item
+       */
+      itemWidth: responsiveStyles.lazy((itemWidth: number | string) => ({
+        gridTemplateColumns: `repeat(auto-fit, minmax(${unit(
+          itemWidth
+        )}, 1fr))`,
+      })),
+      ...sharedGrid.styles,
+    } as const,
+    { atomic: true }
+  );
+
+  const hstack = compoundStyles(
+    {
+      default: responsiveStyles.one({
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         "& > *": {
           flexShrink: 0,
         },
       }),
       /**
-       * Sets a vertical gap between the child elements in the cluster using the "gap"
+       * Reverses the order of the child elements
+       */
+      reversed: responsiveStyles.one({
+        flexDirection: "row-reverse",
+      }),
+      /**
+       * Sets a horizontal gap between the child elements in the hstack using the "gap"
        * token in your theme
        */
-      gap: styles.variants(
+      gap: responsiveStyles.variants(
         reduce(
-          baseStyles.tokens.gap as Record<
+          styles.tokens.gap as Record<
             Extract<keyof Tokens["gap"], string | number>,
             string | number
           >,
@@ -576,7 +724,72 @@ function layout<
             >,
             value
           ) => {
-            const gap = baseStyles.tokens.gap;
+            const gap = styles.tokens.gap;
+            const margin = {
+              "& > * + *": {
+                marginLeft: `${gap[value]}!important`,
+              },
+            };
+            acc[value] = ("" + value).startsWith("-")
+              ? margin
+              : {
+                  "@supports (display: flex) and (gap: 1em)": {
+                    gap: gap[value],
+                  },
+                  "@supports not (display: flex) and (gap: 1em)": margin,
+                };
+
+            return acc;
+          },
+          {}
+        )
+      ),
+      /**
+       * Distributed alignment properties on the y-axis using `justify-content`
+       */
+      distribute: justifyContent,
+      /**
+       * Positional alignment for its child items on the x-axis using `align-items`
+       */
+      align: alignItems,
+      ...box.styles,
+    } as const,
+    { atomic: true }
+  );
+
+  const vstack = compoundStyles(
+    {
+      default: responsiveStyles.one({
+        display: "flex",
+        flexDirection: "column",
+        "& > *": {
+          flexShrink: 0,
+        },
+      }),
+      /**
+       * Reverses the order of the child elements
+       */
+      reversed: responsiveStyles.one({
+        flexDirection: "column-reverse",
+      }),
+      /**
+       * Sets a vertical gap between the child elements in the vstack using the "gap"
+       * token in your theme
+       */
+      gap: responsiveStyles.variants(
+        reduce(
+          styles.tokens.gap as Record<
+            Extract<keyof Tokens["gap"], string | number>,
+            string | number
+          >,
+          (
+            acc: Record<
+              Extract<keyof Tokens["gap"], string | number> | "default",
+              StyleObject
+            >,
+            value
+          ) => {
+            const gap = styles.tokens.gap;
             const margin = {
               "& > * + *": {
                 marginTop: `${gap[value]}!important`,
@@ -610,148 +823,39 @@ function layout<
     { atomic: true }
   );
 
-  const sharedGrid = compoundStyles(
+  const zstack = compoundStyles(
     {
-      default: styles.one({ display: "grid" }),
-      /**
-       * Makes the component display as an `inline-grid` rather than `grid`
-       */
-      inline: styles.one({ display: "inline-grid" }),
-      /**
-       * Sets a `justify-items` CSS property on your component
-       */
+      default: responsiveStyles.one({
+        display: "grid",
+        "> *": {
+          gridArea: "1/1/1/1",
+        },
+      }),
+      inline: grid.styles.inline,
       alignX: justifyItems,
-      /**
-       * Sets an `align-items` CSS property on your component
-       */
       alignY: alignItems,
-      /**
-       * Sets a `justify-content` CSS property on your component
-       */
       distributeX: justifyContent,
-      /**
-       * Sets an `align-content` CSS property on your component
-       */
       distributeY: alignContent,
-      /**
-       * Sets a horizontal and vertical gap between the child elements in the row
-       * using the "gap" token in your theme
-       */
-      gap: styles.lazy(
-        (
-            value:
-              | Extract<keyof Tokens["gap"], number | string>
-              | [
-                  Extract<keyof Tokens["gap"], number | string>,
-                  Extract<keyof Tokens["gap"], number | string>
-                ]
-          ) =>
-          ({ gap }) => ({
-            gridGap: Array.isArray(value)
-              ? value.map((p) => gap[p]).join(" ")
-              : gap[value] + " " + gap[value],
-            gap: Array.isArray(value)
-              ? value.map((p) => gap[p]).join(" ")
-              : gap[value] + " " + gap[value],
-          })
-      ),
-      /**
-       * Sets a `grid-template-rows` CSS property on your component
-       */
-      rows: styles.lazy((value: number | (number | string)[]) => {
-        let rows: (number | string)[];
-        if (Array.isArray(value)) rows = value;
-        // ie doesn't have repeat
-        else rows = [`repeat(${value},minmax(0,1fr))`];
-        return { gridTemplateRows: rows.map((row) => unit(row)).join(" ") };
+      center: responsiveStyles.one({
+        alignItems: "center",
+        justifyItems: "center",
       }),
-    } as const,
-    { atomic: true }
-  );
-
-  const grid = compoundStyles(
-    {
-      /**
-       * Sets a `grid-template-columns` CSS property on your component
-       */
-      cols: styles.lazy((value: number | (number | string)[]) => {
-        let columns: (number | string)[];
-        if (Array.isArray(value)) columns = value;
-        // ie doesn't have repeat
-        else columns = [`repeat(${value},minmax(0,1fr))`];
-        return {
-          gridTemplateColumns: columns.map((col) => unit(col)).join(" "),
-        };
-      }),
-      ...sharedGrid.styles,
       ...box.styles,
     } as const,
     { atomic: true }
   );
 
-  const gridItem = compoundStyles(
+  const overlay = compoundStyles(
     {
+      default: responsiveStyles.one({ position: "absolute" }),
       /**
-       * Sets a `justify-self` CSS property on your component
+       * Sets a `margin` between the edges of the overlay item's container
        */
-      distribute: justifySelf,
+      offset: responsiveStyles.lazy((margin: number | string) => ({ margin })),
       /**
-       * Sets an `align-self` CSS property on your component
+       * Sets the placement of your overlay item relative to its container
        */
-      align: alignSelf,
-      /**
-       * Sets a `grid-column-start` CSS property on your component
-       */
-      colStart: styles.lazy((gridColumnStart: number | string) => ({
-        gridColumnStart,
-      })),
-      /**
-       * Sets a `grid-column-end` CSS property on your component
-       */
-      colEnd: styles.lazy((gridColumnEnd: number | string) => ({
-        gridColumnEnd,
-      })),
-      /**
-       * Sets a `grid-row-start` CSS property on your component
-       */
-      rowStart: styles.lazy((gridRowStart: number | string) => ({
-        gridRowStart,
-      })),
-      /**
-       * Sets a `grid-row-end` CSS property on your component
-       */
-      rowEnd: styles.lazy((gridRowEnd: number | string) => ({ gridRowEnd })),
-      ...box.styles,
-    } as const,
-    { atomic: true }
-  );
-
-  const autoGrid = compoundStyles(
-    {
-      /**
-       * The minimum width of a grid item
-       */
-      itemWidth: styles.lazy((itemWidth: number | string) => ({
-        gridTemplateColumns: `repeat(auto-fit, minmax(${unit(
-          itemWidth
-        )}, 1fr))`,
-      })),
-      ...sharedGrid.styles,
-    } as const,
-    { atomic: true }
-  );
-
-  const layer = compoundStyles(
-    {
-      default: styles.one({ position: "absolute" }),
-      /**
-       * Sets a `margin` between the edges of the layer item's container
-       */
-      offset: styles.lazy((margin: number | string) => ({ margin })),
-      /**
-       * Sets the placement of your layer item relative to its container
-       */
-      placement: styles.variants({
+      placement: responsiveStyles.variants({
         top: { top: 0, left: "50%", transform: "translateX(-50%)" },
         right: { right: 0, top: "50%", transform: "translateY(-50%)" },
         bottom: { bottom: 0, left: "50%", transform: "translateX(-50%)" },
@@ -771,71 +875,12 @@ function layout<
     { atomic: true }
   );
 
-  const row = compoundStyles(
-    {
-      default: styles.one({
-        display: "flex",
-        flexDirection: "row",
-        "& > *": {
-          flexShrink: 0,
-        },
-      }),
-      /**
-       * Sets a horizontal gap between the child elements in the cluster using the "gap"
-       * token in your theme
-       */
-      gap: styles.variants(
-        reduce(
-          baseStyles.tokens.gap as Record<
-            Extract<keyof Tokens["gap"], string | number>,
-            string | number
-          >,
-          (
-            acc: Record<
-              Extract<keyof Tokens["gap"], string | number> | "default",
-              StyleObject
-            >,
-            value
-          ) => {
-            const gap = baseStyles.tokens.gap;
-            const margin = {
-              "& > * + *": {
-                marginLeft: `${gap[value]}!important`,
-              },
-            };
-            acc[value] = ("" + value).startsWith("-")
-              ? margin
-              : {
-                  "@supports (display: flex) and (gap: 1em)": {
-                    gap: gap[value],
-                  },
-                  "@supports not (display: flex) and (gap: 1em)": margin,
-                };
-
-            return acc;
-          },
-          {}
-        )
-      ),
-      /**
-       * Distributed alignment properties on the y-axis using `justify-content`
-       */
-      distribute: justifyContent,
-      /**
-       * Positional alignment for its child items on the x-axis using `align-items`
-       */
-      align: alignItems,
-      ...box.styles,
-    } as const,
-    { atomic: true }
-  );
-
   const bleed = compoundStyles(
     {
       /**
        * Sets a negative margin on itself using the "pad" token in your theme
        */
-      amount: styles.lazy(
+      amount: responsiveStyles.lazy(
         (
             value:
               | Extract<keyof Tokens["pad"], string | number>
@@ -895,8 +940,10 @@ function layout<
      */
     box,
     /**
-     * A row directional layout style that distributes its items in a cluster
-     * like so:
+     * Arranges child nodes horizontally, wrapping to multiple lines if needed,
+     * with equal spacing between items.
+     *
+     * If there is only a single child node, no space will be rendered.
      *
      * ```
      * ☐☐☐☐☐
@@ -905,41 +952,15 @@ function layout<
      * ☐☐☐
      * ```
      *
-     * or
-     * ```
-     *  ☐☐☐☐☐
-     * ☐☐☐☐☐☐
-     *  ☐☐☐☐☐
-     *    ☐☐☐
-     * ```
-     *
      * Some use cases include input chips and tags.
      *
      * @example
-     * <div className={cluster({gap: 'sm})}>
+     * <div className={inline({gap: 'sm})}>
      *   <Item/>
      *   <Item/>
      * </div>
      */
-    cluster,
-    /**
-     * A layout style that distributes its items in a column without wrapping
-     * like so:
-     *
-     * ```
-     * ☐
-     * ☐
-     * ☐
-     * ☐
-     * ```
-     *
-     * @example
-     * <div className={column({gap: 'sm'})}>
-     *   <Item/>
-     *   <Item/>
-     * </div>
-     */
-    column,
+    inline,
     /**
      * A layout style that can add positioning properties to itself inside
      * of a flex container.
@@ -991,14 +1012,6 @@ function layout<
      */
     autoGrid,
     /**
-     * A layout style than positions itself absolutely inside of its
-     * container in whichever placement you decide.
-     *
-     * @example
-     * <div className={layer({placement: 'bottomRight', offset: 24})} />
-     */
-    layer,
-    /**
      * A layout style that distributes its items in a row without wrapping
      * like so:
      *
@@ -1007,12 +1020,51 @@ function layout<
      * ```
      *
      * @example
-     * <div className={row({gap: 'sm'})}>
+     * <div className={hstack({gap: 'sm'})}>
      *   <Item/>
      *   <Item/>
      * </div>
      */
-    row,
+    hstack,
+    /**
+     * A layout style that distributes its items in a column without wrapping
+     * like so:
+     *
+     * ```
+     * ☐
+     * ☐
+     * ☐
+     * ☐
+     * ```
+     *
+     * @example
+     * <div className={vstack({gap: 'sm'})}>
+     *   <Item/>
+     *   <Item/>
+     * </div>
+     */
+    vstack,
+    /**
+     * A layout style that stacks its items on top of one another, like so:
+     *
+     * ```
+     * _____
+     * | ☐ |
+     * _____
+     * ```
+     *
+     * @example
+     * <div className={zstack({center: true})} />
+     */
+    zstack,
+    /**
+     * A layout style than positions itself absolutely inside of its
+     * container in whichever placement you decide.
+     *
+     * @example
+     * <div className={overlay({placement: 'bottomRight', offset: 24})} />
+     */
+    overlay,
     /**
      * A layout style that sets a negative left/top margin on itself using
      * the "pad" token in your theme. This is useful for increasing the
