@@ -1,3 +1,10 @@
+# [1.0.0-alpha.8](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2021-12-08)
+
+
+### Bug Fixes
+
+* fix docs ([a3754ab](https://github.com/dash-ui/layout/commit/a3754ab5af0ebf4fb06abd3de60749045a551d5f))
+
 # [1.0.0-alpha.7](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2021-12-07)
 
 

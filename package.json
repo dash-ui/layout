@@ -1,6 +1,6 @@
 {
   "name": "@dash-ui/layout",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "description": "A framework-agnostic layout library written in Dash",
   "license": "MIT",
   "author": "Jared Lunde <jared.lunde@gmail.com> (https://jaredlunde.com/)",
