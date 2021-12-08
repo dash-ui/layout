@@ -9,10 +9,9 @@ import type {
 } from "@dash-ui/styles";
 
 /**
- * Creates new atomic layout style utilities using an existing Dash `styles` instance.
+ * Creates new layout style utilities using an existing Dash `styles` instance.
  *
- * @param baseStyles - An `styles` instance from `@dash-ui/styles`
- * @param styles
+ * @param styles - An `styles` instance from `@dash-ui/styles`
  * @param mediaQueries - The media queries to use for responsive styles
  */
 function layout<
