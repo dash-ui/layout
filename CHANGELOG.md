@@ -1,3 +1,10 @@
+# [1.0.0-alpha.10](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2021-12-15)
+
+
+### Bug Fixes
+
+* revert previous change ([fc334c7](https://github.com/dash-ui/layout/commit/fc334c793043879a02609fa949ee886f8f9798fa))
+
 # [1.0.0-alpha.9](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2021-12-15)
 
 
