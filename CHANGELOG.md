@@ -1,3 +1,10 @@
+# [1.0.0-alpha.9](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2021-12-15)
+
+
+### Bug Fixes
+
+* fix safari bug with gap and column-reversed flex layouts ([44750a9](https://github.com/dash-ui/layout/commit/44750a9bc660070398fee4d041598e3261f31cca))
+
 # [1.0.0-alpha.8](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2021-12-08)
 
 
