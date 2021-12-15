@@ -795,14 +795,18 @@ function layout<
               },
             };
 
-            acc[value] = (value + "").startsWith("-")
-              ? margin
-              : {
-                  "@supports (display: flex) and (gap: 1em)": {
-                    gap: gap[value],
-                  },
-                  "@supports not (display: flex) and (gap: 1em)": margin,
-                };
+            acc[value] = margin;
+            // There is a bug in Safari right now when column-reversed is used
+            // with `gap`.
+            //
+            // acc[value] = (value + "").startsWith("-")
+            //   ? margin
+            //   : {
+            //       "@supports (display: flex) and (gap: 1em)": {
+            //         gap: gap[value],
+            //       },
+            //       "@supports not (display: flex) and (gap: 1em)": margin,
+            //     };
 
             return acc;
           },
