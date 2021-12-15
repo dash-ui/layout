@@ -342,15 +342,12 @@ describe("vstack()", () => {
   });
   it('applies the "gap" prop', () => {
     const element = createElement(layoutStyles.vstack({ gap: 1 }));
-    // expect(element).toHaveStyleRule("gap", "var(--gap-1)", {
-    //   supports: "(display: flex) and (gap: 1em)",
-    // });
-    // expect(element).toHaveStyleRule("margin-top", "var(--gap-1)!important", {
-    //   target: ">* + *",
-    //   supports: "not (display: flex) and (gap: 1em)",
-    // });
+    expect(element).toHaveStyleRule("gap", "var(--gap-1)", {
+      supports: "(display: flex) and (gap: 1em)",
+    });
     expect(element).toHaveStyleRule("margin-top", "var(--gap-1)!important", {
       target: ">* + *",
+      supports: "not (display: flex) and (gap: 1em)",
     });
   });
 
