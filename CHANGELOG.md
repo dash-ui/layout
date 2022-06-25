@@ -1,3 +1,28 @@
+# [1.0.0](https://github.com/dash-ui/layout/compare/v0.1.3...v1.0.0) (2022-06-25)
+
+### Bug Fixes
+
+- fix docs ([a3754ab](https://github.com/dash-ui/layout/commit/a3754ab5af0ebf4fb06abd3de60749045a551d5f))
+- fix peer dependencies ([1061ba4](https://github.com/dash-ui/layout/commit/1061ba466092784ddb968877462f72d00d79ee24))
+- fix safari bug with gap and column-reversed flex layouts ([44750a9](https://github.com/dash-ui/layout/commit/44750a9bc660070398fee4d041598e3261f31cca))
+- force release ([da02df6](https://github.com/dash-ui/layout/commit/da02df6e7b2d763757626f5bf45a3f4c0ff7178c))
+- maybe fix type error ([4244786](https://github.com/dash-ui/layout/commit/4244786096c59f6ce508b721b3cf0b183032839f))
+- revert previous change ([fc334c7](https://github.com/dash-ui/layout/commit/fc334c793043879a02609fa949ee886f8f9798fa))
+
+### Features
+
+- add bleed layout ([31a418c](https://github.com/dash-ui/layout/commit/31a418cf0697251f3cbf664898b162b57f620e4f))
+- add zstack, rename styles ([1e3142e](https://github.com/dash-ui/layout/commit/1e3142e7b46c4f44e175590fc241517b8d1493b9))
+- allow negative margins in row/column gaps ([70bb1b8](https://github.com/dash-ui/layout/commit/70bb1b8040db7cc7733febb591c1c9aed9dc1328))
+- release v1 ([f3c31ec](https://github.com/dash-ui/layout/commit/f3c31ec1937bc95a4b532e79e950b2435f9908de))
+- remove alpha peers ([38ee070](https://github.com/dash-ui/layout/commit/38ee070f8926ddeee753c8a4735972c4f4ce0a63))
+- remove alpha peers ([a35599e](https://github.com/dash-ui/layout/commit/a35599eaa7fa5246bb67fa11b518d700e6f87936))
+- update types to support latest dash ([d9b1a94](https://github.com/dash-ui/layout/commit/d9b1a94b3a337443feafb6fc1d7bb1a9c368d3e1))
+
+### BREAKING CHANGES
+
+- Updates type definitions and the expected styles instance shape
+
 # [1.0.0-alpha.11](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2022-06-25)
 
 ### Features
