@@ -1,30 +1,33 @@
-# [1.0.0-alpha.10](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2021-12-15)
-
-
-### Bug Fixes
-
-* revert previous change ([fc334c7](https://github.com/dash-ui/layout/commit/fc334c793043879a02609fa949ee886f8f9798fa))
-
-# [1.0.0-alpha.9](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2021-12-15)
-
-
-### Bug Fixes
-
-* fix safari bug with gap and column-reversed flex layouts ([44750a9](https://github.com/dash-ui/layout/commit/44750a9bc660070398fee4d041598e3261f31cca))
-
-# [1.0.0-alpha.8](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2021-12-08)
-
-
-### Bug Fixes
-
-* fix docs ([a3754ab](https://github.com/dash-ui/layout/commit/a3754ab5af0ebf4fb06abd3de60749045a551d5f))
-
-# [1.0.0-alpha.7](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2021-12-07)
-
+# [1.0.0-alpha.11](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.10...v1.0.0-alpha.11) (2022-06-25)
 
 ### Features
 
-* add zstack, rename styles ([1e3142e](https://github.com/dash-ui/layout/commit/1e3142e7b46c4f44e175590fc241517b8d1493b9))
+- remove alpha peers ([38ee070](https://github.com/dash-ui/layout/commit/38ee070f8926ddeee753c8a4735972c4f4ce0a63))
+- remove alpha peers ([a35599e](https://github.com/dash-ui/layout/commit/a35599eaa7fa5246bb67fa11b518d700e6f87936))
+
+# [1.0.0-alpha.10](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.9...v1.0.0-alpha.10) (2021-12-15)
+
+### Bug Fixes
+
+- revert previous change ([fc334c7](https://github.com/dash-ui/layout/commit/fc334c793043879a02609fa949ee886f8f9798fa))
+
+# [1.0.0-alpha.9](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.8...v1.0.0-alpha.9) (2021-12-15)
+
+### Bug Fixes
+
+- fix safari bug with gap and column-reversed flex layouts ([44750a9](https://github.com/dash-ui/layout/commit/44750a9bc660070398fee4d041598e3261f31cca))
+
+# [1.0.0-alpha.8](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.7...v1.0.0-alpha.8) (2021-12-08)
+
+### Bug Fixes
+
+- fix docs ([a3754ab](https://github.com/dash-ui/layout/commit/a3754ab5af0ebf4fb06abd3de60749045a551d5f))
+
+# [1.0.0-alpha.7](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.6...v1.0.0-alpha.7) (2021-12-07)
+
+### Features
+
+- add zstack, rename styles ([1e3142e](https://github.com/dash-ui/layout/commit/1e3142e7b46c4f44e175590fc241517b8d1493b9))
 
 # [1.0.0-alpha.6](https://github.com/dash-ui/layout/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-12-05)
 
