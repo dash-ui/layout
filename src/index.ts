@@ -1085,7 +1085,7 @@ const keys: <T>(obj: T) => (keyof T)[] = Object.keys;
 function reduce<T, U>(
   obj: T,
   fn: (acc: U, key: keyof T, currentIndex: number, arr: (keyof T)[]) => U,
-  init: U extends {} ? Partial<U> : U
+  init: Partial<U>
 ): U {
   return keys(obj).reduce(fn, init as U);
 }
