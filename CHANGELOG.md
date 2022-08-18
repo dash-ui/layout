@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/dash-ui/layout/compare/v1.0.0...v1.0.1) (2022-08-18)
+
+### Bug Fixes
+
+- add explicit function return types ([#3](https://github.com/dash-ui/layout/issues/3)) ([ccf7099](https://github.com/dash-ui/layout/commit/ccf70992ff9c4ff630121d97a0a81c5f06a653de))
+
 # [1.0.0](https://github.com/dash-ui/layout/compare/v0.1.3...v1.0.0) (2022-06-25)
 
 ### Bug Fixes

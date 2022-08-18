@@ -6623,13 +6623,7 @@ declare function layout<
         MQ
       >;
       readonly default: import("@dash-ui/responsive").ResponsiveOne<MQ>;
-      /**
-       * Makes the component display as an `inline-grid` rather than `grid`
-       */
       readonly inline: import("@dash-ui/responsive").ResponsiveOne<MQ>;
-      /**
-       * Sets a `justify-items` CSS property on your component
-       */
       readonly alignX: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -6645,9 +6639,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets an `align-items` CSS property on your component
-       */
       readonly alignY: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -6663,9 +6654,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets a `justify-content` CSS property on your component
-       */
       readonly distributeX: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -6684,9 +6672,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets an `align-content` CSS property on your component
-       */
       readonly distributeY: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -6705,10 +6690,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets a horizontal and vertical gap between the child elements in the row
-       * using the "gap" token in your theme
-       */
       readonly gap: import("@dash-ui/responsive").ResponsiveLazy<
         | Extract<keyof Tokens["gap"], string | number>
         | [
@@ -6717,9 +6698,6 @@ declare function layout<
           ],
         MQ
       >;
-      /**
-       * Sets a `grid-template-rows` CSS property on your component
-       */
       readonly rows: import("@dash-ui/responsive").ResponsiveLazy<
         number | (string | number)[],
         MQ
@@ -9285,13 +9263,7 @@ declare function layout<
     }) => string[];
     styles: {
       readonly default: import("@dash-ui/responsive").ResponsiveOne<MQ>;
-      /**
-       * Makes the component display as an `inline-grid` rather than `grid`
-       */
       readonly inline: import("@dash-ui/responsive").ResponsiveOne<MQ>;
-      /**
-       * Sets a `justify-items` CSS property on your component
-       */
       readonly alignX: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -9307,9 +9279,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets an `align-items` CSS property on your component
-       */
       readonly alignY: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -9325,9 +9294,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets a `justify-content` CSS property on your component
-       */
       readonly distributeX: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -9346,9 +9312,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets an `align-content` CSS property on your component
-       */
       readonly distributeY: import("@dash-ui/responsive").ResponsiveStyle<
         | "inherit"
         | "initial"
@@ -9367,10 +9330,6 @@ declare function layout<
         Themes,
         MQ
       >;
-      /**
-       * Sets a horizontal and vertical gap between the child elements in the row
-       * using the "gap" token in your theme
-       */
       readonly gap: import("@dash-ui/responsive").ResponsiveLazy<
         | Extract<keyof Tokens["gap"], string | number>
         | [
@@ -9379,9 +9338,6 @@ declare function layout<
           ],
         MQ
       >;
-      /**
-       * Sets a `grid-template-rows` CSS property on your component
-       */
       readonly rows: import("@dash-ui/responsive").ResponsiveLazy<
         number | (string | number)[],
         MQ
