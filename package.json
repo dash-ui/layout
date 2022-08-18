@@ -32,7 +32,7 @@
   "sideEffects": false,
   "types": "types/index.d.ts",
   "dependencies": {
-    "@dash-ui/compound": "^1.0.0-alpha.2"
+    "@dash-ui/compound": "1.0.0-alpha.2"
   },
   "peerDependencies": {
     "@dash-ui/responsive": ">=1.0.0",
@@ -73,7 +73,10 @@
   "eslintConfig": {
     "extends": [
       "lunde"
-    ]
+    ],
+    "rules": {
+      "@typescript-eslint/explicit-function-return-type": "warn"
+    }
   },
   "eslintIgnore": [
     "node_modules",
