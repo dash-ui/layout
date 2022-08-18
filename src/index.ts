@@ -129,7 +129,7 @@ function layout<
               | Extract<keyof Tokens["pad"], string | number>
               | Extract<keyof Tokens["pad"], string | number>[]
           ) =>
-          ({ pad }) => ({
+          ({ pad }): StyleObject => ({
             padding: Array.isArray(value)
               ? value.map((k) => pad[k]).join(" ")
               : pad[value],
@@ -174,7 +174,7 @@ function layout<
             ),
             Extract<keyof Tokens["color"], string | number>
           ]) =>
-          ({ borderWidth, color }) => ({
+          ({ borderWidth, color }): StyleObject => ({
             borderWidth: Array.isArray(width)
               ? width.map((w) => borderWidth[w]).join(" ")
               : borderWidth[width],
@@ -218,7 +218,7 @@ function layout<
               | Extract<keyof Tokens["radius"], string | number>
               | Extract<keyof Tokens["radius"], string | number>[]
           ) =>
-          ({ radius }) => ({
+          ({ radius }): StyleObject => ({
             borderRadius: Array.isArray(value)
               ? value.map((k) => radius[k]).join(" ")
               : radius[value],
@@ -594,7 +594,7 @@ function layout<
                   Extract<keyof Tokens["gap"], number | string>
                 ]
           ) =>
-          ({ gap }) => ({
+          ({ gap }): StyleObject => ({
             gridGap: Array.isArray(value)
               ? value.map((p) => gap[p]).join(" ")
               : gap[value] + " " + gap[value],
@@ -606,14 +606,16 @@ function layout<
       /**
        * Sets a `grid-template-rows` CSS property on your component
        */
-      rows: responsiveStyles.lazy((value: number | (number | string)[]) => {
-        let rows: (number | string)[];
-        if (Array.isArray(value)) rows = value;
-        // ie doesn't have repeat
-        else rows = [`repeat(${value},minmax(0,1fr))`];
-        return { gridTemplateRows: rows.map((row) => unit(row)).join(" ") };
-      }),
-    } as const,
+      rows: responsiveStyles.lazy(
+        (value: number | (number | string)[]): StyleObject => {
+          let rows: (number | string)[];
+          if (Array.isArray(value)) rows = value;
+          // ie doesn't have repeat
+          else rows = [`repeat(${value},minmax(0,1fr))`];
+          return { gridTemplateRows: rows.map((row) => unit(row)).join(" ") };
+        }
+      ),
+    },
     { atomic: true }
   );
 
@@ -885,7 +887,7 @@ function layout<
               | Extract<keyof Tokens["pad"], string | number>
               | Extract<keyof Tokens["pad"], string | number>[]
           ) =>
-          ({ pad }) => ({
+          ({ pad }): StyleObject => ({
             margin: Array.isArray(value)
               ? value
                   .map((k) =>
@@ -1096,6 +1098,6 @@ function reduce<T, U>(
  *
  * @param value - The value you want to maybe add a unit to
  */
-function unit<T extends number | string>(value: T) {
+function unit<T extends number | string>(value: T): T | string {
   return !isNaN(value as any) && value !== 0 ? `${value}px` : value;
 }
